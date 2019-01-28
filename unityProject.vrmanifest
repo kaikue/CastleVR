@@ -1,0 +1,16 @@
+{
+  "source": "Unity",
+  "applications": [
+    {
+      "app_key": "application.generated.unity.castlevr.exe",
+      "launch_type": "url",
+      "url": "steam://launch/",
+      "action_manifest_path": "C:\\Users\\team-admin\\Documents\\CastleVR\\actions.json",
+      "strings": {
+        "en_us": {
+          "name": "CastleVR [Testing]"
+        }
+      }
+    }
+  ]
+}
