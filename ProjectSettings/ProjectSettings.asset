@@ -616,10 +616,10 @@ PlayerSettings:
   facebookXfbml: 0
   facebookFrictionlessRequests: 1
   apiCompatibilityLevel: 6
-  cloudProjectId: 
+  cloudProjectId: 9575fb60-9ac5-4a14-85e0-b019a8400cbd
   framebufferDepthMemorylessMode: 0
-  projectName: 
-  organizationId: 
+  projectName: CastleVR
+  organizationId: vnbhatia
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
