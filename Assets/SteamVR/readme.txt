@@ -1,4 +1,4 @@
-﻿# SteamVR Unity Plugin - v2.2RC5
+﻿# SteamVR Unity Plugin - v2.2.0
 
 Copyright (c) Valve Corporation, All rights reserved.
 
@@ -12,9 +12,7 @@ Requirements:
 
 Documentation:
 
- PDF documents are included in this directory on the new input system and the plugin itself. 
-
- For a basic tutorial see the steam guide here: https://steamcommunity.com/sharedfiles/filedetails/?id=1416820276
+ Documentation can be found online here: https://valvesoftware.github.io/steamvr_unity_plugin/
 
 
 Quick Start:
@@ -32,6 +30,11 @@ Support:
 
  If you'd like to discuss features, post guides, and give general feedback please post on the steam forum here: https://steamcommunity.com/app/250820/discussions/7/
  
+
+Changes for v2.2.0:
+ 
+ * Removing some unused code
+
 
 Changes for v2.2RC5:
  
