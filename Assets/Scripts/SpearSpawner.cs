@@ -5,35 +5,40 @@ using UnityEngine;
 public class SpearSpawner : MonoBehaviour
 {
     public GameObject spearPrefab;
-    int spears = 0;
+    public Transform spawnPoint;
 
-    void Start()
+    private HashSet<GameObject> spears;
+
+    private void Start()
     {
-        
+        spears = new HashSet<GameObject>();
     }
     
     private void FixedUpdate()
     {
-        if (spears == 0)
+        if (spears.Count == 0)
         {
             SpawnSpear();
         }
-        spears = 0;
+        spears.Clear();
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        
+        if (other.transform.parent.CompareTag("Spear") && !spears.Contains(other.gameObject))
+        {
+            print("enter");
+            spears.Add(other.gameObject);
+        }
     }
 
-    private void OnCollisionStay(Collision collision)
+    private void OnTriggerStay(Collider other)
     {
-        
+        OnTriggerEnter(other);
     }
 
     private void SpawnSpear()
     {
-        //TODO
-        Instantiate(spearPrefab);
+        Instantiate(spearPrefab, spawnPoint.transform.position, Quaternion.identity);
     }
 }
