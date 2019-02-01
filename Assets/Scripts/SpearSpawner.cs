@@ -27,7 +27,6 @@ public class SpearSpawner : MonoBehaviour
     {
         if (other.transform.parent.CompareTag("Spear") && !spears.Contains(other.gameObject))
         {
-            print("enter");
             spears.Add(other.gameObject);
         }
     }
