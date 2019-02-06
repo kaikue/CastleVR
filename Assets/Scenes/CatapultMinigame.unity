@@ -484,6 +484,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &907384721 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2288927914320845601, guid: 92ea38936e3e4d640931b27eaf382018,
+    type: 3}
+  m_PrefabInstance: {fileID: 312766251}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &919641114
 GameObject:
   m_ObjectHideFlags: 0
@@ -742,7 +748,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ball: {fileID: 1011116679}
-  target: {fileID: 2288927914320845601, guid: 92ea38936e3e4d640931b27eaf382018, type: 3}
+  target: {fileID: 907384721}
   h: 25
   gravity: -18
 --- !u!4 &2115663055
