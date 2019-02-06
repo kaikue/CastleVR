@@ -188,6 +188,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3213349591315563810, guid: 92ea38936e3e4d640931b27eaf382018,
+        type: 3}
+      propertyPath: m_Name
+      value: TrajectoryPoint
+      objectReference: {fileID: 0}
     - target: {fileID: 2288927914320845601, guid: 92ea38936e3e4d640931b27eaf382018,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -242,11 +247,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3213349591315563810, guid: 92ea38936e3e4d640931b27eaf382018,
-        type: 3}
-      propertyPath: m_Name
-      value: TrajectoryPoint
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92ea38936e3e4d640931b27eaf382018, type: 3}
@@ -740,7 +740,6 @@ MonoBehaviour:
   clickMask:
     serializedVersion: 2
     m_Bits: 512
-  debugPath: 1
   h: 25
   gravity: -18
 --- !u!4 &2115663055

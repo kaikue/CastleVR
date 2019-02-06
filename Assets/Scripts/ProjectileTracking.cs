@@ -7,7 +7,7 @@ public class ProjectileTracking : MonoBehaviour
     public Rigidbody ball;
     public Transform target;
     //public GameObject trajectoryPointPrefab;
-    //public LayerMask clickMask;
+    public LayerMask clickMask;
 
     //public bool debugPath;
 
@@ -23,21 +23,18 @@ public class ProjectileTracking : MonoBehaviour
 
     void Update()
     {
-        /*if (Input.GetMouseButtonUp(0))
+        if (Input.GetMouseButtonUp(0))
         {
-            if (trajectoryPointPrefab != null)
+            Vector3 clickPosition = -Vector3.one;
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+            if (Physics.Raycast(ray, out hit, 100f, clickMask))
             {
-                //Destroy(trajectoryPointPrefab);
-                Vector3 clickPosition = -Vector3.one;
-                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-                RaycastHit hit;
-                if (Physics.Raycast(ray, out hit, 100f, clickMask))
-                {
-                    clickPosition = hit.point;
-                }
-                Instantiate(trajectoryPointPrefab, clickPosition, transform.rotation);
+                clickPosition = hit.point;
             }
-        }*/
+            //Instantiate(trajectoryPointPrefab, clickPosition, transform.rotation); 
+            print(clickPosition);
+        }
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
