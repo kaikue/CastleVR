@@ -563,6 +563,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &1011116679 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 6105321617030288744, guid: 65375e0d5c291af4285f130d90d2f1d2,
+    type: 3}
+  m_PrefabInstance: {fileID: 695226739}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1677286701
 GameObject:
   m_ObjectHideFlags: 0
@@ -735,11 +741,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34b97aee1eedbfa48bc94e39714ffae3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ball: {fileID: 6105321617030288744, guid: 65375e0d5c291af4285f130d90d2f1d2, type: 3}
+  ball: {fileID: 1011116679}
   target: {fileID: 2288927914320845601, guid: 92ea38936e3e4d640931b27eaf382018, type: 3}
+<<<<<<< HEAD
   clickMask:
     serializedVersion: 2
     m_Bits: 512
+=======
+>>>>>>> b49acda4091a8a5f4d4f5c56f27b6ba35af956e3
   h: 25
   gravity: -18
 --- !u!4 &2115663055

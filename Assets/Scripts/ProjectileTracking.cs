@@ -51,10 +51,12 @@ public class ProjectileTracking : MonoBehaviour
     {
         Physics.gravity = Vector3.up * gravity;
         ball.useGravity = true;
-        //ball.velocity = CalculateLaunchData().initialVelocity;
-        ball.velocity = CalculateLaunchVelocity();
+		//ball.velocity = CalculateLaunchData().initialVelocity;
+		Vector3 vel = CalculateLaunchVelocity();
+		ball.AddForce(vel, ForceMode.Impulse);
         //print(CalculateLaunchData().initialVelocity);
-        print(CalculateLaunchVelocity());
+        print(vel);
+		//print(ball.velocity);
     }
 
     /*LaunchData CalculateLaunchData()
