@@ -31,7 +31,7 @@ public class EnemyWalk : MonoBehaviour
     public void setVelocity(Vector3 v)
     {
         velocity = v;
-        print(rb.velocity);
+        //print(rb.velocity);
     }
 
     private void OnCollisionEnter(Collision collision)
