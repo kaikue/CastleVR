@@ -8,6 +8,7 @@ TagManager:
   - FxTemporaire
   - Spear
   - theWall
+  - ball
   layers:
   - Default
   - TransparentFX
