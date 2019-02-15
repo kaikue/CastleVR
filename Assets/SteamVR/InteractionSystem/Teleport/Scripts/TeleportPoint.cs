@@ -29,6 +29,7 @@ namespace Valve.VR.InteractionSystem
 		public Color titleHighlightedColor;
 		public Color titleLockedColor;
 		public bool playerSpawnPoint = false;
+        public int scaleOnTeleport;
 
 		//Private data
 		private bool gotReleventComponents = false;

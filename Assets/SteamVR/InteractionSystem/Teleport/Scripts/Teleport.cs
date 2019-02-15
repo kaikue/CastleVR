@@ -15,6 +15,9 @@ namespace Valve.VR.InteractionSystem
     {
         public SteamVR_Action_Boolean teleportAction = SteamVR_Input.GetAction<SteamVR_Action_Boolean>("Teleport");
 
+        public int globalScaleOnTeleport;
+        public GameObject PlayerRoot;
+
         public LayerMask traceLayerMask;
 		public LayerMask floorFixupTraceLayerMask;
 		public float floorFixupMaximumTraceDistance = 1.0f;
@@ -861,6 +864,8 @@ namespace Valve.VR.InteractionSystem
 			TeleportPoint teleportPoint = teleportingToMarker as TeleportPoint;
 			Vector3 teleportPosition = pointedAtPosition;
 
+            int scaleFromPoint = teleportPoint.scaleOnTeleport;
+
 			if ( teleportPoint != null )
 			{
 				teleportPosition = teleportPoint.transform.position;
@@ -897,6 +902,7 @@ namespace Valve.VR.InteractionSystem
 				teleportingToMarker.TeleportPlayer( pointedAtPosition );
 			}
 
+            PlayerRoot.transform.localScale = new Vector3((float)scaleFromPoint, (float)scaleFromPoint, (float)scaleFromPoint) ;
 			Teleport.Player.Send( pointedAtTeleportMarker );
 		}
 
