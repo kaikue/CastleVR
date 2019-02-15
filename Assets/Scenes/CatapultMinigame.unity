@@ -265,7 +265,7 @@ PrefabInstance:
     - target: {fileID: 8920005917603589797, guid: 65375e0d5c291af4285f130d90d2f1d2,
         type: 3}
       propertyPath: m_TagString
-      value: ball
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 5309413445046566185, guid: 65375e0d5c291af4285f130d90d2f1d2,
         type: 3}

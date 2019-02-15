@@ -38,12 +38,17 @@ public class EnemyWalk : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Spear") || collision.gameObject.CompareTag("projectile"))
         {
-            Destroy(gameObject);
+            Kill();
         }
         if (collision.gameObject.CompareTag("theWall"))
         {
-            Destroy(gameObject);
+            Kill();
         }
         
+    }
+
+    public void Kill()
+    {
+        Destroy(gameObject);
     }
 }

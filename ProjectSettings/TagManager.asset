@@ -4,11 +4,7 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - projectile
-  - FxTemporaire
-  - Spear
-  - theWall
-  - ball
+  - Shield
   layers:
   - Default
   - TransparentFX
@@ -18,8 +14,8 @@ TagManager:
   - UI
   - 
   - 
-  - PostProcessing
-  - ClickLayer
+  - 
+  - 
   - 
   - 
   - 
