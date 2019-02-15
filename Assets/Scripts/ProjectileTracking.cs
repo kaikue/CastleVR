@@ -7,9 +7,12 @@ public class ProjectileTracking : MonoBehaviour
     public Rigidbody ball;
     public Transform target;
     //public GameObject trajectoryPointPrefab;
-    //public LayerMask clickMask;
+    public LayerMask clickMask;
 
-    //public bool debugPath;
+    private LineRenderer line;
+    private Transform launcher;
+
+    public bool debugPath;
 
     public float h = 30;
     public float gravity = -18;
@@ -19,50 +22,52 @@ public class ProjectileTracking : MonoBehaviour
     {
         //ball = GetComponent<Rigidbody>();
         ball.useGravity = false;
+        line = this.GetComponent<LineRenderer>();
+        launcher = this.GetComponent<Transform>();
     }
 
     void Update()
     {
-        /*if (Input.GetMouseButtonUp(0))
+        if (Input.GetMouseButtonUp(0))
         {
-            if (trajectoryPointPrefab != null)
+            Vector3 clickPosition = -Vector3.one;
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+            if (Physics.Raycast(ray, out hit, 100f, clickMask))
             {
-                //Destroy(trajectoryPointPrefab);
-                Vector3 clickPosition = -Vector3.one;
-                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-                RaycastHit hit;
-                if (Physics.Raycast(ray, out hit, 100f, clickMask))
-                {
-                    clickPosition = hit.point;
-                }
-                Instantiate(trajectoryPointPrefab, clickPosition, transform.rotation);
+                clickPosition = hit.point;
             }
-        }*/
+            //Instantiate(trajectoryPointPrefab, clickPosition, transform.rotation); 
+            print(clickPosition);
+        }
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Launch();
         }
 
-        /*if (debugPath)
+        line.SetPosition(0, new Vector3(launcher.position.x, launcher.position.y, launcher.position.z));
+        line.SetPosition(1, new Vector3(target.position.x, target.position.y, target.position.z));
+
+        if (debugPath)
         {
             DrawPath();
-        }*/
+        }
     }
        
     void Launch()
     {
         Physics.gravity = Vector3.up * gravity;
         ball.useGravity = true;
-		//ball.velocity = CalculateLaunchData().initialVelocity;
-		Vector3 vel = CalculateLaunchVelocity();
-		ball.AddForce(vel, ForceMode.Impulse);
-        //print(CalculateLaunchData().initialVelocity);
-        print(vel);
+		ball.velocity = CalculateLaunchData().initialVelocity;
+		//Vector3 vel = CalculateLaunchVelocity();
+		//ball.AddForce(vel, ForceMode.Impulse);
+        print(CalculateLaunchData().initialVelocity);
+        //print(vel);
 		//print(ball.velocity);
     }
 
-    /*LaunchData CalculateLaunchData()
+    LaunchData CalculateLaunchData()
     {
         float displacementY = target.position.y - ball.position.y;
         Vector3 displacementXZ = new Vector3(target.position.x - ball.position.x, 0, target.position.z - ball.position.z);
@@ -99,9 +104,9 @@ public class ProjectileTracking : MonoBehaviour
             this.initialVelocity = initialVelocity;
             this.timeToTarget = timeToTarget;
         }
-    }*/
+    }
 
-    Vector3 CalculateLaunchVelocity()
+    /*Vector3 CalculateLaunchVelocity()
     {
         float displacementY = target.position.y - ball.position.y;
         Vector3 displacementXZ = new Vector3(target.position.x - ball.position.x, 0, target.position.z - ball.position.z);
@@ -110,5 +115,5 @@ public class ProjectileTracking : MonoBehaviour
         Vector3 velocityXZ = displacementXZ / (Mathf.Sqrt(-2 * h / gravity) + Mathf.Sqrt(2 * (displacementY - h) / gravity));
 
         return velocityXZ + velocityY;
-    }
+    }*/
 }
