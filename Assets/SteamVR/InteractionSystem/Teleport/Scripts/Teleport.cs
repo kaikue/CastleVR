@@ -863,10 +863,12 @@ namespace Valve.VR.InteractionSystem
 
 			TeleportPoint teleportPoint = teleportingToMarker as TeleportPoint;
 			Vector3 teleportPosition = pointedAtPosition;
+            PlayerRoot.transform.localScale = new Vector3((float)globalScaleOnTeleport, (float)globalScaleOnTeleport, (float)globalScaleOnTeleport);
 
-            int scaleFromPoint = teleportPoint.scaleOnTeleport;
 
-			if ( teleportPoint != null )
+            // int scaleFromPoint = teleportPoint.scaleOnTeleport;
+
+            if ( teleportPoint != null )
 			{
 				teleportPosition = teleportPoint.transform.position;
 
@@ -902,7 +904,6 @@ namespace Valve.VR.InteractionSystem
 				teleportingToMarker.TeleportPlayer( pointedAtPosition );
 			}
 
-            PlayerRoot.transform.localScale = new Vector3((float)scaleFromPoint, (float)scaleFromPoint, (float)scaleFromPoint) ;
 			Teleport.Player.Send( pointedAtTeleportMarker );
 		}
 
