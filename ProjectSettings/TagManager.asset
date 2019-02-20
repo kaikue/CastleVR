@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Shield
+  - Spear
+  - projectile
+  - FxTemporaire
+  - Enemy
   layers:
   - Default
   - TransparentFX
