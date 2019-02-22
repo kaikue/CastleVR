@@ -15,6 +15,7 @@ namespace Valve.VR.InteractionSystem.Sample
         public int globalScaleOnTeleport;
         public GameObject PlayerRoot;
         public Transform godPosition;
+        public GameObject teleporter;
 
 
         private void OnEnable()
@@ -48,8 +49,12 @@ namespace Valve.VR.InteractionSystem.Sample
         public void Something()
         {
             // zoom out to original position
-            PlayerRoot.transform.position = godPosition.position;
-            PlayerRoot.transform.localScale = godPosition.localScale;
+            //PlayerRoot.transform.localPosition = godPosition.localPosition;
+            //PlayerRoot.transform.localScale = godPosition.localScale;
+
+            //teleport to god point
+            Teleport t = teleporter.GetComponent<Teleport>();
+            t.TryTeleportPlayerToGodPosition();
            
         }
 
