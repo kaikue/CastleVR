@@ -5,8 +5,9 @@ using UnityEngine;
 public class ProjectileTracking : MonoBehaviour
 {
     public Rigidbody ball;
-    public Transform target;
-    //public GameObject trajectoryPointPrefab;
+    private Transform target;
+    public GameObject trajectoryPointPrefab;
+    //public GameObject ballPrefab;
     public LayerMask clickMask;
 
     private LineRenderer line;
@@ -37,8 +38,12 @@ public class ProjectileTracking : MonoBehaviour
             {
                 clickPosition = hit.point;
             }
-            //Instantiate(trajectoryPointPrefab, clickPosition, transform.rotation); 
+            GameObject targetPoint = Instantiate(trajectoryPointPrefab, clickPosition, transform.rotation);
+            target = targetPoint.GetComponent<Transform>();
+            //line.SetPosition(0, new Vector3(launcher.position.x, launcher.position.y, launcher.position.z));
+            //line.SetPosition(1, new Vector3(target.position.x, target.position.y, target.position.z));
             print(clickPosition);
+            
         }
 
         if (Input.GetKeyDown(KeyCode.Space))
@@ -48,6 +53,7 @@ public class ProjectileTracking : MonoBehaviour
 
         line.SetPosition(0, new Vector3(launcher.position.x, launcher.position.y, launcher.position.z));
         line.SetPosition(1, new Vector3(target.position.x, target.position.y, target.position.z));
+        
 
         if (debugPath)
         {
@@ -60,11 +66,7 @@ public class ProjectileTracking : MonoBehaviour
         Physics.gravity = Vector3.up * gravity;
         ball.useGravity = true;
 		ball.velocity = CalculateLaunchData().initialVelocity;
-		//Vector3 vel = CalculateLaunchVelocity();
-		//ball.AddForce(vel, ForceMode.Impulse);
         print(CalculateLaunchData().initialVelocity);
-        //print(vel);
-		//print(ball.velocity);
     }
 
     LaunchData CalculateLaunchData()
@@ -105,15 +107,4 @@ public class ProjectileTracking : MonoBehaviour
             this.timeToTarget = timeToTarget;
         }
     }
-
-    /*Vector3 CalculateLaunchVelocity()
-    {
-        float displacementY = target.position.y - ball.position.y;
-        Vector3 displacementXZ = new Vector3(target.position.x - ball.position.x, 0, target.position.z - ball.position.z);
-
-        Vector3 velocityY = Vector3.up * Mathf.Sqrt(-2 * gravity * h);
-        Vector3 velocityXZ = displacementXZ / (Mathf.Sqrt(-2 * h / gravity) + Mathf.Sqrt(2 * (displacementY - h) / gravity));
-
-        return velocityXZ + velocityY;
-    }*/
 }
