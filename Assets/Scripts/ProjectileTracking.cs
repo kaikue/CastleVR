@@ -40,6 +40,8 @@ public class ProjectileTracking : MonoBehaviour
             }
             GameObject targetPoint = Instantiate(trajectoryPointPrefab, clickPosition, transform.rotation);
             target = targetPoint.GetComponent<Transform>();
+            //line.SetPosition(0, new Vector3(launcher.position.x, launcher.position.y, launcher.position.z));
+            //line.SetPosition(1, new Vector3(target.position.x, target.position.y, target.position.z));
             print(clickPosition);
             
         }
@@ -51,6 +53,7 @@ public class ProjectileTracking : MonoBehaviour
 
         line.SetPosition(0, new Vector3(launcher.position.x, launcher.position.y, launcher.position.z));
         line.SetPosition(1, new Vector3(target.position.x, target.position.y, target.position.z));
+        
 
         if (debugPath)
         {

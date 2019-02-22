@@ -563,6 +563,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpearTray
       objectReference: {fileID: 0}
+    - target: {fileID: 4273319385869009638, guid: eb036168b84b27d4cb8fbe9a4e10b6c7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4273319385869009636, guid: eb036168b84b27d4cb8fbe9a4e10b6c7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -638,7 +643,7 @@ GameObject:
   - component: {fileID: 1452472495}
   - component: {fileID: 1452472494}
   - component: {fileID: 1452472493}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -735,7 +740,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!81 &1677286702
 AudioListener:
   m_ObjectHideFlags: 0
@@ -1046,7 +1051,7 @@ MonoBehaviour:
     type: 3}
   clickMask:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 256
   debugPath: 1
   h: 25
   gravity: -18

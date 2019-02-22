@@ -17,7 +17,7 @@ public class Explosion : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.name == "Terrain")
+        if (collision.gameObject.name == "Plane")
         {
             Impact();
         }
