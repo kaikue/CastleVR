@@ -4,11 +4,12 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - Shield
+  - Spear
   - projectile
   - FxTemporaire
-  - Spear
+  - Enemy
   - theWall
-  - Shield
   layers:
   - Default
   - TransparentFX
@@ -18,8 +19,8 @@ TagManager:
   - UI
   - 
   - 
-  - PostProcessing
-  - ClickLayer
+  - Clicking Layer
+  - 
   - 
   - 
   - 

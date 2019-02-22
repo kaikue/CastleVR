@@ -3,6 +3,27 @@ guid: 0160b807e222f774fb05fa9653d242a0
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
+    100000: //RootNode
+    100002: Door
+    100004: LeftDoor
+    100006: RightDoor
+    400000: //RootNode
+    400002: Door
+    400004: LeftDoor
+    400006: RightDoor
+    2100000: DarkWood
+    2100002: LightWood
+    2300000: Door
+    2300002: LeftDoor
+    2300004: RightDoor
+    3300000: Door
+    3300002: LeftDoor
+    3300004: RightDoor
+    4300000: Door
+    4300002: LeftDoor
+    4300004: RightDoor
+    7400000: Default Take
+    9500000: //RootNode
     2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
@@ -57,7 +78,7 @@ ModelImporter:
     secondaryUVPackMargin: 4
     useFileScale: 1
     previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 0
+    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
