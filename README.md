@@ -4,6 +4,9 @@ A game for Windows Mixed Reality by Studio Lighthouse
 
 ## TODO
 - Consistently get head tracking
+- Sword game
+	- Sword bends when you hit enemies?
+		- Have to bend it back?
 - Archery game
 	- Arrows collide with invisible enemy-kill wall
 	- Grabbing bow is weird, feels like lefty mode
