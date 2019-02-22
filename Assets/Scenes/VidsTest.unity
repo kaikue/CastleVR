@@ -294,6 +294,36 @@ Transform:
   m_Father: {fileID: 522038538}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &77508846
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 77508847}
+  m_Layer: 0
+  m_Name: godPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &77508847
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 77508846}
+  m_LocalRotation: {x: -0, y: -0.922915, z: -0, w: 0.38500392}
+  m_LocalPosition: {x: 7.54, y: 15.79, z: 32.84}
+  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: 0, y: -134.712, z: 0}
 --- !u!1 &94456041
 GameObject:
   m_ObjectHideFlags: 0
@@ -873,6 +903,31 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 558514377}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &575454946 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 160596, guid: dc06161b6d97feb419f45f03b62e14b9,
+    type: 3}
+  m_PrefabInstance: {fileID: 1094924946}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &575454947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 575454946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0e5ccd98cba1b84b97d71ac6cf73e97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  action:
+    actionPath: /actions/default/in/GrabGrip
+    needsReinit: 0
+  hand: {fileID: 0}
+  globalScaleOnTeleport: 0
+  PlayerRoot: {fileID: 1387775748}
+  godPosition: {fileID: 0}
 --- !u!1001 &582386970
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1864,7 +1919,7 @@ PrefabInstance:
     - target: {fileID: 3006134860722490105, guid: c3dcb1ec10e2bff4b8f12e8bad5a2be9,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3006134860722490105, guid: c3dcb1ec10e2bff4b8f12e8bad5a2be9,
         type: 3}
