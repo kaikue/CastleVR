@@ -830,17 +830,20 @@ namespace Valve.VR.InteractionSystem
 
         public void TryTeleportPlayerToGodPosition()
         {
-            if (visible && !teleporting)
-            {
+            //if (visible && !teleporting)
+            //{
             
                     //Pointing at an unlocked teleport marker
                     teleportingToMarker = godPosition;
+                    pointedAtTeleportMarker = godPosition;
+            pointedAtPosition = godPosition.transform.position;
+            
                     globalScaleOnTeleport = 10;
                     InitiateTeleportFade();
 
                     CancelTeleportHint();
                 
-            }
+            //}
         }
 
         //-------------------------------------------------
