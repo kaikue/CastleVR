@@ -18,6 +18,8 @@ namespace Valve.VR.InteractionSystem
         public int globalScaleOnTeleport;
         public GameObject PlayerRoot;
         public TeleportMarkerBase godPosition;
+        public Hand lhand;
+        public Hand rhand;
 
         public LayerMask traceLayerMask;
 		public LayerMask floorFixupTraceLayerMask;
@@ -837,8 +839,12 @@ namespace Valve.VR.InteractionSystem
                     teleportingToMarker = godPosition;
                     pointedAtTeleportMarker = godPosition;
             pointedAtPosition = godPosition.transform.position;
-            
-                    globalScaleOnTeleport = 10;
+
+            rhand.DetachObject(rhand.currentAttachedObject);
+            lhand.DetachObject(lhand.currentAttachedObject);
+
+
+            globalScaleOnTeleport = 10;
                     InitiateTeleportFade();
 
                     CancelTeleportHint();
