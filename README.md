@@ -10,6 +10,8 @@ A game for Windows Mixed Reality by Studio Lighthouse
 - Archery game
 	- Arrows collide with invisible enemy-kill wall
 	- Grabbing bow is weird, feels like lefty mode
+	- Disable zoom out flash when zoomed out already
+	- Drop bow & arrow when zooming out
 - Spear game
 	- Lock rotation when picking up (transform on controller tip?)
 	- Keep horizontal when throwing
