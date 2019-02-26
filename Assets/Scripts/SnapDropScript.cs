@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SnapDropScript : MonoBehaviour
 {
-    public GameObject insertBall;
+    /*public GameObject insertBall;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -17,5 +17,5 @@ public class SnapDropScript : MonoBehaviour
     void TurnOffScript()
     {
         insertBall.GetComponent<Interactable>().enabled = false;
-    }
+    }*/
 }
