@@ -96,7 +96,7 @@ namespace Valve.VR.InteractionSystem
 
             SetCollisionMode(CollisionDetectionMode.ContinuousDynamic);
 
-			Destroy( gameObject, 30 );
+			Destroy( gameObject, 1 );
 		}
 
         protected void SetCollisionMode(CollisionDetectionMode newMode, bool force = false)
@@ -143,6 +143,8 @@ namespace Valve.VR.InteractionSystem
 				if ( rbSpeed > 0.1f )
 				{
 					hitGroundSound.Play();
+                    // destroy the arrow
+
 				}
 
 				FireSource arrowFire = gameObject.GetComponentInChildren<FireSource>();
