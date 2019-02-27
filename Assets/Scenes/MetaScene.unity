@@ -1109,5 +1109,15 @@ PrefabInstance:
       propertyPath: globalScaleOnTeleportToTower
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 103421463136407388, guid: c1bd2093a05622247aa7d11c349c72fa,
+        type: 3}
+      propertyPath: debugFloor
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 103421463143148226, guid: c1bd2093a05622247aa7d11c349c72fa,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.062
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1bd2093a05622247aa7d11c349c72fa, type: 3}
