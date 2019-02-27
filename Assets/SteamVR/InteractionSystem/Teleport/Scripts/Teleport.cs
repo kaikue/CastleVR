@@ -17,6 +17,9 @@ namespace Valve.VR.InteractionSystem
 
         public int globalScaleOnTeleport;
         public GameObject PlayerRoot;
+        public TeleportMarkerBase godPosition;
+        public Hand lhand;
+        public Hand rhand;
 
         public LayerMask traceLayerMask;
 		public LayerMask floorFixupTraceLayerMask;
@@ -817,7 +820,8 @@ namespace Valve.VR.InteractionSystem
 			{
 				if ( pointedAtTeleportMarker != null && pointedAtTeleportMarker.locked == false )
 				{
-					//Pointing at an unlocked teleport marker
+                    //Pointing at an unlocked teleport marker
+                    globalScaleOnTeleport = 1;
 					teleportingToMarker = pointedAtTeleportMarker;
 					InitiateTeleportFade();
 
@@ -826,9 +830,30 @@ namespace Valve.VR.InteractionSystem
 			}
 		}
 
+        public void TryTeleportPlayerToGodPosition()
+        {
+            //if (visible && !teleporting)
+            //{
+            
+                    //Pointing at an unlocked teleport marker
+                    teleportingToMarker = godPosition;
+                    pointedAtTeleportMarker = godPosition;
+            pointedAtPosition = godPosition.transform.position;
 
-		//-------------------------------------------------
-		private void InitiateTeleportFade()
+            rhand.DetachObject(rhand.currentAttachedObject);
+            lhand.DetachObject(lhand.currentAttachedObject);
+
+
+            globalScaleOnTeleport = 10;
+                    InitiateTeleportFade();
+
+                    CancelTeleportHint();
+                
+            //}
+        }
+
+        //-------------------------------------------------
+        private void InitiateTeleportFade()
 		{
 			teleporting = true;
 

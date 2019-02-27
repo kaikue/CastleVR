@@ -9,7 +9,7 @@ public class SpearSpawner : MonoBehaviour
 
     private HashSet<GameObject> spears;
 
-    private void Start()
+    private void Awake()
     {
         spears = new HashSet<GameObject>();
     }
@@ -23,9 +23,14 @@ public class SpearSpawner : MonoBehaviour
         spears.Clear();
     }
 
+	private static bool IsSpear(Transform t)
+	{
+		return t.CompareTag("Spear") || t.parent.CompareTag("Spear");
+	}
+
     private void OnTriggerEnter(Collider other)
     {
-        if (other.transform.parent.CompareTag("Spear") && !spears.Contains(other.gameObject))
+        if (IsSpear(other.transform) && !spears.Contains(other.gameObject))
         {
             spears.Add(other.gameObject);
         }

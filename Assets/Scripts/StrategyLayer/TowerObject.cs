@@ -93,7 +93,7 @@ namespace Valve.VR.InteractionSystem
                     // Attempt to attach the tower at the node
                     if (intersectedNode.IsOpen())
                     {
-                        hand.DetachObject(gameObject, false);
+                        hand.DetachObject(gameObject, false);        
                         intersectedNode.AttachTower(this);
                     }
                 }        
@@ -104,6 +104,16 @@ namespace Valve.VR.InteractionSystem
                     transform.SetPositionAndRotation(oldPosition, oldRotation);
                 }
             }
+        }
+
+        protected virtual void OnAttachedToHand(Hand hand)
+        {
+            hand.HoverLock(null);
+        }
+
+        protected virtual void OnDetachFromHand(Hand hand)
+        {
+            hand.HoverUnlock(null);
         }
 
 
