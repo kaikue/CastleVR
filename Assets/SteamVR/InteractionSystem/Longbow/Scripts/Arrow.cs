@@ -143,6 +143,8 @@ namespace Valve.VR.InteractionSystem
 				if ( rbSpeed > 0.1f )
 				{
 					hitGroundSound.Play();
+                    // destroy the arrow
+
 				}
 
 				FireSource arrowFire = gameObject.GetComponentInChildren<FireSource>();
