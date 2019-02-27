@@ -1164,6 +1164,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 6775579605020647294, guid: acd1e47dcb70eb843b25f85f04070022,
+        type: 3}
+      propertyPath: teleporter
+      value: 
+      objectReference: {fileID: 1362260053}
     - target: {fileID: 6775579606670994524, guid: acd1e47dcb70eb843b25f85f04070022,
         type: 3}
       propertyPath: swordPrefab
@@ -1175,11 +1180,6 @@ PrefabInstance:
       propertyPath: swordParent
       value: 
       objectReference: {fileID: 1740285458}
-    - target: {fileID: 6775579605020647294, guid: acd1e47dcb70eb843b25f85f04070022,
-        type: 3}
-      propertyPath: teleporter
-      value: 
-      objectReference: {fileID: 1362260053}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: acd1e47dcb70eb843b25f85f04070022, type: 3}
 --- !u!114 &890735558 stripped
@@ -1731,6 +1731,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8012478200835099502, guid: 00997d53bdc1dd5459696f9098951d03,
+        type: 3}
+      propertyPath: m_Text
+      value: Bow And Arrow
+      objectReference: {fileID: 0}
+    - target: {fileID: 8012478200835099502, guid: 00997d53bdc1dd5459696f9098951d03,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8012478200835099502, guid: 00997d53bdc1dd5459696f9098951d03,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8012478200835099502, guid: 00997d53bdc1dd5459696f9098951d03,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8012478200759738003, guid: 00997d53bdc1dd5459696f9098951d03,
         type: 3}
       propertyPath: m_IsActive
@@ -1756,24 +1776,9 @@ PrefabInstance:
       propertyPath: titleVisibleColor.b
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8012478200835099502, guid: 00997d53bdc1dd5459696f9098951d03,
+    - target: {fileID: 8012478200835110060, guid: 00997d53bdc1dd5459696f9098951d03,
         type: 3}
-      propertyPath: m_Text
-      value: Bow And Arrow
-      objectReference: {fileID: 0}
-    - target: {fileID: 8012478200835099502, guid: 00997d53bdc1dd5459696f9098951d03,
-        type: 3}
-      propertyPath: m_Color.r
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8012478200835099502, guid: 00997d53bdc1dd5459696f9098951d03,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8012478200835099502, guid: 00997d53bdc1dd5459696f9098951d03,
-        type: 3}
-      propertyPath: m_Color.b
+      propertyPath: swordPoint
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
