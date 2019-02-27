@@ -48,6 +48,7 @@ public class ProjectileTracking : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            Debug.Log("Space");
             Launch();
         }
 
