@@ -844,7 +844,7 @@ namespace Valve.VR.InteractionSystem
             lhand.DetachObject(lhand.currentAttachedObject);
 
 
-            globalScaleOnTeleport = 10;
+            globalScaleOnTeleport = 20;
                     InitiateTeleportFade();
 
                     CancelTeleportHint();
