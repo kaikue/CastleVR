@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyPathWalk : MonoBehaviour
 {
-	private const float SPEED = 3.0f;
+	private const float SPEED = 1.5f;
 
     private Rigidbody rb;
 	private BezierCurve curve;
