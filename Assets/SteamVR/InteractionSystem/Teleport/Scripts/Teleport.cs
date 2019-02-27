@@ -827,6 +827,9 @@ namespace Valve.VR.InteractionSystem
                     globalScaleOnTeleport = globalScaleOnTeleportToTower;
 
                     TeleportPoint teleportPoint = teleportingToMarker as TeleportPoint;
+
+                    rhand.DetachObject(rhand.currentAttachedObject);
+                    lhand.DetachObject(lhand.currentAttachedObject);
                     teleportPoint.activateRelevantWeapons();
  
                     InitiateTeleportFade();
