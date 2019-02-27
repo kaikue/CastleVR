@@ -849,7 +849,6 @@ namespace Valve.VR.InteractionSystem
             InitiateTeleportFade();
             CancelTeleportHint();
 
-            //}
         }
 
         //-------------------------------------------------
