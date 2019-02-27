@@ -6,10 +6,10 @@
 
 using UnityEngine;
 using UnityEngine.UI;
+
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
-
 namespace Valve.VR.InteractionSystem
 {
 	//-------------------------------------------------------------------------
@@ -32,7 +32,8 @@ namespace Valve.VR.InteractionSystem
         public int scaleOnTeleport;
         public Hand lhand;
         public Hand rhand;
-        public SwordActivator sa;
+        //public SwordActivator sa;
+        
 
         public bool swordPoint = false;
 
@@ -255,7 +256,7 @@ namespace Valve.VR.InteractionSystem
         {
             if (swordPoint)
             {
-                
+                rhand.Activate_sword();
             }
         }
 

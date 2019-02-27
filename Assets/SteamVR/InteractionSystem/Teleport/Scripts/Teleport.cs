@@ -847,8 +847,10 @@ namespace Valve.VR.InteractionSystem
             pointedAtPosition = godPosition.transform.position;
             globalScaleOnTeleport = globalScaleOnTeleportToMeta;
 
+            rhand.Deactivate_sword();
             rhand.DetachObject(rhand.currentAttachedObject);
             lhand.DetachObject(lhand.currentAttachedObject);
+
 
             InitiateTeleportFade();
             CancelTeleportHint();
