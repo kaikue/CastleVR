@@ -516,7 +516,7 @@ PrefabInstance:
         type: 3}
       propertyPath: teleporter
       value: 
-      objectReference: {fileID: 2119373663}
+      objectReference: {fileID: 1362260053}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: acd1e47dcb70eb843b25f85f04070022, type: 3}
 --- !u!114 &890735558 stripped
@@ -798,6 +798,12 @@ Transform:
   m_Father: {fileID: 1177398106}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1362260053 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 103421463142953912, guid: c1bd2093a05622247aa7d11c349c72fa,
+    type: 3}
+  m_PrefabInstance: {fileID: 2119373662}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1658929751
 GameObject:
   m_ObjectHideFlags: 0
@@ -1050,9 +1056,3 @@ PrefabInstance:
       objectReference: {fileID: 890735558}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1bd2093a05622247aa7d11c349c72fa, type: 3}
---- !u!1 &2119373663 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 103421463766876161, guid: c1bd2093a05622247aa7d11c349c72fa,
-    type: 3}
-  m_PrefabInstance: {fileID: 2119373662}
-  m_PrefabAsset: {fileID: 0}
