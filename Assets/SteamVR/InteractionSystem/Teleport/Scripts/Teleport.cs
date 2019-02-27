@@ -825,6 +825,10 @@ namespace Valve.VR.InteractionSystem
                     //Pointing at an unlocked teleport marker
                     teleportingToMarker = pointedAtTeleportMarker;
                     globalScaleOnTeleport = globalScaleOnTeleportToTower;
+
+                    TeleportPoint teleportPoint = teleportingToMarker as TeleportPoint;
+                    teleportPoint.activateRelevantWeapons();
+ 
                     InitiateTeleportFade();
 
                     CancelTeleportHint();

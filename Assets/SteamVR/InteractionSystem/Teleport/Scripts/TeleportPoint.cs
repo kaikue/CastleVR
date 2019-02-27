@@ -30,6 +30,10 @@ namespace Valve.VR.InteractionSystem
 		public Color titleLockedColor;
 		public bool playerSpawnPoint = false;
         public int scaleOnTeleport;
+        public Hand lhand;
+        public Hand rhand;
+
+        public bool swordPoint = false;
 
 		//Private data
 		private bool gotReleventComponents = false;
@@ -244,6 +248,15 @@ namespace Valve.VR.InteractionSystem
 
 			gotReleventComponents = true;
 		}
+
+        //----
+        public void activateRelevantWeapons()
+        {
+            if (swordPoint)
+            {
+
+            }
+        }
 
 
 		//-------------------------------------------------
