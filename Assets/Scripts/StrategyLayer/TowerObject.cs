@@ -29,6 +29,12 @@ namespace Valve.VR.InteractionSystem
         [Tooltip("The prefab to spawn at a node when this tower is placed.")]
         public GameObject towerFab;
 
+        [Tooltip("The position offset to use when the tower is placed at a node.")]
+        public Vector3 nodePositionOffset;
+
+        [Tooltip("The rotation offset (in Euler angles) to use when the twoer is placed at a node.")]
+        public Vector3 nodeRotationOffset;
+
         public bool showGrabHint;
 
         /** PRIVATE MEMBERS **/
@@ -41,6 +47,8 @@ namespace Valve.VR.InteractionSystem
         // not a node, we restore it to this config
         private Vector3 oldPosition;
         private Quaternion oldRotation;
+        // A hook to the tower dive components, if they have been spawned
+        private GameObject diveComponent;
 
         /** UNITY SYSTEM ROUTINES **/
 
@@ -94,7 +102,7 @@ namespace Valve.VR.InteractionSystem
                     if (intersectedNode.IsOpen())
                     {
                         hand.DetachObject(gameObject, false);        
-                        intersectedNode.AttachTower(this);
+                        intersectedNode.AttachTower(this, nodePositionOffset, nodeRotationOffset);
                     }
                 }        
                 else
@@ -142,10 +150,44 @@ namespace Valve.VR.InteractionSystem
 
         /** UNIQUE ROUTINES **/
 
-        protected void SpawnTowerComponents()
+        public void SpawnTowerComponents()
         {
             // TODO
             // We're gonna want to find some way to make this routine flexible
+
+            // Clear away existing instances
+            if (diveComponent != null)
+            {
+                DestroyTowerComponents();
+            }
+
+            // Create the raw prefab
+            GameObject comp = Instantiate(towerFab);
+            diveComponent = comp;
+
+            // Child and center the instance
+            comp.transform.SetParent(this.transform);
+            comp.transform.localPosition = new Vector3(0, 0, 0);
+            comp.transform.localRotation = Quaternion.identity;
+        }
+
+        public void DestroyTowerComponents()
+        {
+            if (diveComponent != null)
+            {
+                Destroy(diveComponent);
+                diveComponent = null;
+            }
+        }
+
+        public void ShowTowerObject()
+        {
+            this.GetComponent<MeshRenderer>().enabled = true;
+        }
+
+        public void HideTowerObject()
+        {
+            this.GetComponent<MeshRenderer>().enabled = false;
         }
     }
 }

@@ -74,15 +74,16 @@ namespace Valve.VR.InteractionSystem
         }
         
 
-        public bool AttachTower(TowerObject tower)
+        public bool AttachTower(TowerObject tower, Vector3 positionOFfset, Vector3 rotationOffset)
         {
             // If we already have a tower here reject the attempt
             // TODO: Probably make it so we can switch out the tower in hand with the tower at the node
             if (attachedTower != null) return false;
 
             // Fix the tower to the position and rotation of the node
-            Vector3 newPos = new Vector3(transform.position.x, tower.transform.position.y, transform.position.z);
-            tower.transform.SetPositionAndRotation(newPos, transform.rotation);
+            Vector3 newPos = transform.position + positionOFfset;
+            Quaternion newRot = transform.rotation * Quaternion.Euler(rotationOffset);
+            tower.transform.SetPositionAndRotation(newPos, newRot);
             tower.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotation;
 
             // Change the material to indicate that this position is now closed
@@ -90,6 +91,9 @@ namespace Valve.VR.InteractionSystem
 
             // Store a reference to the attached tower
             attachedTower = tower;
+
+            tower.SpawnTowerComponents();
+            tower.HideTowerObject();
 
             return true;
         }
