@@ -115,12 +115,19 @@ namespace Valve.VR.InteractionSystem
 		{
 			if ( inFlight )
 			{
-				Rigidbody rb = GetComponent<Rigidbody>();
+               
+                Rigidbody rb = GetComponent<Rigidbody>();
 				float rbSpeed = rb.velocity.sqrMagnitude;
 				bool canStick = ( targetPhysMaterial != null && collision.collider.sharedMaterial == targetPhysMaterial && rbSpeed > 0.2f );
 				bool hitBalloon = collision.collider.gameObject.GetComponent<Balloon>() != null;
 
-				if ( travelledFrames < 2 && !canStick )
+                if (collision.collider.CompareTag("Shield"))
+                {
+                    // hit a shield so destry arrow
+                    canStick = true;
+                }
+
+                if ( travelledFrames < 2 && !canStick )
 				{
 					// Reset transform but halve your velocity
 					transform.position = prevPosition - prevVelocity * Time.deltaTime;
@@ -143,7 +150,7 @@ namespace Valve.VR.InteractionSystem
 				if ( rbSpeed > 0.1f )
 				{
 					hitGroundSound.Play();
-                    // destroy the arrow
+                    // destroy the arrow?
 
 				}
 

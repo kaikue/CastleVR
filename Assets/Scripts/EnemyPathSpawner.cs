@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class EnemyPathSpawner : MonoBehaviour
 {
-    public GameObject enemy;                // The enemy prefab to be spawned.
+    public GameObject[] enemies;                // The enemy prefab to be spawned.
     public float spawnTime = 3f;            // How long between each spawn.
 
 	private BezierCurve curve;
@@ -20,7 +20,7 @@ public class EnemyPathSpawner : MonoBehaviour
 
     void Spawn()
     {
-        GameObject temp = Instantiate(enemy, curve.GetPointAt(0), Quaternion.identity);
+        GameObject temp = Instantiate(enemies[Random.Range(0,enemies.Length)], curve.GetPointAt(0), Quaternion.identity);
         EnemyPathWalk script = temp.GetComponent<EnemyPathWalk>();
 		script.SetCurve(curve);
     }

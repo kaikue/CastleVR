@@ -1164,11 +1164,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 20
       objectReference: {fileID: 0}
-    - target: {fileID: 6775579605020647294, guid: acd1e47dcb70eb843b25f85f04070022,
-        type: 3}
-      propertyPath: teleporter
-      value: 
-      objectReference: {fileID: 1362260053}
     - target: {fileID: 6775579606670994524, guid: acd1e47dcb70eb843b25f85f04070022,
         type: 3}
       propertyPath: swordPrefab
@@ -1180,6 +1175,11 @@ PrefabInstance:
       propertyPath: swordParent
       value: 
       objectReference: {fileID: 1740285458}
+    - target: {fileID: 6775579605020647294, guid: acd1e47dcb70eb843b25f85f04070022,
+        type: 3}
+      propertyPath: teleporter
+      value: 
+      objectReference: {fileID: 1362260053}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: acd1e47dcb70eb843b25f85f04070022, type: 3}
 --- !u!114 &890735558 stripped
@@ -1731,26 +1731,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8012478200835099502, guid: 00997d53bdc1dd5459696f9098951d03,
-        type: 3}
-      propertyPath: m_Text
-      value: Bow And Arrow
-      objectReference: {fileID: 0}
-    - target: {fileID: 8012478200835099502, guid: 00997d53bdc1dd5459696f9098951d03,
-        type: 3}
-      propertyPath: m_Color.r
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8012478200835099502, guid: 00997d53bdc1dd5459696f9098951d03,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8012478200835099502, guid: 00997d53bdc1dd5459696f9098951d03,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8012478200759738003, guid: 00997d53bdc1dd5459696f9098951d03,
         type: 3}
       propertyPath: m_IsActive
@@ -1779,6 +1759,26 @@ PrefabInstance:
     - target: {fileID: 8012478200835110060, guid: 00997d53bdc1dd5459696f9098951d03,
         type: 3}
       propertyPath: swordPoint
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8012478200835099502, guid: 00997d53bdc1dd5459696f9098951d03,
+        type: 3}
+      propertyPath: m_Text
+      value: Bow And Arrow
+      objectReference: {fileID: 0}
+    - target: {fileID: 8012478200835099502, guid: 00997d53bdc1dd5459696f9098951d03,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8012478200835099502, guid: 00997d53bdc1dd5459696f9098951d03,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8012478200835099502, guid: 00997d53bdc1dd5459696f9098951d03,
+        type: 3}
+      propertyPath: m_Color.b
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1813,8 +1813,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f9f0b0883b044c409cfbd64a3da117b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 2694739165608509837, guid: acad5e990ec9aea42a9aacb97104b171, type: 3}
-  spawnTime: 3
+  enemies:
+  - {fileID: 2694739165608509837, guid: acad5e990ec9aea42a9aacb97104b171, type: 3}
+  - {fileID: 5071701623172308235, guid: 5c5dc9e0abfcaf24bb5788576eed73c2, type: 3}
+  spawnTime: 2
 --- !u!114 &1177398105
 MonoBehaviour:
   m_ObjectHideFlags: 0
