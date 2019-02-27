@@ -29,7 +29,7 @@ public class Sword : MonoBehaviour
 
         else
         {
-            EnemyWalk enemy = collision.gameObject.GetComponent<EnemyWalk>();
+            EnemyPathWalk enemy = collision.gameObject.GetComponent<EnemyPathWalk>();
             if (enemy != null)
             {
                 enemy.Kill();
