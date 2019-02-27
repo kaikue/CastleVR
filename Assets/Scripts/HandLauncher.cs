@@ -5,7 +5,7 @@ using Valve.VR.InteractionSystem;
 
 public class HandLauncher : MonoBehaviour
 {
-    public SteamVR_Action_Boolean launchAction;
+    //public SteamVR_Action_Boolean launchAction;
 
     public Hand hand;
 
@@ -16,19 +16,19 @@ public class HandLauncher : MonoBehaviour
         if (hand == null)
             hand = this.GetComponent<Hand>();
 
-        if (launchAction == null)
-        {
-            Debug.LogError("<b>[SteamVR Interaction]</b> No plant action assigned");
-            return;
-        }
+        //if (launchAction == null)
+        //{
+            //Debug.LogError("<b>[SteamVR Interaction]</b> No plant action assigned");
+            //return;
+        //}
 
-        launchAction.AddOnChangeListener(OnLaunchActionChange, hand.handType);
+        //launchAction.AddOnChangeListener(OnLaunchActionChange, hand.handType);
     }
 
-    private void OnDisable()
+    /*private void OnDisable()
     {
         if (launchAction != null)
-            launchAction.RemoveOnChangeListener(OnLaunchActionChange, hand.handType);
+            //launchAction.RemoveOnChangeListener(OnLaunchActionChange, hand.handType);
     }
 
     private void OnLaunchActionChange(SteamVR_Action_Boolean actionIn, SteamVR_Input_Sources inputSource, bool newValue)
@@ -51,5 +51,5 @@ public class HandLauncher : MonoBehaviour
         GameObject targetPoint = Instantiate(trajectoryPointPrefab, clickPosition, transform.rotation);
         target = targetPoint.GetComponent<Transform>();
         print(clickPosition);
-    }
+    }*/
 }
