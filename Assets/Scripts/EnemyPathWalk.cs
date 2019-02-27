@@ -28,7 +28,6 @@ public class EnemyPathWalk : MonoBehaviour
 		Vector3 goalPos = curve.GetPointAt(t / totalT);
 		t += Time.fixedDeltaTime;
         transform.rotation = Quaternion.LookRotation(goalPos - rb.position);
-        print(goalPos + " " + rb.position + " " + transform.rotation);
         rb.MovePosition(goalPos); //TODO: move physically around obstacles?
     }
 	
