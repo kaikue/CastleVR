@@ -32,6 +32,7 @@ namespace Valve.VR.InteractionSystem
         public int scaleOnTeleport;
         public Hand lhand;
         public Hand rhand;
+        public SwordActivator sa;
 
         public bool swordPoint = false;
 
@@ -254,7 +255,7 @@ namespace Valve.VR.InteractionSystem
         {
             if (swordPoint)
             {
-
+                
             }
         }
 
