@@ -113,7 +113,14 @@ namespace Valve.VR.InteractionSystem
 		//-------------------------------------------------
 		void OnCollisionEnter( Collision collision )
 		{
-			if ( inFlight )
+            if (collision.collider.CompareTag("Shield"))
+            {
+                // hit a shield so destry arrow
+                Destroy(gameObject);
+                
+            }
+
+            if ( inFlight )
 			{
                
                 Rigidbody rb = GetComponent<Rigidbody>();
@@ -121,11 +128,7 @@ namespace Valve.VR.InteractionSystem
 				bool canStick = ( targetPhysMaterial != null && collision.collider.sharedMaterial == targetPhysMaterial && rbSpeed > 0.2f );
 				bool hitBalloon = collision.collider.gameObject.GetComponent<Balloon>() != null;
 
-                if (collision.collider.CompareTag("Shield"))
-                {
-                    // hit a shield so destry arrow
-                    canStick = true;
-                }
+                
 
                 if ( travelledFrames < 2 && !canStick )
 				{

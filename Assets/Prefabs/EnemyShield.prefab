@@ -89,6 +89,7 @@ GameObject:
   - component: {fileID: 5638644740390169596}
   - component: {fileID: 8504948831523189881}
   - component: {fileID: 5374778568935131196}
+  - component: {fileID: 2669751117080200773}
   m_Layer: 0
   m_Name: Shield
   m_TagString: Shield
@@ -169,6 +170,19 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &2669751117080200773
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7290975804721281224}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.7225146, y: 2.0000007, z: 0.67141867}
+  m_Center: {x: -0.0066630538, y: 8.917118e-10, z: 0.0022121144}
 --- !u!1001 &4277016811415775388
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -176,6 +190,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3006134860722490105}
     m_Modifications:
+    - target: {fileID: 100632, guid: 789396300d039cc4fa674d36eddb10a7, type: 3}
+      propertyPath: m_Name
+      value: TT_ww1_demo_german_A
+      objectReference: {fileID: 0}
     - target: {fileID: 403684, guid: 789396300d039cc4fa674d36eddb10a7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -231,10 +249,6 @@ PrefabInstance:
     - target: {fileID: 403684, guid: 789396300d039cc4fa674d36eddb10a7, type: 3}
       propertyPath: m_LocalScale.z
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 100632, guid: 789396300d039cc4fa674d36eddb10a7, type: 3}
-      propertyPath: m_Name
-      value: TT_ww1_demo_german_A
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 789396300d039cc4fa674d36eddb10a7, type: 3}
