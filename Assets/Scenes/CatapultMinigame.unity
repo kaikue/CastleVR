@@ -940,6 +940,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e244068f3d674249acf2227e4aff705, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  launchAction:
+    actionPath: /actions/default/in/GrabGrip
+    needsReinit: 0
   hand: {fileID: 0}
   prefabToLaunch: {fileID: 5630329640689728729, guid: 66174f79b1afaab4780b174affbe8956,
     type: 3}
@@ -961,6 +964,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e244068f3d674249acf2227e4aff705, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  launchAction:
+    actionPath: /actions/default/in/GrabGrip
+    needsReinit: 0
   hand: {fileID: 0}
   prefabToLaunch: {fileID: 5630329640689728729, guid: 66174f79b1afaab4780b174affbe8956,
     type: 3}
