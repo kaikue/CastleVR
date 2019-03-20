@@ -247,7 +247,7 @@ public class BezierCurve : MonoBehaviour {
 		}
 		
 		t -= totalPercent;
-		
+
 		return GetPoint(p1, p2, t / curvePercent);
 	}
 	

@@ -40,6 +40,13 @@ namespace Valve.VR.InteractionSystem
                                                               AttachmentFlags.TurnOnKinematic |
                                                               AttachmentFlags.SnapOnAttach;
 
+        //SWORD
+
+        public GameObject swordPrefab;
+        public Transform swordParent;
+        private GameObject swordObj;
+
+
         public Hand otherHand;
         public SteamVR_Input_Sources handType;
 
@@ -336,15 +343,28 @@ namespace Valve.VR.InteractionSystem
             }
         }
 
+        // SWORD METHODS
 
-        //-------------------------------------------------
-        // Attach a GameObject to this GameObject
-        //
-        // objectToAttach - The GameObject to attach
-        // flags - The flags to use for attaching the object
-        // attachmentPoint - Name of the GameObject in the hierarchy of this Hand which should act as the attachment point for this GameObject
-        //-------------------------------------------------
-        public void AttachObject(GameObject objectToAttach, GrabTypes grabbedWithType, AttachmentFlags flags = defaultAttachmentFlags, Transform attachmentOffset = null)
+        public void Activate_sword()
+        {
+            swordObj = Instantiate(swordPrefab, swordParent);
+        }
+
+        public void Deactivate_sword()
+        {
+            Destroy(swordObj);
+        }
+    
+
+
+    //-------------------------------------------------
+    // Attach a GameObject to this GameObject
+    //
+    // objectToAttach - The GameObject to attach
+    // flags - The flags to use for attaching the object
+    // attachmentPoint - Name of the GameObject in the hierarchy of this Hand which should act as the attachment point for this GameObject
+    //-------------------------------------------------
+    public void AttachObject(GameObject objectToAttach, GrabTypes grabbedWithType, AttachmentFlags flags = defaultAttachmentFlags, Transform attachmentOffset = null)
         {
             AttachedObject attachedObject = new AttachedObject();
             attachedObject.attachmentFlags = flags;

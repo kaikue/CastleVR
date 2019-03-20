@@ -825,6 +825,13 @@ namespace Valve.VR.InteractionSystem
                     //Pointing at an unlocked teleport marker
                     teleportingToMarker = pointedAtTeleportMarker;
                     globalScaleOnTeleport = globalScaleOnTeleportToTower;
+
+                    TeleportPoint teleportPoint = teleportingToMarker as TeleportPoint;
+
+                    rhand.DetachObject(rhand.currentAttachedObject);
+                    lhand.DetachObject(lhand.currentAttachedObject);
+                    teleportPoint.activateRelevantWeapons();
+ 
                     InitiateTeleportFade();
 
                     CancelTeleportHint();
@@ -843,8 +850,10 @@ namespace Valve.VR.InteractionSystem
             pointedAtPosition = godPosition.transform.position;
             globalScaleOnTeleport = globalScaleOnTeleportToMeta;
 
+            rhand.Deactivate_sword();
             rhand.DetachObject(rhand.currentAttachedObject);
             lhand.DetachObject(lhand.currentAttachedObject);
+
 
             InitiateTeleportFade();
             CancelTeleportHint();

@@ -6,10 +6,10 @@
 
 using UnityEngine;
 using UnityEngine.UI;
+
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
-
 namespace Valve.VR.InteractionSystem
 {
 	//-------------------------------------------------------------------------
@@ -30,6 +30,12 @@ namespace Valve.VR.InteractionSystem
 		public Color titleLockedColor;
 		public bool playerSpawnPoint = false;
         public int scaleOnTeleport;
+        public Hand lhand;
+        public Hand rhand;
+        //public SwordActivator sa;
+        
+
+        public bool swordPoint = false;
 
 		//Private data
 		private bool gotReleventComponents = false;
@@ -244,6 +250,15 @@ namespace Valve.VR.InteractionSystem
 
 			gotReleventComponents = true;
 		}
+
+        //----
+        public void activateRelevantWeapons()
+        {
+            if (swordPoint)
+            {
+                rhand.Activate_sword();
+            }
+        }
 
 
 		//-------------------------------------------------
