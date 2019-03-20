@@ -2024,6 +2024,7 @@ MonoBehaviour:
   - {fileID: 2694739165608509837, guid: acad5e990ec9aea42a9aacb97104b171, type: 3}
   - {fileID: 5071701623172308235, guid: 5c5dc9e0abfcaf24bb5788576eed73c2, type: 3}
   spawnTime: 2
+  gc: {fileID: 0}
 --- !u!114 &1177398105
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2833,6 +2834,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aca352715e877934a883b97ad475985e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  txt: {fileID: 721150538}
+  enemies_spawned: 0
+  enemies_through: 0
 --- !u!4 &1937837757
 Transform:
   m_ObjectHideFlags: 0
