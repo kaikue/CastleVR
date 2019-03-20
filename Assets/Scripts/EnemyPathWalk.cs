@@ -10,13 +10,20 @@ public class EnemyPathWalk : MonoBehaviour
 	private BezierCurve curve;
 	private float t;
 	private float totalT;
+    private GameController gc;
 	
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
     }
 
-	public void SetCurve(BezierCurve curve)
+    private void Start()
+    {
+        GameObject gco = GameObject.Find("GameController");
+        gc = gco.GetComponent<GameController>();
+    }
+
+    public void SetCurve(BezierCurve curve)
 	{
 		this.curve = curve;
 		t = 0;
@@ -39,6 +46,7 @@ public class EnemyPathWalk : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("theWall"))
         {
+            gc.add_to_enemies_through(1);
             Kill();
         }
         
