@@ -113,12 +113,6 @@ namespace Valve.VR.InteractionSystem
 		//-------------------------------------------------
 		void OnCollisionEnter( Collision collision )
 		{
-            if (collision.collider.CompareTag("Shield"))
-            {
-                // hit a shield so destry arrow
-                Destroy(gameObject);
-                
-            }
 
             if ( inFlight )
 			{

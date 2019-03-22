@@ -6,10 +6,13 @@ public class Sword : MonoBehaviour
 {
     public float disableTime; //Time in seconds to disable for a blocked hit
     public Material disabledMaterial;
-
+    
     private Collider mc;
     private MeshRenderer mr;
     private Material enabledMaterial;
+
+    private Vector3 velocity;
+    private Vector3 lastPosition;
 
     private void Start()
     {
@@ -32,9 +35,17 @@ public class Sword : MonoBehaviour
             EnemyPathWalk enemy = collision.gameObject.GetComponent<EnemyPathWalk>();
             if (enemy != null)
             {
-                enemy.Kill();
+                enemy.Kill(velocity);
             }
         }
+    }
+
+    private void FixedUpdate()
+    {
+        //Vector3 targetVel = (transform.position - lastPosition) / Time.fixedDeltaTime;
+        //velocity = Vector3.Lerp(velocity, targetVel, 0.3f);
+        velocity = (transform.position - lastPosition) / Time.fixedDeltaTime;
+        lastPosition = transform.position;
     }
 
     private IEnumerator Disable()

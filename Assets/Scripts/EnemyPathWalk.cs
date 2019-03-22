@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyPathWalk : MonoBehaviour
 {
 	private const float SPEED = 1.5f;
-	private const float DIE_TIME = 2.0f;
+	private const float DIE_TIME = 1.0f;
 
 	public GameObject deathParticlesPrefab;
 
@@ -51,20 +51,24 @@ public class EnemyPathWalk : MonoBehaviour
 			}
 			else
 			{
-				Kill();
+				Kill(collision.rigidbody.velocity);
 			}
         }
         if (collision.gameObject.CompareTag("theWall"))
         {
             gc.add_to_enemies_through(1);
-            Kill();
+            Destroy(gameObject);
         }
         
     }
 
-    public void Kill()
+    public void Kill(Vector3 velocity)
     {
-		//Destroy(gameObject);
+        //velocity.y = 0;
+        gameObject.layer = LayerMask.NameToLayer("DeadEnemy");
+        print(velocity);
+        rb.velocity = velocity;
+        rb.useGravity = true;
 		DelayDestroy script = gameObject.AddComponent<DelayDestroy>();
 		script.destroyTime = DIE_TIME;
 		script.onDestroyObject = deathParticlesPrefab;
