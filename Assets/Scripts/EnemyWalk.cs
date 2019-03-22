@@ -38,6 +38,12 @@ public class EnemyWalk : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Spear") || collision.gameObject.CompareTag("projectile"))
         {
+			print("this: " + collision.GetContact(0).thisCollider.gameObject);
+			print("other: " + collision.GetContact(0).otherCollider.gameObject);
+			if (collision.GetContact(0).thisCollider.CompareTag("Shield"))
+			{
+				Destroy(collision.gameObject);
+			}
             Kill();
         }
         if (collision.gameObject.CompareTag("theWall"))
