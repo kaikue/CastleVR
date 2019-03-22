@@ -41,8 +41,15 @@ public class EnemyPathWalk : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Spear") || collision.gameObject.CompareTag("projectile"))
-        {
-            Kill();
+		{
+			if (collision.GetContact(0).thisCollider.CompareTag("Shield"))
+			{
+				Destroy(collision.gameObject); //TODO: stick it in the shield or something?
+			}
+			else
+			{
+				Kill();
+			}
         }
         if (collision.gameObject.CompareTag("theWall"))
         {
