@@ -2,20 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SwordActivator : MonoBehaviour
+namespace Valve.VR.InteractionSystem
 {
-    public GameObject swordPrefab;
-    public Transform swordParent;
-
-    private GameObject swordObj;
-
-    public void Activate()
+    public class SwordActivator : MonoBehaviour
     {
-        swordObj = Instantiate(swordPrefab, swordParent);
-    }
+        public GameObject swordPrefab;
+        public Transform swordParent;
+		
+        private GameObject swordObj;
 
-    public void Deactivate()
-    {
-        Destroy(swordObj);
+        public void Activate()
+        {
+            swordObj = Instantiate(swordPrefab, swordParent);
+        }
+
+        public void Deactivate()
+        {
+            Destroy(swordObj);
+        }
     }
 }
