@@ -63,6 +63,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c5680f8c46037745bec2de3a90c66ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathParticlesPrefab: {fileID: 2166782192338350113, guid: 7db6f667c382814458a59526ef41726e,
+    type: 3}
 --- !u!136 &3782907401401270589
 CapsuleCollider:
   m_ObjectHideFlags: 0

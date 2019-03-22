@@ -5,6 +5,9 @@ using UnityEngine;
 public class EnemyPathWalk : MonoBehaviour
 {
 	private const float SPEED = 1.5f;
+	private const float DIE_TIME = 2.0f;
+
+	public GameObject deathParticlesPrefab;
 
     private Rigidbody rb;
 	private BezierCurve curve;
@@ -61,6 +64,10 @@ public class EnemyPathWalk : MonoBehaviour
 
     public void Kill()
     {
-        Destroy(gameObject);
+		//Destroy(gameObject);
+		DelayDestroy script = gameObject.AddComponent<DelayDestroy>();
+		script.destroyTime = DIE_TIME;
+		script.onDestroyObject = deathParticlesPrefab;
+		enabled = false;
     }
 }
