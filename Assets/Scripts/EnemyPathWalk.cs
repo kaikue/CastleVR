@@ -45,9 +45,13 @@ public class EnemyPathWalk : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Spear") || collision.gameObject.CompareTag("projectile"))
 		{
-			if (collision.GetContact(0).thisCollider.CompareTag("Shield"))
+			Collider thisCollider = collision.GetContact(0).thisCollider;
+			if (thisCollider.CompareTag("Shield"))
 			{
-				Destroy(collision.gameObject); //TODO: stick it in the shield or something?
+				//stick it in the shield and disable physics
+				Destroy(collision.gameObject.GetComponent<Rigidbody>());
+				collision.transform.parent = thisCollider.transform;
+				//Destroy(collision.gameObject); //TODO: stick it in the shield or something?
 			}
 			else
 			{
