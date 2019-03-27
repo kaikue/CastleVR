@@ -275,12 +275,12 @@ PrefabInstance:
     - target: {fileID: 5630329640689728732, guid: 66174f79b1afaab4780b174affbe8956,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.802
+      value: -0.07
       objectReference: {fileID: 0}
     - target: {fileID: 5630329640689728732, guid: 66174f79b1afaab4780b174affbe8956,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.1566377
+      value: -0.59
       objectReference: {fileID: 0}
     - target: {fileID: 5630329640689728732, guid: 66174f79b1afaab4780b174affbe8956,
         type: 3}
@@ -878,7 +878,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 447954, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.53
       objectReference: {fileID: 0}
     - target: {fileID: 447954, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
       propertyPath: m_LocalPosition.z
@@ -943,9 +943,14 @@ MonoBehaviour:
   launchAction:
     actionPath: /actions/default/in/GrabGrip
     needsReinit: 0
-  hand: {fileID: 0}
+  hand: {fileID: 1859619690}
   prefabToLaunch: {fileID: 5630329640689728729, guid: 66174f79b1afaab4780b174affbe8956,
     type: 3}
+  trajectoryPointPrefab: {fileID: 3213349591315563810, guid: 92ea38936e3e4d640931b27eaf382018,
+    type: 3}
+  clickMask:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!1 &1859619683 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 160596, guid: dc06161b6d97feb419f45f03b62e14b9,
@@ -970,6 +975,22 @@ MonoBehaviour:
   hand: {fileID: 0}
   prefabToLaunch: {fileID: 5630329640689728729, guid: 66174f79b1afaab4780b174affbe8956,
     type: 3}
+  trajectoryPointPrefab: {fileID: 0}
+  clickMask:
+    serializedVersion: 2
+    m_Bits: 0
+--- !u!114 &1859619690 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 11450312, guid: dc06161b6d97feb419f45f03b62e14b9,
+    type: 3}
+  m_PrefabInstance: {fileID: 1859619680}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1859619681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29e3e4511966ba94d8ba0b98c6c62f82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2089924977
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1057,6 +1078,8 @@ GameObject:
   - component: {fileID: 2115663058}
   - component: {fileID: 2115663057}
   - component: {fileID: 2115663054}
+  - component: {fileID: 2115663060}
+  - component: {fileID: 2115663059}
   m_Layer: 0
   m_Name: Launcher
   m_TagString: Untagged
@@ -1071,7 +1094,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2115663053}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 34b97aee1eedbfa48bc94e39714ffae3, type: 3}
   m_Name: 
@@ -1239,3 +1262,38 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &2115663059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2115663053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf5b2228d6ca8d14f8ae0aec46faa8cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  traceLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  arcDistance: 10
+--- !u!114 &2115663060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2115663053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a043c731a29ecd745a9270fbf002ee68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  segmentCount: 60
+  thickness: 0.01
+  arcDuration: 6
+  segmentBreak: 0.025
+  arcSpeed: 0.2
+  material: {fileID: 0}
+  traceLayerMask: 0
