@@ -46,7 +46,7 @@ namespace Valve.VR.InteractionSystem
 
         void Aim()
         {
-            launcher.GetComponent(LaunchProcess());
+            //launcher.GetComponent(LaunchProcess());
         }
     }
 }
