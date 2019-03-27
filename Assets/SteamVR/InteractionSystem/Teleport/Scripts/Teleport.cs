@@ -18,7 +18,7 @@ namespace Valve.VR.InteractionSystem
         public int globalScaleOnTeleportToMeta;
         public int globalScaleOnTeleportToTower;
         public GameObject PlayerRoot;
-        public TeleportMarkerBase godPosition;
+        public TeleportPoint godPosition;
         public Hand lhand;
         public Hand rhand;
 
@@ -831,7 +831,14 @@ namespace Valve.VR.InteractionSystem
                     rhand.DetachObject(rhand.currentAttachedObject);
                     lhand.DetachObject(lhand.currentAttachedObject);
                     teleportPoint.activateRelevantWeapons();
- 
+
+                    if (teleportPoint.facingDirection != null)
+                    {
+                        print("rotating to " + teleportPoint.facingDirection.rotation);
+                        player.trackingOriginTransform.rotation = teleportPoint.facingDirection.rotation;
+                    }
+
+
                     InitiateTeleportFade();
 
                     CancelTeleportHint();
@@ -854,6 +861,11 @@ namespace Valve.VR.InteractionSystem
             rhand.DetachObject(rhand.currentAttachedObject);
             lhand.DetachObject(lhand.currentAttachedObject);
 
+            if (godPosition.facingDirection != null)
+            {
+                print("rotating to " + godPosition.facingDirection.rotation);
+                player.trackingOriginTransform.rotation = godPosition.facingDirection.rotation;
+            }
 
             InitiateTeleportFade();
             CancelTeleportHint();
