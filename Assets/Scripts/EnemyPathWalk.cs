@@ -48,10 +48,12 @@ public class EnemyPathWalk : MonoBehaviour
 			Collider thisCollider = collision.GetContact(0).thisCollider;
 			if (thisCollider.CompareTag("Shield"))
 			{
-				//stick it in the shield and disable physics
-				Destroy(collision.gameObject.GetComponent<Rigidbody>());
+                //stick it in the shield and disable physics
+                /*FixedJoint fj = collision.gameObject.GetComponentInChildren<FixedJoint>();
+                if (fj != null) Destroy(fj);
+                Destroy(collision.gameObject.GetComponent<Rigidbody>());
 				collision.transform.parent = thisCollider.transform;
-				//Destroy(collision.gameObject); //TODO: stick it in the shield or something?
+				*///Destroy(collision.gameObject); //TODO: stick it in the shield or something?
 			}
 			else
 			{

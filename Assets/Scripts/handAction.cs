@@ -17,6 +17,10 @@ namespace Valve.VR.InteractionSystem.Sample
         public Transform godPosition;
         public GameObject teleporter;
 
+        private void Start()
+        {
+            Something();
+        }
 
         private void OnEnable()
         {

@@ -96,7 +96,7 @@ namespace Valve.VR.InteractionSystem
 
             SetCollisionMode(CollisionDetectionMode.ContinuousDynamic);
 
-			Destroy( gameObject, 1 );
+			Destroy( gameObject, 5f );
 		}
 
         protected void SetCollisionMode(CollisionDetectionMode newMode, bool force = false)
