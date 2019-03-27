@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyPathWalk : MonoBehaviour
 {
 	private const float SPEED = 1.5f;
-	private const float DIE_TIME = 2.0f;
+	private const float DIE_TIME = 1.0f;
 
 	public GameObject deathParticlesPrefab;
 
@@ -45,26 +45,36 @@ public class EnemyPathWalk : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Spear") || collision.gameObject.CompareTag("projectile"))
 		{
-			if (collision.GetContact(0).thisCollider.CompareTag("Shield"))
+			Collider thisCollider = collision.GetContact(0).thisCollider;
+			if (thisCollider.CompareTag("Shield"))
 			{
-				Destroy(collision.gameObject); //TODO: stick it in the shield or something?
+                //stick it in the shield and disable physics
+                /*FixedJoint fj = collision.gameObject.GetComponentInChildren<FixedJoint>();
+                if (fj != null) Destroy(fj);
+                Destroy(collision.gameObject.GetComponent<Rigidbody>());
+				collision.transform.parent = thisCollider.transform;
+				*///Destroy(collision.gameObject); //TODO: stick it in the shield or something?
 			}
 			else
 			{
-				Kill();
+				Kill(collision.rigidbody.velocity);
 			}
         }
         if (collision.gameObject.CompareTag("theWall"))
         {
             gc.add_to_enemies_through(1);
-            Kill();
+            Destroy(gameObject);
         }
         
     }
 
-    public void Kill()
+    public void Kill(Vector3 velocity)
     {
-		//Destroy(gameObject);
+        //velocity.y = 0;
+        gameObject.layer = LayerMask.NameToLayer("DeadEnemy");
+        print(velocity);
+        rb.velocity = velocity;
+        rb.useGravity = true;
 		DelayDestroy script = gameObject.AddComponent<DelayDestroy>();
 		script.destroyTime = DIE_TIME;
 		script.onDestroyObject = deathParticlesPrefab;

@@ -32,6 +32,7 @@ namespace Valve.VR.InteractionSystem
         public int scaleOnTeleport;
         public Hand lhand;
         public Hand rhand;
+        public Transform facingDirection;
         //public SwordActivator sa;
         
 
