@@ -5,8 +5,12 @@ using Valve.VR.InteractionSystem;
 
 public class Sword : MonoBehaviour
 {
+    private const ushort VIBRATE_STRENGTH = 255;
+    private const float VIBRATE_TIME = 0.1f;
+
     public float disableTime; //Time in seconds to disable for a blocked hit
     public Material disabledMaterial;
+    public GameObject model;
 
     private Collider mc;
     private MeshRenderer mr;
@@ -25,7 +29,7 @@ public class Sword : MonoBehaviour
     private void Start()
     {
         mc = GetComponent<Collider>();
-        mr = GetComponent<MeshRenderer>();
+        mr = model.GetComponent<MeshRenderer>();
         enabledMaterial = mr.material;
     }
 
@@ -33,9 +37,9 @@ public class Sword : MonoBehaviour
     {
         //collision.collider is shield (child obj), collision.gameObject is enemy (parent)
         print(collision.collider.gameObject);
-        if (collision.collider.CompareTag("Shield"))
+        if (collision.collider.CompareTag("Shield") && collision.gameObject.GetComponent<DelayDestroy>() == null)
         {
-            hand.TriggerHapticPulse(255);
+            Vibrate();
             StartCoroutine(Disable());
         }
 
@@ -44,7 +48,7 @@ public class Sword : MonoBehaviour
             EnemyPathWalk enemy = collision.gameObject.GetComponent<EnemyPathWalk>();
             if (enemy != null)
             {
-                hand.TriggerHapticPulse(255);
+                Vibrate();
                 enemy.Kill(velocity);
             }
         }
@@ -67,5 +71,19 @@ public class Sword : MonoBehaviour
 
         mr.material = enabledMaterial;
         mc.enabled = true;
+    }
+
+    private void Vibrate()
+    {
+        StartCoroutine(VibrateCrt());
+    }
+
+    private IEnumerator VibrateCrt()
+    {
+        for (float t = 0; t < VIBRATE_TIME; t += Time.deltaTime)
+        {
+            hand.TriggerHapticPulse(VIBRATE_STRENGTH);
+            yield return null;
+        }
     }
 }
