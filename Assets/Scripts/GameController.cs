@@ -2,8 +2,11 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using Valve.VR.InteractionSystem;
 
-public class GameController : MonoBehaviour { 
+public class GameController : MonoBehaviour {
+
+    private bool isLefty = false;
 
     public TextMeshPro score_txt;
     public TextMeshPro wave_txt;
@@ -20,6 +23,8 @@ public class GameController : MonoBehaviour {
     public EnemyPathSpawner[] enemyPaths;
 
     public int num_enemies = 5;
+
+    public TeleportPoint[] handedTeleportPoints;
 
     // Start is called before the first frame update
 
@@ -119,6 +124,7 @@ public class GameController : MonoBehaviour {
         StartCoroutine(SpawnWaves(0));
 
     }
+    
 }
 
 
