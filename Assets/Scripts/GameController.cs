@@ -21,9 +21,7 @@ public class GameController : MonoBehaviour {
     public EnemyPathSpawner[] enemyPaths;
 
     public int num_enemies = 5;
-
-    public TeleportPoint[] handedTeleportPoints;
-
+    
     // Start is called before the first frame update
 
     private void Awake()
