@@ -252,7 +252,7 @@ namespace Valve.VR.InteractionSystem
                     {
                         if (pointerHand == hand) //This is the pointer hand
                         {
-                            TryTeleportPlayer();
+                            TryTeleportPlayer(hand);
                         }
                     }
                 }
@@ -816,7 +816,7 @@ namespace Valve.VR.InteractionSystem
 
 
         //-------------------------------------------------
-        private void TryTeleportPlayer()
+        private void TryTeleportPlayer(Hand hand)
         {
             if (visible && !teleporting)
             {
@@ -830,11 +830,10 @@ namespace Valve.VR.InteractionSystem
 
                     rhand.DetachObject(rhand.currentAttachedObject);
                     lhand.DetachObject(lhand.currentAttachedObject);
-                    teleportPoint.activateRelevantWeapons();
+                    teleportPoint.activateRelevantWeapons(hand);
 
                     if (teleportPoint.facingDirection != null)
                     {
-                        print("rotating to " + teleportPoint.facingDirection.rotation);
                         player.trackingOriginTransform.rotation = teleportPoint.facingDirection.rotation;
                     }
 
@@ -857,13 +856,13 @@ namespace Valve.VR.InteractionSystem
             pointedAtPosition = godPosition.transform.position;
             globalScaleOnTeleport = globalScaleOnTeleportToMeta;
 
+            lhand.Deactivate_sword();
             rhand.Deactivate_sword();
             rhand.DetachObject(rhand.currentAttachedObject);
             lhand.DetachObject(lhand.currentAttachedObject);
 
             if (godPosition.facingDirection != null)
             {
-                print("rotating to " + godPosition.facingDirection.rotation);
                 player.trackingOriginTransform.rotation = godPosition.facingDirection.rotation;
             }
 

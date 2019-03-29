@@ -347,11 +347,13 @@ namespace Valve.VR.InteractionSystem
 
         public void Activate_sword()
         {
+            Hide();
             swordObj = Instantiate(swordPrefab, swordParent);
         }
 
         public void Deactivate_sword()
         {
+            Show();
             Destroy(swordObj);
         }
     
