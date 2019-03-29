@@ -5,9 +5,7 @@ using UnityEngine;
 using Valve.VR.InteractionSystem;
 
 public class GameController : MonoBehaviour {
-
-    private bool isLefty = false;
-
+    
     public TextMeshPro score_txt;
     public TextMeshPro wave_txt;
     public int enemies_left_to_spawn;
