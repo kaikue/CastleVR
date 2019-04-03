@@ -23,9 +23,18 @@ namespace Valve.VR.InteractionSystem
         public Material closedMat; // When there is a tower at the node
         public Material closedHoverMat; // When there is a tower and a tower is held over the node
 
+        [Tooltip("The dive agent to respond to commands from")]
+        public DiveAgent da;
+
+        [Tooltip("Whether or not this node should allow towers to be swapped out between the node and the hand")]
+        public bool allowsSwapping = true;
+
         /** PRIVATE MEMBERS **/
         // The tower object attached at this node, if there is one
         private TowerObject attachedTower = null;
+        // Stored attributes of the tower rigidbody
+        private bool towerRigidWasColliding;
+        private bool towerRigidWasKinematic;
 
 
         /** UNITY SYSTEM ROUTINES **/
@@ -35,12 +44,30 @@ namespace Valve.VR.InteractionSystem
         }
 
 
+        /** STEAMVR SYSTEM ROUTINES **/
+        protected virtual void HandHoverUpdate(Hand hand)
+        {
+            // We want to handle potentially picking up a tower that has been placed at this node
+            // Capture current grab information from the hand
+            GrabTypes startingGrabType = hand.GetGrabStarting();
+
+            // If the hand is grabbing and there is a tower here to be grabbed
+            if (attachedTower != null && startingGrabType != GrabTypes.None && !da.isDived())
+            {
+                // Remove the tower and attach it to the hand
+                TowerObject temp = attachedTower;
+                RemoveTower();
+                hand.AttachObject(temp.gameObject, startingGrabType, temp.attachmentFlags, temp.attachentOffset);
+                hand.HideGrabHint();
+            }
+        }
+
         /** PHYSICS ROUTINES **/
         void OnTriggerEnter(Collider col)
         {
             if (col.gameObject.CompareTag("TowerObject"))
             {
-                if (attachedTower == null)
+                if (attachedTower == null || allowsSwapping)
                 {
                     GetComponent<Renderer>().material = openHoverMat;
                 } 
@@ -74,17 +101,56 @@ namespace Valve.VR.InteractionSystem
         }
         
 
-        public bool AttachTower(TowerObject tower, Vector3 positionOFfset, Vector3 rotationOffset)
+        public DiveTarget GetDiveTarget()
         {
-            // If we already have a tower here reject the attempt
-            // TODO: Probably make it so we can switch out the tower in hand with the tower at the node
-            if (attachedTower != null) return false;
+            if (attachedTower != null)
+            {
+                return attachedTower.GetDiveTarget();
+            } 
+            else
+            {
+                return null;
+            }
+        }
 
+
+        public bool TryAttachTower(TowerObject tower, Vector3 positionOffset, Vector3 rotationOffset, Hand hand)
+        {
+            TowerObject temp = attachedTower;
+            if (temp != null)
+            {
+                if (allowsSwapping)
+                {
+                    RemoveTower();
+                    hand.AttachObject(temp.gameObject, GrabTypes.Grip, temp.attachmentFlags, temp.attachentOffset);
+                    AttachTower(tower, positionOffset, rotationOffset);
+
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                AttachTower(tower, positionOffset, rotationOffset);
+
+                return true;
+            }
+        }
+
+
+        public void AttachTower(TowerObject tower, Vector3 positionOFfset, Vector3 rotationOffset)
+        {
             // Fix the tower to the position and rotation of the node
             Vector3 newPos = transform.position + positionOFfset;
             Quaternion newRot = transform.rotation * Quaternion.Euler(rotationOffset);
             tower.transform.SetPositionAndRotation(newPos, newRot);
-            tower.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotation;
+            towerRigidWasColliding = tower.GetComponent<Rigidbody>().detectCollisions;
+            towerRigidWasKinematic = tower.GetComponent<Rigidbody>().isKinematic;
+            tower.GetComponent<Rigidbody>().detectCollisions = false;
+            tower.GetComponent<Rigidbody>().isKinematic = true;
 
             // Change the material to indicate that this position is now closed
             GetComponent<Renderer>().material = closedMat;
@@ -94,8 +160,6 @@ namespace Valve.VR.InteractionSystem
 
             tower.SpawnTowerComponents();
             tower.HideTowerObject();
-
-            return true;
         }
 
 
@@ -105,10 +169,15 @@ namespace Valve.VR.InteractionSystem
             if (attachedTower == null) return false;
 
             // Free the position and rotation of the tower
-            attachedTower.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+            attachedTower.GetComponent<Rigidbody>().detectCollisions = towerRigidWasColliding;
+            attachedTower.GetComponent<Rigidbody>().isKinematic = towerRigidWasKinematic;
 
             // Change the material to indicate that this position is now open
             GetComponent<Renderer>().material = openHoverMat;
+
+            // Restore the tower object and destroy the tower dive components
+            attachedTower.DestroyTowerComponents();
+            attachedTower.ShowTowerObject();
 
             // Clear the reference to the attached tower;
             attachedTower = null;

@@ -11,6 +11,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Valve.VR.InteractionSystem
 {
@@ -35,6 +36,16 @@ namespace Valve.VR.InteractionSystem
         [Tooltip("The rotation offset (in Euler angles) to use when the twoer is placed at a node.")]
         public Vector3 nodeRotationOffset;
 
+        [Tooltip("Screen cover used to fade out the screen during dive transition")]
+        public CanvasGroup screenCover;
+
+        [Header("Input")]
+        [Tooltip("The input action to initiate dive-in attempts")]
+        public SteamVR_Action_Boolean diveInAction = SteamVR_Input.GetAction<SteamVR_Action_Boolean>("DiveIn");
+
+        [Tooltip("The input action to initiate dive-in attempts")]
+        public SteamVR_Action_Boolean diveOutAction = SteamVR_Input.GetAction<SteamVR_Action_Boolean>("DiveOut");
+
         public bool showGrabHint;
 
         /** PRIVATE MEMBERS **/
@@ -49,6 +60,8 @@ namespace Valve.VR.InteractionSystem
         private Quaternion oldRotation;
         // A hook to the tower dive components, if they have been spawned
         private GameObject diveComponent;
+        // If the player is dived at this tower
+        private bool playerDive = false;
 
         /** UNITY SYSTEM ROUTINES **/
 
@@ -99,17 +112,17 @@ namespace Valve.VR.InteractionSystem
                 if (intersectedNode != null)
                 {
                     // Attempt to attach the tower at the node
-                    if (intersectedNode.IsOpen())
+                    if (intersectedNode.IsOpen() || intersectedNode.allowsSwapping)
                     {
                         hand.DetachObject(gameObject, false);        
-                        intersectedNode.AttachTower(this, nodePositionOffset, nodeRotationOffset);
+                        intersectedNode.TryAttachTower(this, nodePositionOffset, nodeRotationOffset, hand);
                     }
                 }        
                 else
                 {
                     // Restore the tower object to its original position
                     hand.DetachObject(gameObject, false);
-                    transform.SetPositionAndRotation(oldPosition, oldRotation);
+                    //transform.SetPositionAndRotation(oldPosition, oldRotation);
                 }
             }
         }
@@ -166,9 +179,12 @@ namespace Valve.VR.InteractionSystem
             diveComponent = comp;
 
             // Child and center the instance
-            comp.transform.SetParent(this.transform);
-            comp.transform.localPosition = new Vector3(0, 0, 0);
-            comp.transform.localRotation = Quaternion.identity;
+            comp.transform.SetPositionAndRotation(transform.position, Quaternion.identity);
+            Rigidbody rigid = comp.GetComponent<Rigidbody>();
+            if (rigid != null)
+            {
+                rigid.isKinematic = true;
+            }
         }
 
         public void DestroyTowerComponents()
@@ -188,6 +204,22 @@ namespace Valve.VR.InteractionSystem
         public void HideTowerObject()
         {
             this.GetComponent<MeshRenderer>().enabled = false;
+        }
+
+        public DiveTarget GetDiveTarget()
+        {
+            if (diveComponent.GetComponent<DiveTarget>() != null)
+            {
+                return diveComponent.GetComponent<DiveTarget>();
+            }
+            else if (diveComponent.GetComponentInChildren<DiveTarget>() != null)
+            {
+                return diveComponent.GetComponentInChildren<DiveTarget>();
+            }
+            else
+            {
+                return null;
+            }
         }
     }
 }
