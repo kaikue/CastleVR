@@ -13,7 +13,7 @@ namespace Vale.VR.InteractionSystem
         private Transform target;
         public GameObject trajectoryPointPrefab;
         //public GameObject ballPrefab;
-        public LayerMask clickMask;
+        //public LayerMask clickMask;
 
         private LineRenderer line;
         private Transform launcher;
@@ -23,11 +23,20 @@ namespace Vale.VR.InteractionSystem
         public float h = 30;
         public float gravity = -18;
 
+        void Start()
+        {
+            target = trajectoryPointPrefab.GetComponent<Transform>();
+            ball.useGravity = false;
+            line = this.GetComponent<LineRenderer>();
+            launcher = this.GetComponent<Transform>();
+        }
+
         // Update is called once per frame
         void Update()
         {
             if (linearMapping.value == 1.0f)
             {
+                //Debug.Log("Fire");
                 Launch();
             }
 
@@ -43,7 +52,8 @@ namespace Vale.VR.InteractionSystem
             Physics.gravity = Vector3.up * gravity;
             ball.useGravity = true;
             ball.velocity = CalculateLaunchData().initialVelocity;
-            print(CalculateLaunchData().initialVelocity);
+            //print(CalculateLaunchData().initialVelocity);
+            linearMapping.value = 0.0f;
         }
 
         LaunchData CalculateLaunchData()
