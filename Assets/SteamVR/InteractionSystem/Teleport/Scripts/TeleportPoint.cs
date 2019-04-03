@@ -32,8 +32,8 @@ namespace Valve.VR.InteractionSystem
         public int scaleOnTeleport;
         public Hand lhand;
         public Hand rhand;
+        public Transform facingDirection;
         //public SwordActivator sa;
-        
 
         public bool swordPoint = false;
 
@@ -91,7 +91,7 @@ namespace Valve.VR.InteractionSystem
 		void Start()
 		{
 			player = Player.instance;
-		}
+        }
 
 
 		//-------------------------------------------------
@@ -250,13 +250,13 @@ namespace Valve.VR.InteractionSystem
 
 			gotReleventComponents = true;
 		}
-
+        
         //----
-        public void activateRelevantWeapons()
+        public void activateRelevantWeapons(Hand hand)
         {
             if (swordPoint)
             {
-                rhand.Activate_sword();
+                hand.Activate_sword();
             }
         }
 

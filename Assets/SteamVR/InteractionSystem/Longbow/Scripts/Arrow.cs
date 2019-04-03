@@ -96,7 +96,7 @@ namespace Valve.VR.InteractionSystem
 
             SetCollisionMode(CollisionDetectionMode.ContinuousDynamic);
 
-			Destroy( gameObject, 1 );
+			Destroy( gameObject, 5f );
 		}
 
         protected void SetCollisionMode(CollisionDetectionMode newMode, bool force = false)
@@ -113,12 +113,6 @@ namespace Valve.VR.InteractionSystem
 		//-------------------------------------------------
 		void OnCollisionEnter( Collision collision )
 		{
-            if (collision.collider.CompareTag("Shield"))
-            {
-                // hit a shield so destry arrow
-                Destroy(gameObject);
-                
-            }
 
             if ( inFlight )
 			{

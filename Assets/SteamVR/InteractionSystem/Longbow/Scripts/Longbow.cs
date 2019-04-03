@@ -19,7 +19,7 @@ namespace Valve.VR.InteractionSystem
 		public Handedness currentHandGuess = Handedness.Left;
 		private float timeOfPossibleHandSwitch = 0f;
 		private float timeBeforeConfirmingHandSwitch = 1.5f;
-		private bool possibleHandSwitch = false;
+		private bool possibleHandSwitch = true;
 
 		public Transform pivotTransform;
 		public Transform handleTransform;
@@ -83,11 +83,15 @@ namespace Valve.VR.InteractionSystem
 		private void OnAttachedToHand( Hand attachedHand )
 		{
 			hand = attachedHand;
-		}
+            EvaluateHandedness();
+            DoHandednessCheck();
 
 
-		//-------------------------------------------------
-		private void HandAttachedUpdate( Hand hand )
+        }
+
+
+        //-------------------------------------------------
+        private void HandAttachedUpdate( Hand hand )
 		{
 			// Reset transform since we cheated it right after getting poses on previous frame
 			//transform.localPosition = Vector3.zero;
@@ -315,11 +319,11 @@ namespace Valve.VR.InteractionSystem
 			// Based on our current best guess about hand, switch bow orientation and arrow lerp direction
 			if ( currentHandGuess == Handedness.Left )
 			{
-				pivotTransform.localScale = new Vector3( 1f, 1f, 1f );
+				pivotTransform.localScale = new Vector3( 1f, -1f, 1f );
 			}
 			else
 			{
-				pivotTransform.localScale = new Vector3( 1f, -1f, 1f );
+				pivotTransform.localScale = new Vector3( 1f, 1f, 1f );
 			}
 		}
 

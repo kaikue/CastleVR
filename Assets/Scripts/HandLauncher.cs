@@ -14,6 +14,7 @@ namespace Valve.VR.InteractionSystem
         private Transform target;
         public GameObject trajectoryPointPrefab;
         public LayerMask clickMask;
+        public GameObject launcher;
 
         private void OnEnable()
         {
@@ -39,22 +40,13 @@ namespace Valve.VR.InteractionSystem
         {
             if (newValue)
             {
-                //Aim();
+                Aim();
             }
         }
 
-        /*void Aim()
+        void Aim()
         {
-            Vector3 clickPosition = -Vector3.one;
-            Ray ray = Camera.main.ScreenPointToRay(Input.handPosition);
-            RaycastHit hit;
-            if (Physics.Raycast(ray, out hit, 100f, clickMask))
-            {
-                clickPosition = hit.point;
-            }
-            GameObject targetPoint = Instantiate(trajectoryPointPrefab, clickPosition, transform.rotation);
-            target = targetPoint.GetComponent<Transform>();
-            print(clickPosition);
-        }*/
+            //launcher.GetComponent(LaunchProcess());
+        }
     }
 }

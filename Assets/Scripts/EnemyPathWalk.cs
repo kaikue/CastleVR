@@ -5,18 +5,28 @@ using UnityEngine;
 public class EnemyPathWalk : MonoBehaviour
 {
 	private const float SPEED = 1.5f;
+	private const float DIE_TIME = 1.0f;
+
+	public GameObject deathParticlesPrefab;
 
     private Rigidbody rb;
 	private BezierCurve curve;
 	private float t;
 	private float totalT;
+    private GameController gc;
 	
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
     }
 
-	public void SetCurve(BezierCurve curve)
+    private void Start()
+    {
+        GameObject gco = GameObject.Find("GameController");
+        gc = gco.GetComponent<GameController>();
+    }
+
+    public void SetCurve(BezierCurve curve)
 	{
 		this.curve = curve;
 		t = 0;
@@ -34,18 +44,40 @@ public class EnemyPathWalk : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Spear") || collision.gameObject.CompareTag("projectile"))
-        {
-            Kill();
+		{
+			Collider thisCollider = collision.GetContact(0).thisCollider;
+			if (thisCollider.CompareTag("Shield"))
+			{
+                //stick it in the shield and disable physics
+                /*FixedJoint fj = collision.gameObject.GetComponentInChildren<FixedJoint>();
+                if (fj != null) Destroy(fj);
+                Destroy(collision.gameObject.GetComponent<Rigidbody>());
+				collision.transform.parent = thisCollider.transform;
+				*///Destroy(collision.gameObject); //TODO: stick it in the shield or something?
+			}
+			else
+			{
+				Kill(collision.rigidbody.velocity);
+			}
         }
         if (collision.gameObject.CompareTag("theWall"))
         {
-            Kill();
+            gc.add_to_enemies_through(1);
+            Destroy(gameObject);
         }
         
     }
 
-    public void Kill()
+    public void Kill(Vector3 velocity)
     {
-        Destroy(gameObject);
+        //velocity.y = 0;
+        gameObject.layer = LayerMask.NameToLayer("DeadEnemy");
+        print(velocity);
+        rb.velocity = velocity;
+        rb.useGravity = true;
+		DelayDestroy script = gameObject.AddComponent<DelayDestroy>();
+		script.destroyTime = DIE_TIME;
+		script.onDestroyObject = deathParticlesPrefab;
+		enabled = false;
     }
 }

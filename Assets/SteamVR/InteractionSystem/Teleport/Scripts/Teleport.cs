@@ -18,7 +18,7 @@ namespace Valve.VR.InteractionSystem
         public int globalScaleOnTeleportToMeta;
         public int globalScaleOnTeleportToTower;
         public GameObject PlayerRoot;
-        public TeleportMarkerBase godPosition;
+        public TeleportPoint godPosition;
         public Hand lhand;
         public Hand rhand;
 
@@ -252,7 +252,7 @@ namespace Valve.VR.InteractionSystem
                     {
                         if (pointerHand == hand) //This is the pointer hand
                         {
-                            TryTeleportPlayer();
+                            TryTeleportPlayer(hand);
                         }
                     }
                 }
@@ -816,7 +816,7 @@ namespace Valve.VR.InteractionSystem
 
 
         //-------------------------------------------------
-        private void TryTeleportPlayer()
+        private void TryTeleportPlayer(Hand hand)
         {
             if (visible && !teleporting)
             {
@@ -830,8 +830,14 @@ namespace Valve.VR.InteractionSystem
 
                     rhand.DetachObject(rhand.currentAttachedObject);
                     lhand.DetachObject(lhand.currentAttachedObject);
-                    teleportPoint.activateRelevantWeapons();
- 
+                    teleportPoint.activateRelevantWeapons(hand);
+
+                    if (teleportPoint.facingDirection != null)
+                    {
+                        player.trackingOriginTransform.rotation = teleportPoint.facingDirection.rotation;
+                    }
+
+
                     InitiateTeleportFade();
 
                     CancelTeleportHint();
@@ -850,10 +856,15 @@ namespace Valve.VR.InteractionSystem
             pointedAtPosition = godPosition.transform.position;
             globalScaleOnTeleport = globalScaleOnTeleportToMeta;
 
+            lhand.Deactivate_sword();
             rhand.Deactivate_sword();
             rhand.DetachObject(rhand.currentAttachedObject);
             lhand.DetachObject(lhand.currentAttachedObject);
 
+            if (godPosition.facingDirection != null)
+            {
+                player.trackingOriginTransform.rotation = godPosition.facingDirection.rotation;
+            }
 
             InitiateTeleportFade();
             CancelTeleportHint();
