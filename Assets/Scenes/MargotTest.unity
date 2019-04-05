@@ -291,6 +291,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1381560441933809826, guid: 0a3bfde9921d46a4392cd19448804209,
+        type: 3}
+      propertyPath: da
+      value: 
+      objectReference: {fileID: 2079728387}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a3bfde9921d46a4392cd19448804209, type: 3}
 --- !u!1 &563572482
@@ -485,6 +490,8 @@ MonoBehaviour:
   openHoverMat: {fileID: 2100000, guid: 9186594482cd25a4dbba2ba0e4deb6ee, type: 2}
   closedMat: {fileID: 2100000, guid: 89d7cf9a4a67b2842b1acdc57d52c0c7, type: 2}
   closedHoverMat: {fileID: 2100000, guid: bd9462ac52728514296ea58a66f0e1e3, type: 2}
+  da: {fileID: 0}
+  allowsSwapping: 1
 --- !u!136 &661145404
 CapsuleCollider:
   m_ObjectHideFlags: 0

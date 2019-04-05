@@ -20,6 +20,9 @@ namespace Valve.VR.InteractionSystem
     public class TowerObject : MonoBehaviour
     {
         /** Public members **/
+        [Tooltip("The name associated with this type of tower")]
+        public string towerName;
+
         [EnumFlags]
         [Tooltip("The flags used to attach this object to the hand.")]
         public Hand.AttachmentFlags attachmentFlags = Hand.AttachmentFlags.ParentToHand | Hand.AttachmentFlags.DetachFromOtherHand | Hand.AttachmentFlags.TurnOnKinematic;

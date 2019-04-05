@@ -97,6 +97,14 @@ namespace Valve.VR
             }
         }
         
+        public virtual SteamVR_Action_Boolean DiveOut
+        {
+            get
+            {
+                return SteamVR_Actions.default_DiveOut;
+            }
+        }
+        
         public virtual SteamVR_Action_Vibration Haptic
         {
             get

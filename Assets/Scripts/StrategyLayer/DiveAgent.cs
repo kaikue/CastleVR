@@ -131,11 +131,17 @@ namespace Valve.VR.InteractionSystem
             diveOutPos = player.trackingOriginTransform.position;
 
             // Scale down the agent using the inverse of the scaling factor
-            playerRoot.transform.localScale *= (1f / nextDT.scaleFactor);
+            player.transform.localScale *= (1f / nextDT.scaleFactor);
 
             // Update the position of the agent
-            Vector3 feetOffset = player.trackingOriginTransform.position - player.feetPositionGuess;
-            player.trackingOriginTransform.position = nextDT.divePos.position + feetOffset;
+            //Vector3 feetOffset = player.trackingOriginTransform.position - player.feetPositionGuess;
+            player.trackingOriginTransform.position = nextDT.divePos.position;// + feetOffset;
+
+            // Spawn the sword if necessary
+            if (nextDT.swordTarget)
+            {
+                rightHand.Activate_sword();
+            }
 
             // Finish the dive process
             currentDT = nextDT;
@@ -171,8 +177,14 @@ namespace Valve.VR.InteractionSystem
             playerRoot.transform.localScale *= currentDT.scaleFactor;
 
             // Update the position of the agent
-            Vector3 feetOffset = player.trackingOriginTransform.position - player.feetPositionGuess;
-            player.trackingOriginTransform.position = diveOutPos + feetOffset;
+            //Vector3 feetOffset = player.trackingOriginTransform.position - player.feetPositionGuess;
+            player.trackingOriginTransform.position = diveOutPos; //+ feetOffset;
+
+            // Free the agent's hands
+            leftHand.Deactivate_sword();
+            rightHand.Deactivate_sword();
+            leftHand.DetachObject(leftHand.currentAttachedObject);
+            rightHand.DetachObject(rightHand.currentAttachedObject);
 
             // Finish the dive process
             currentDT = null;

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2049794007
+--- !u!1 &8119556038263710034
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,49 +8,49 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2049794014}
-  - component: {fileID: 2049794013}
-  - component: {fileID: 2049794012}
-  - component: {fileID: 2049794011}
-  - component: {fileID: 2049794010}
-  - component: {fileID: 2049794008}
-  - component: {fileID: 2049794009}
+  - component: {fileID: 8119556038263710035}
+  - component: {fileID: 468300005788502091}
+  - component: {fileID: 259371697798290518}
+  - component: {fileID: 6981095792565273756}
+  - component: {fileID: 4922927194049868886}
+  - component: {fileID: 3337577714364359501}
+  - component: {fileID: 7440083513566132127}
   m_Layer: 0
-  m_Name: ArcheryTowerObject
-  m_TagString: TowerObject
+  m_Name: SwordTowerObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2049794014
+--- !u!4 &8119556038263710035
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2049794007}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -0.498, y: -0.154, z: 1.5}
-  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_GameObject: {fileID: 8119556038263710034}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: -0.154, z: 0}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &2049794013
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!33 &468300005788502091
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2049794007}
-  m_Mesh: {fileID: 4300000, guid: db6b1a8244dec42469dac7cd1f589803, type: 3}
---- !u!23 &2049794012
+  m_GameObject: {fileID: 8119556038263710034}
+  m_Mesh: {fileID: 4300000, guid: 8732d0a0247cdbc48aa6e2d61d5a59a8, type: 3}
+--- !u!23 &259371697798290518
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2049794007}
+  m_GameObject: {fileID: 8119556038263710034}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -61,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f3373efa3c13330409cca4609f8bbb66, type: 2}
+  - {fileID: 2100000, guid: 50df01dd7003c404fb38a44140d6bc21, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -81,43 +81,13 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!54 &2049794011
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2049794007}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!64 &2049794010
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2049794007}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 4300000, guid: db6b1a8244dec42469dac7cd1f589803, type: 3}
---- !u!114 &2049794008
+--- !u!114 &6981095792565273756
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2049794007}
+  m_GameObject: {fileID: 8119556038263710034}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b93b6a877adcbf94c89a9d6e0c0e844d, type: 3}
@@ -125,7 +95,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   activateActionSetOnAttach:
     actionSetPath: 
-  hideHandOnAttach: 1
+  hideHandOnAttach: 0
   hideSkeletonOnAttach: 0
   hideControllerOnAttach: 0
   handAnimationOnPickup: 0
@@ -162,24 +132,40 @@ MonoBehaviour:
   handFollowTransform: 1
   highlightOnHover: 1
   hideHighlight: []
---- !u!114 &2049794009
+--- !u!54 &4922927194049868886
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8119556038263710034}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &3337577714364359501
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2049794007}
+  m_GameObject: {fileID: 8119556038263710034}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2ad02c2a2183a7b4db90344ed3616898, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerName: Archery Tower
+  towerName: Sword Tower
   attachmentFlags: 44
   attachentOffset: {fileID: 0}
-  towerFab: {fileID: 317257284, guid: 0ea75c9787f7fd44fabac3f464778bab, type: 3}
-  nodePositionOffset: {x: 0, y: 0, z: 0}
-  nodeRotationOffset: {x: -90, y: 0, z: 0}
+  towerFab: {fileID: 1365019060, guid: 6114c132ca3382741a4b795dac2d7cbd, type: 3}
+  nodePositionOffset: {x: 0, y: 1.5, z: 0}
+  nodeRotationOffset: {x: 0, y: 0, z: 0}
   screenCover: {fileID: 0}
   diveInAction:
     actionPath: /actions/default/in/DiveIn
@@ -188,3 +174,16 @@ MonoBehaviour:
     actionPath: /actions/default/in/DiveOut
     needsReinit: 0
   showGrabHint: 0
+--- !u!65 &7440083513566132127
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8119556038263710034}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.3615575, y: 10.885913, z: 4.7216463}
+  m_Center: {x: -1.2876885, y: 0, z: -0.0000010728836}

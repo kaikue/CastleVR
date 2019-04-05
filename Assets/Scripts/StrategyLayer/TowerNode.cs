@@ -10,6 +10,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Valve.VR.InteractionSystem
 {
@@ -28,6 +29,9 @@ namespace Valve.VR.InteractionSystem
 
         [Tooltip("Whether or not this node should allow towers to be swapped out between the node and the hand")]
         public bool allowsSwapping = true;
+
+        [Tooltip("The interface text indicating this node")]
+        public Text hudText;
 
         /** PRIVATE MEMBERS **/
         // The tower object attached at this node, if there is one
@@ -155,6 +159,12 @@ namespace Valve.VR.InteractionSystem
             // Change the material to indicate that this position is now closed
             GetComponent<Renderer>().material = closedMat;
 
+            // Set the HUD text
+            if (hudText != null)
+            {
+                hudText.text = tower.towerName;
+            }
+
             // Store a reference to the attached tower
             attachedTower = tower;
 
@@ -174,6 +184,12 @@ namespace Valve.VR.InteractionSystem
 
             // Change the material to indicate that this position is now open
             GetComponent<Renderer>().material = openHoverMat;
+
+            // Clear the HUD text
+            if (hudText != null)
+            {
+                hudText.text = "";
+            }
 
             // Restore the tower object and destroy the tower dive components
             attachedTower.DestroyTowerComponents();

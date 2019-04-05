@@ -10,4 +10,7 @@ public class DiveTarget : MonoBehaviour
 
     [Tooltip("The uniform scaling constant to be applied to the player upon diving")]
     public float scaleFactor = 1f;
+
+    [Tooltip("Whether or not the sword apparatus should be spawned on the agent's hands")]
+    public bool swordTarget = false;
 }
