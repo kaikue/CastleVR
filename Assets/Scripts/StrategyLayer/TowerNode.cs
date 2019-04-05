@@ -33,6 +33,9 @@ namespace Valve.VR.InteractionSystem
         [Tooltip("The interface text indicating this node")]
         public Text hudText;
 
+        [Tooltip("If not null, overrides the dive target of any tower placed here")]
+        public Transform dtOverride;
+
         /** PRIVATE MEMBERS **/
         // The tower object attached at this node, if there is one
         private TowerObject attachedTower = null;
@@ -40,6 +43,7 @@ namespace Valve.VR.InteractionSystem
         private bool towerRigidWasColliding;
         private bool towerRigidWasKinematic;
 
+        private Transform tempDT;
 
         /** UNITY SYSTEM ROUTINES **/
         void Awake()
@@ -109,7 +113,12 @@ namespace Valve.VR.InteractionSystem
         {
             if (attachedTower != null)
             {
-                return attachedTower.GetDiveTarget();
+                DiveTarget dtRet = attachedTower.GetDiveTarget();
+                if (dtOverride != null && dtRet.swordTarget)
+                {
+                    dtRet.divePos = dtOverride;
+                }
+                return dtRet;
             } 
             else
             {
