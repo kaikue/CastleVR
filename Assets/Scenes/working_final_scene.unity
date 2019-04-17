@@ -2077,6 +2077,11 @@ PrefabInstance:
       propertyPath: playerSpawnPoint
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 699368424571104764, guid: 42956a6ff8ff9a54bacf569e4345c3d8,
+        type: 3}
+      propertyPath: swordPoint
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 42956a6ff8ff9a54bacf569e4345c3d8, type: 3}
 --- !u!114 &496679014 stripped
