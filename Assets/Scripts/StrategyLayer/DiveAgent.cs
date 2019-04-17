@@ -57,22 +57,26 @@ namespace Valve.VR.InteractionSystem
             {
                 print("Yeet me");
                 TowerNode tn = null;
-                if (leftHand.hoveringInteractable != null &&
+				Hand divingHand = rightHand;
+				if (leftHand.hoveringInteractable != null &&
                     leftHand.hoveringInteractable.GetComponent<TowerNode>() != null)
                 {
                     tn = leftHand.hoveringInteractable.GetComponent<TowerNode>();
+					divingHand = leftHand;
                 }
                 else if (rightHand.hoveringInteractable != null &&
                          rightHand.hoveringInteractable.GetComponent<TowerNode>() != null)
                 {
                     tn = rightHand.hoveringInteractable.GetComponent<TowerNode>();
-                }
+					divingHand = rightHand;
+				}
                 else if (fallBackHand != null &&
                          fallBackHand.hoveringInteractable != null &&
                          fallBackHand.hoveringInteractable.GetComponent<TowerNode>() != null)
                 {
                     tn = fallBackHand.hoveringInteractable.GetComponent<TowerNode>();
-                }
+					divingHand = fallBackHand;
+				}
 
                 if (tn != null)
                 {
@@ -82,7 +86,7 @@ namespace Valve.VR.InteractionSystem
                 if (tn != null && tn.GetDiveTarget() != null)
                 {
                     print("Yeet us");
-                    TryDiveIn(tn.GetDiveTarget());
+                    TryDiveIn(tn.GetDiveTarget(), divingHand);
                 }
             }
 
@@ -103,27 +107,29 @@ namespace Valve.VR.InteractionSystem
 
 
         /** UNIQUE ROUTINES **/
-        public bool TryDiveIn(DiveTarget dt)
+        public bool TryDiveIn(DiveTarget dt, Hand divingHand)
         {
             // Prevent aimless and redundant dives
             if (dt == null || currentDT != null || diving) return false;
 
             diving = true;
             nextDT = dt;
-            InitiateDiveInFade();
+            InitiateDiveInFade(divingHand);
             return true;
         }
 
-        private void InitiateDiveInFade()
+        private void InitiateDiveInFade(Hand divingHand)
         {
             SteamVR_Fade.Start(Color.clear, 0);
             SteamVR_Fade.Start(Color.black, currentFadeTime);
 
-            Invoke("DiveIn", currentFadeTime);
+			StartCoroutine(DiveIn(divingHand, currentFadeTime));
         }
 
-        private void DiveIn()
+        private IEnumerator DiveIn(Hand divingHand, float fadeTime)
         {
+			yield return new WaitForSeconds(fadeTime);
+
             // Fade the screen back in
             SteamVR_Fade.Start(Color.clear, currentFadeTime);
 
@@ -140,7 +146,7 @@ namespace Valve.VR.InteractionSystem
             // Spawn the sword if necessary
             if (nextDT.swordTarget)
             {
-                rightHand.Activate_sword();
+                divingHand.Activate_sword();
             }
 
             // Finish the dive process
