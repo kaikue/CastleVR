@@ -18,9 +18,9 @@ public class GameController : MonoBehaviour {
 
 
     public GameObject[] enemies;    // The enemy prefabs to be spawned.
-    public float spawnTime = 3f;  // How long between each spawn.
+    //public float spawnTime = 3f;  // How long between each spawn.
     public float wave_time = 5f; // time between waves
-    public int spawn_time = 10;
+    public int spawn_time = 3;
 
     public EnemyPathSpawner[] enemyPaths;
 

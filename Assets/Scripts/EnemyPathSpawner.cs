@@ -9,7 +9,7 @@ public class EnemyPathSpawner : MonoBehaviour
     //   public float spawnTime = 3f;  // How long between each spawn.
     //   public float wave_time = 5f; // time between waves
     //   public int spawn_time = 2;
-
+    public GameObject spawn_effect;
     private BezierCurve curve;
     //   public GameController gc;
 
@@ -44,6 +44,9 @@ public class EnemyPathSpawner : MonoBehaviour
 
         //print(curve);
         GameObject temp = Instantiate(enemy, curve.GetPointAt(0), Quaternion.identity);
+        GameObject effect = Instantiate(spawn_effect, curve.GetPointAt(0), Quaternion.identity);
+        effect.transform.Rotate(new Vector3(-90, 0, 0));
+      
         EnemyPathWalk script = temp.GetComponent<EnemyPathWalk>();
         script.SetCurve(curve);
 
