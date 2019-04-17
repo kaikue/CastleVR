@@ -8,6 +8,7 @@ public class Explosion : MonoBehaviour
     private Transform transform;
 
     public GameObject ImpactAreaPrefab;
+    public GameObject ParticlePrefab;
 
     void Start()
     {
@@ -30,5 +31,8 @@ public class Explosion : MonoBehaviour
 
         GameObject impactArea = Instantiate(ImpactAreaPrefab, landing, transform.rotation);
         impactArea.transform.parent = this.transform;
+        GameObject explosionArea = Instantiate(ParticlePrefab, landing, transform.rotation);
+        explosionArea.transform.parent = this.transform;
+        explosionArea.transform.localScale = new Vector3(2, 2, 2);
     }
 }
