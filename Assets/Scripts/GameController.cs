@@ -6,8 +6,12 @@ using Valve.VR.InteractionSystem;
 
 public class GameController : MonoBehaviour {
     
-    public TextMeshPro score_txt;
+    public TextMeshPro let_through_txt;
+    public TextMeshPro incoming_txt;
     public TextMeshPro wave_txt;
+    public TextMeshPro let_through_txt_2;
+    public TextMeshPro incoming_txt_2;
+    public TextMeshPro wave_txt_2;
     public int enemies_left_to_spawn;
     public int enemies_through;
     public int wave = 0;
@@ -26,17 +30,17 @@ public class GameController : MonoBehaviour {
 
     private void Awake()
     {
-        if (score_txt == null)
-        {
-            GameObject score = GameObject.Find("Score_Text");
-            score_txt = score.GetComponent<TextMeshPro>();
-        }
+        //if (score_txt == null)
+        //{
+        //    GameObject score = GameObject.Find("Score_Text");
+        //    score_txt = score.GetComponent<TextMeshPro>();
+        //}
 
-        if (wave_txt == null)
-        {
-            GameObject wave = GameObject.Find("Wave_Text");
-            wave_txt = wave.GetComponent<TextMeshPro>();
-        }
+        //if (wave_txt == null)
+        //{
+        //    GameObject wave = GameObject.Find("Wave_Text");
+        //    wave_txt = wave.GetComponent<TextMeshPro>();
+        //}
     }
     void Start()
     {
@@ -77,7 +81,12 @@ public class GameController : MonoBehaviour {
 
     void UpdateScore()
     {
-        score_txt.text = "Incoming: " + enemies_left_to_spawn + " Let Through: " + enemies_through;
+        incoming_txt.text = "Incoming: " + enemies_left_to_spawn;
+            
+        let_through_txt.text =  " Let Through: " + enemies_through;
+        incoming_txt_2.text = "Incoming: " + enemies_left_to_spawn;
+
+        let_through_txt_2.text = " Let Through: " + enemies_through;
     }
 
     public void increase_wave()
@@ -89,6 +98,8 @@ public class GameController : MonoBehaviour {
     void UpdateWave()
     {
         wave_txt.text = "Wave: " + wave;
+        wave_txt_2.text = "Wave: " + wave;
+
     }
 
 
@@ -98,7 +109,7 @@ public class GameController : MonoBehaviour {
     {
         //yield return new WaitForSeconds(wave_time);
 
-        increase_wave();
+        increase_wave();    
         reset_enemies_left(num_enemies);
 
         for (int i = 0; i < num_enemies; i++)
