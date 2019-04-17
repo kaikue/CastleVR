@@ -12,7 +12,8 @@ namespace Vale.VR.InteractionSystem
         public Rigidbody ball;
         private Transform target;
         public GameObject trajectoryPointPrefab;
-        //public GameObject ballPrefab;
+        public GameObject ballPrefab;
+        private GameObject instance;
         //public LayerMask clickMask;
 
         private LineRenderer line;
@@ -23,10 +24,18 @@ namespace Vale.VR.InteractionSystem
         public float h = 30;
         public float gravity = -18;
 
-        void Start()
+        void Awake()
         {
+            instance = ballPrefab;
             target = trajectoryPointPrefab.GetComponent<Transform>();
             ball.useGravity = false;
+        }
+        void Start()
+        {
+            /*instance = ballPrefab;
+            ball = instance.GetComponent<Rigidbody>();
+            target = trajectoryPointPrefab.GetComponent<Transform>();
+            ball.useGravity = false;*/
             line = this.GetComponent<LineRenderer>();
             launcher = this.GetComponent<Transform>();
         }
@@ -52,8 +61,8 @@ namespace Vale.VR.InteractionSystem
             Physics.gravity = Vector3.up * gravity;
             ball.useGravity = true;
             ball.velocity = CalculateLaunchData().initialVelocity;
-            //print(CalculateLaunchData().initialVelocity);
             linearMapping.value = 0.0f;
+            StartCoroutine(Reload());
         }
 
         LaunchData CalculateLaunchData()
@@ -93,6 +102,15 @@ namespace Vale.VR.InteractionSystem
                 this.initialVelocity = initialVelocity;
                 this.timeToTarget = timeToTarget;
             }
+        }
+
+        IEnumerator Reload()
+        {
+            yield return new WaitForSeconds(5.5f);
+            Destroy(instance);
+            instance = Instantiate(ballPrefab, new Vector3(0.468f, 0.96f, 1.115f),  new Quaternion(0, 0, 0, 0));
+            ball = instance.GetComponent<Rigidbody>();
+            ball.useGravity = false;
         }
     }
 }
