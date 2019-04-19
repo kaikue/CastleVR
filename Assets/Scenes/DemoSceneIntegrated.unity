@@ -11394,6 +11394,11 @@ PrefabInstance:
       propertyPath: spawn_time
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 897642264911170033, guid: d5cba16541903254a81daa6405ca7a6d,
+        type: 3}
+      propertyPath: wave_time
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 721150542, guid: d5cba16541903254a81daa6405ca7a6d, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 22.299997

@@ -116,11 +116,31 @@ public class GameController : MonoBehaviour {
         {
             // call spawnEnmenty on a path
             EnemyPathSpawner path = enemyPaths[Random.Range(0, enemyPaths.Length)];
-            GameObject enemy_prefab = enemies[Random.Range(0, enemies.Length)];
-            path.SpawnEnemy(enemy_prefab);
-            subtract_from_enemies_left(1);
 
-            // wait a random amoount of time between spawining enemenies
+            if (enemies_left_to_spawn <= 2)
+            {
+                GameObject enemy_prefab = enemies[Random.Range(0, enemies.Length)];
+                path.SpawnEnemy(enemy_prefab);
+                subtract_from_enemies_left(1);
+            }
+            else
+            {
+
+                // pick a path now randomly generate a horde
+                int horde_size = Random.Range(1, Mathf.Min(enemies_left_to_spawn, 11));
+                //print(" hs: "+  horde_size);
+                //print(" left : " + enemies_left_to_spawn);
+                for (int j = 0; j < horde_size; j++)
+                {
+                    GameObject enemy_prefab = enemies[Random.Range(0, enemies.Length)];
+                    path.SpawnEnemy(enemy_prefab);
+                    subtract_from_enemies_left(1);
+                    i++;
+                    yield return new WaitForSeconds(1f);
+
+                }
+            }
+            // wait a random amoount of time betwen spawining hordes
             int wait = Random.Range(spawn_time, spawn_time + 5);
             yield return new WaitForSeconds(wait);
         }

@@ -43,9 +43,10 @@ public class EnemyPathSpawner : MonoBehaviour
     {
 
         //print(curve);
-        GameObject temp = Instantiate(enemy, curve.GetPointAt(0), Quaternion.identity);
         GameObject effect = Instantiate(spawn_effect, curve.GetPointAt(0), Quaternion.identity);
         effect.transform.Rotate(new Vector3(-90, 0, 0));
+
+        GameObject temp = Instantiate(enemy, curve.GetPointAt(0), Quaternion.identity);
       
         EnemyPathWalk script = temp.GetComponent<EnemyPathWalk>();
         script.SetCurve(curve);
