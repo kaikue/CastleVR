@@ -15,6 +15,7 @@ public class DelayDestroy : MonoBehaviour
     private void Die()
 	{
 		Instantiate(onDestroyObject, transform.position, transform.rotation);
+        SoundManagerScript.S.MakeEnemyDeathSound();
         Destroy(gameObject);
 	}
 }
