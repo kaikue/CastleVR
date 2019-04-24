@@ -63,6 +63,7 @@ public class EnemyPathWalk : MonoBehaviour
         if (collision.gameObject.CompareTag("theWall"))
         {
             gc.add_to_enemies_through(1);
+            SoundManagerScript.S.MakeBellSound();
             Destroy(gameObject);
         }
         
