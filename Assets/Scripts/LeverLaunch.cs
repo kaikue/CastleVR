@@ -18,6 +18,7 @@ namespace Vale.VR.InteractionSystem
 
         private LineRenderer line;
         private Transform launcher;
+        private Transform ball_pos;
 
         public bool debugPath;
 
@@ -58,6 +59,8 @@ namespace Vale.VR.InteractionSystem
 
         void Launch()
         {
+            GameObject child = this.transform.GetChild(0).gameObject; 
+            ball_pos = child.transform;
             Physics.gravity = Vector3.up * gravity;
             ball.useGravity = true;
             ball.velocity = CalculateLaunchData().initialVelocity;
@@ -108,7 +111,7 @@ namespace Vale.VR.InteractionSystem
         {
             yield return new WaitForSeconds(5.5f);
             Destroy(instance);
-            instance = Instantiate(ballPrefab, new Vector3(0.468f, 0.96f, 1.115f),  new Quaternion(0, 0, 0, 0));
+            instance = Instantiate(ballPrefab, ball_pos.position,  new Quaternion(0, 0, 0, 0));
             ball = instance.GetComponent<Rigidbody>();
             ball.useGravity = false;
         }
