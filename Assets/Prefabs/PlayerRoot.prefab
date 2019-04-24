@@ -91,6 +91,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -192.131, z: 0}
+--- !u!114 &687299766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6775579606682250102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 64ba8727041cfdf4a8c08efac45bc697, type: 2}
 --- !u!114 &1495835965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -115,6 +128,19 @@ MonoBehaviour:
   leftHand: {fileID: 6775579606671043778}
   rightHand: {fileID: 6775579606670994524}
   fallBackHand: {fileID: 6775579606671160564}
+--- !u!114 &748654328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6775579606682269446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 64ba8727041cfdf4a8c08efac45bc697, type: 2}
 --- !u!1001 &6775579606682213130
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -122,10 +148,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6775579606357927581}
     m_Modifications:
-    - target: {fileID: 107946, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
-      propertyPath: m_Name
-      value: Player
-      objectReference: {fileID: 0}
     - target: {fileID: 11401046, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
       propertyPath: swordPrefab
       value: 
@@ -135,6 +157,15 @@ PrefabInstance:
       propertyPath: swordParent
       value: 
       objectReference: {fileID: 1740285458}
+    - target: {fileID: 11450312, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
+      propertyPath: swordPrefab
+      value: 
+      objectReference: {fileID: 5362359158886345182, guid: 7b1b15d3a558d194a8331210f7b2cb79,
+        type: 3}
+    - target: {fileID: 11450312, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
+      propertyPath: swordParent
+      value: 
+      objectReference: {fileID: 1375322843}
     - target: {fileID: 447954, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.5699662
@@ -179,15 +210,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 11450312, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
-      propertyPath: swordPrefab
-      value: 
-      objectReference: {fileID: 5362359158886345182, guid: 7b1b15d3a558d194a8331210f7b2cb79,
-        type: 3}
-    - target: {fileID: 11450312, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
-      propertyPath: swordParent
-      value: 
-      objectReference: {fileID: 1375322843}
+    - target: {fileID: 107946, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
+      propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
 --- !u!1 &6775579606682255008 stripped
@@ -250,6 +276,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29e3e4511966ba94d8ba0b98c6c62f82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &6775579606682269446 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 125964, guid: dc06161b6d97feb419f45f03b62e14b9,
+    type: 3}
+  m_PrefabInstance: {fileID: 6775579606682213130}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6775579606682250102 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 110716, guid: dc06161b6d97feb419f45f03b62e14b9,
+    type: 3}
+  m_PrefabInstance: {fileID: 6775579606682213130}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &6775579606671160564 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 11497470, guid: dc06161b6d97feb419f45f03b62e14b9,
