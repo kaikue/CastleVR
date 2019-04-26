@@ -55,7 +55,21 @@ public class GameController : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        
+        if (wave >= 10)
+        {
+            if (enemies_through >= 15)
+            {
+                StopCoroutine(SpawnWaves(0));
+                wave_txt.text = "You Lose!";
+                SoundManagerScript.S.MakeLoseSound();
+            }
+            else
+            {
+                StopCoroutine(SpawnWaves(0));
+                wave_txt.text = "You Win!";
+                SoundManagerScript.S.MakeWinSound();
+            }
+        }
     }
 
     public void subtract_from_enemies_left(int x)

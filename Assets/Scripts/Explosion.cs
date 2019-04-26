@@ -34,5 +34,6 @@ public class Explosion : MonoBehaviour
         GameObject explosionArea = Instantiate(ParticlePrefab, landing, transform.rotation);
         explosionArea.transform.parent = this.transform;
         explosionArea.transform.localScale = new Vector3(2, 2, 2);
+        SoundManagerScript.S.MakeExplosionSound();
     }
 }

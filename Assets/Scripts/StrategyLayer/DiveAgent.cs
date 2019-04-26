@@ -153,6 +153,9 @@ namespace Valve.VR.InteractionSystem
             currentDT = nextDT;
             nextDT = null;
             diving = false;
+            //Start Battle Music
+            SoundManagerScript.S.StopPlayroomSound();
+            SoundManagerScript.S.MakeBattleSound();
         }
 
         public bool TryDiveOut()
@@ -195,6 +198,9 @@ namespace Valve.VR.InteractionSystem
             // Finish the dive process
             currentDT = null;
             diving = false;
+            //Make Playroom Sound play
+            SoundManagerScript.S.MakePlayroomSound();
+            SoundManagerScript.S.StopBattleSound();
         }
 
         public bool isDived()
