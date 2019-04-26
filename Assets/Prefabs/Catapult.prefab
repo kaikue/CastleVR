@@ -1554,6 +1554,36 @@ Transform:
   m_Father: {fileID: 7861175700033248816}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2841629170967240676
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6690449050802107519}
+  m_Layer: 0
+  m_Name: ballpos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6690449050802107519
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2841629170967240676}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.16099998, y: 0.801, z: 0.13574804}
+  m_LocalScale: {x: 1, y: 1, z: 0.31940717}
+  m_Children: []
+  m_Father: {fileID: 789780246430130315}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2981958438197260647
 GameObject:
   m_ObjectHideFlags: 0
@@ -1799,7 +1829,8 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.307, y: 0.159, z: 0.69}
   m_LocalScale: {x: 1, y: 1, z: 3.1308}
-  m_Children: []
+  m_Children:
+  - {fileID: 6690449050802107519}
   m_Father: {fileID: 1550434790221482857}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
