@@ -14,6 +14,7 @@ public class SoundManagerScript : MonoBehaviour
     public GameObject enemyDeathSoundObj;
     public GameObject wilhelmSoundObj;
     public GameObject winSoundObj;
+    public GameObject thwackSoundObj;
 
     private AudioSource bellSound;
     private AudioSource explosionSound;
@@ -23,6 +24,7 @@ public class SoundManagerScript : MonoBehaviour
     private AudioSource enemyDeathSound;
     private AudioSource wilhelmSound;
     private AudioSource winSound;
+    private AudioSource thwackSound;
 
 
     // Start is called before the first frame update
@@ -38,6 +40,7 @@ public class SoundManagerScript : MonoBehaviour
         enemyDeathSound = enemyDeathSoundObj.GetComponent<AudioSource>();
         wilhelmSound = wilhelmSoundObj.GetComponent<AudioSource>();
         winSound = winSoundObj.GetComponent<AudioSource>();
+        thwackSound = thwackSoundObj.GetComponent<AudioSource>();
     }
 
     //bell sound
@@ -111,5 +114,14 @@ public class SoundManagerScript : MonoBehaviour
     public void StopWinSound()
     {
         winSound.Stop();
+    }
+    //thwack sound
+    public void MakeThwackSound()
+    {
+        thwackSound.Play();
+    }
+    public void StopThwackSound()
+    {
+        thwackSound.Stop();
     }
 }
