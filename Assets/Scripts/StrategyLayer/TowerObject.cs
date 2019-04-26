@@ -202,11 +202,14 @@ namespace Valve.VR.InteractionSystem
         public void ShowTowerObject()
         {
             this.GetComponent<MeshRenderer>().enabled = true;
+            transform.GetChild(0).gameObject.SetActive(true);
+
         }
 
         public void HideTowerObject()
         {
             this.GetComponent<MeshRenderer>().enabled = false;
+            transform.GetChild(0).gameObject.SetActive(false);
         }
 
         public DiveTarget GetDiveTarget()
