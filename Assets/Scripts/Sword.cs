@@ -39,6 +39,7 @@ public class Sword : MonoBehaviour
         print(collision.collider.gameObject);
         if (collision.collider.CompareTag("Shield") && collision.gameObject.GetComponent<DelayDestroy>() == null)
         {
+            SoundManagerScript.S.MakeThwackSound();
             Vibrate();
             StartCoroutine(Disable());
         }
@@ -48,6 +49,7 @@ public class Sword : MonoBehaviour
             EnemyPathWalk enemy = collision.gameObject.GetComponent<EnemyPathWalk>();
             if (enemy != null)
             {
+                SoundManagerScript.S.MakeThwackSound();
                 Vibrate();
                 enemy.Kill(velocity);
             }
