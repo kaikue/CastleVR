@@ -3575,7 +3575,7 @@ Transform:
   - {fileID: 1983428830}
   - {fileID: 314856282}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &552591192 stripped
 GameObject:
@@ -5478,6 +5478,11 @@ PrefabInstance:
       propertyPath: m_Volume
       value: 0.478
       objectReference: {fileID: 0}
+    - target: {fileID: 6131587857634477814, guid: 1f557d85e4f48ce45ab626c672326314,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: d5b2a05be1f9fe2439a532c3cc63f64e, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f557d85e4f48ce45ab626c672326314, type: 3}
 --- !u!1 &960468036 stripped
@@ -6648,7 +6653,7 @@ Transform:
   - {fileID: 1242687846}
   - {fileID: 2068416318}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1167961256 stripped
 GameObject:
