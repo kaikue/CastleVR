@@ -9,9 +9,12 @@ A game for Windows Mixed Reality by Studio Lighthouse
 - https://assetstore.unity.com/packages/3d/environments/generic-low-poly-pack-141077
 - https://assetstore.unity.com/packages/3d/props/furniture/big-furniture-pack-7717
 - https://assetstore.unity.com/packages/3d/props/furniture/free-furniture-set-26678
-
+- https://assetstore.unity.com/packages/vfx/shaders/free-skybox-cubemap-extended-107400
 
 
 ## Assets from Itch.io
 - https://jprinsloo.itch.io/free-low-poly-medieval-buildings-pack
 - https://imersastudios.itch.io/furniture-pack-low-poly
+
+## Google Poly assets
+- https://poly.google.com/view/dRvd7q2nO-6
