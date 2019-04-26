@@ -168,7 +168,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: ce8a3e89526b0444a9df08d79ed041fe, type: 3}
+  m_audioClip: {fileID: 8300000, guid: d5b2a05be1f9fe2439a532c3cc63f64e, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -441,6 +441,7 @@ MonoBehaviour:
   enemyDeathSoundObj: {fileID: 0}
   wilhelmSoundObj: {fileID: 0}
   winSoundObj: {fileID: 0}
+  thwackSoundObj: {fileID: 0}
 --- !u!1 &6131587857974024123
 GameObject:
   m_ObjectHideFlags: 0
