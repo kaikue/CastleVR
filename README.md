@@ -15,3 +15,6 @@ A game for Windows Mixed Reality by Studio Lighthouse
 ## Assets from Itch.io
 - https://jprinsloo.itch.io/free-low-poly-medieval-buildings-pack
 - https://imersastudios.itch.io/furniture-pack-low-poly
+
+## Google Poly assets
+- https://poly.google.com/view/dRvd7q2nO-6
