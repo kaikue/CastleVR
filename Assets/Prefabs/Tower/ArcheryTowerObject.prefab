@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2049794010}
   - component: {fileID: 2049794008}
   - component: {fileID: 2049794009}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ArcheryTowerObject
   m_TagString: TowerObject
   m_Icon: {fileID: 0}
@@ -189,6 +189,9 @@ MonoBehaviour:
     actionPath: /actions/default/in/DiveOut
     needsReinit: 0
   showGrabHint: 0
+  respawnTime: 5
+  respawnObject: {fileID: 2166782192338350113, guid: 7db6f667c382814458a59526ef41726e,
+    type: 3}
 --- !u!1 &3778706597465422434
 GameObject:
   m_ObjectHideFlags: 0
@@ -201,7 +204,7 @@ GameObject:
   - component: {fileID: 3748711734714981310}
   - component: {fileID: 3756725859802744592}
   - component: {fileID: 3883833823330220102}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: arrow_tip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -290,7 +293,7 @@ GameObject:
   - component: {fileID: 3782198906800318542}
   - component: {fileID: 3748711736360296054}
   - component: {fileID: 3756725859756531732}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: arrow_prop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -367,7 +370,7 @@ GameObject:
   - component: {fileID: 3779404233879048044}
   - component: {fileID: 3779404233869049178}
   - component: {fileID: 3779404233872025196}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sound_ArrowCollideTarget
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -554,7 +557,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3779404233879021310}
   - component: {fileID: 3779404233872215138}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sound_ArrowFireIgnition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -684,7 +687,7 @@ GameObject:
   - component: {fileID: 3779404233866994300}
   - component: {fileID: 3779404233873522560}
   - component: {fileID: 3883833821119785558}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: FireSource
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -778,7 +781,7 @@ GameObject:
   - component: {fileID: 3779404233879046056}
   - component: {fileID: 3779404233894237822}
   - component: {fileID: 3779404233892233610}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ArrowGlint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5444,7 +5447,7 @@ GameObject:
   - component: {fileID: 3779404233879034808}
   - component: {fileID: 3779404233869031080}
   - component: {fileID: 3779404233872024926}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sound_ArrowCollideGround
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5644,7 +5647,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3779404233879045926}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Arrow Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5677,7 +5680,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3779404233878968718}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Arrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5713,7 +5716,7 @@ GameObject:
   - component: {fileID: 3779404233873505196}
   - component: {fileID: 3779404233865046628}
   - component: {fileID: 3779404233872637452}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Arrowhead collider
   m_TagString: projectile
   m_Icon: {fileID: 0}
@@ -5792,7 +5795,7 @@ GameObject:
   - component: {fileID: 3779404233878964944}
   - component: {fileID: 3779404233869045654}
   - component: {fileID: 3779404233872020088}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sound_BowReleaseAir
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5983,7 +5986,7 @@ GameObject:
   - component: {fileID: 3779404233878965584}
   - component: {fileID: 3779404233869023416}
   - component: {fileID: 3779404233872032670}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sound_BowReleaseFire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6168,7 +6171,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5947640513673579228}
   - component: {fileID: 4542222520140444761}
-  m_Layer: 31
+  m_Layer: 9
   m_Name: LongbowPreview
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6204,6 +6207,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 30
+  axis: 0
 --- !u!1 &5947640513673363502
 GameObject:
   m_ObjectHideFlags: 0
@@ -6213,7 +6217,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5947640513673646130}
-  m_Layer: 31
+  m_Layer: 9
   m_Name: btmArm0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6244,7 +6248,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5947640513673685970}
-  m_Layer: 31
+  m_Layer: 9
   m_Name: bow_base_CTRL_HmNUL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6275,7 +6279,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5947640513673589124}
-  m_Layer: 31
+  m_Layer: 9
   m_Name: topArm1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6306,7 +6310,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5947640513673678880}
-  m_Layer: 31
+  m_Layer: 9
   m_Name: notch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6337,7 +6341,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5947640513673568594}
   - component: {fileID: 5947640513684998584}
-  m_Layer: 31
+  m_Layer: 9
   m_Name: bow_noString
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6432,7 +6436,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5947640513673686172}
-  m_Layer: 31
+  m_Layer: 9
   m_Name: stringTopArc
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6464,7 +6468,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5947640513673676770}
   - component: {fileID: 5947640513685012942}
-  m_Layer: 31
+  m_Layer: 9
   m_Name: StringGeom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6560,7 +6564,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5947640513673682120}
-  m_Layer: 31
+  m_Layer: 9
   m_Name: stringTop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6591,7 +6595,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5947640513673670630}
-  m_Layer: 31
+  m_Layer: 9
   m_Name: btmArm1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6622,7 +6626,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5947640513673666824}
-  m_Layer: 31
+  m_Layer: 9
   m_Name: bow_base_CTRL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6652,7 +6656,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5947640513673602548}
-  m_Layer: 31
+  m_Layer: 9
   m_Name: bow_base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6686,7 +6690,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5947640513673575866}
   - component: {fileID: 5947640513680786978}
-  m_Layer: 31
+  m_Layer: 9
   m_Name: bow_model (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6739,7 +6743,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5947640513673646680}
-  m_Layer: 31
+  m_Layer: 9
   m_Name: stringBtmNotch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6769,7 +6773,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5947640513673667242}
-  m_Layer: 31
+  m_Layer: 9
   m_Name: btmArm3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6800,7 +6804,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5947640513673657686}
-  m_Layer: 31
+  m_Layer: 9
   m_Name: topArm0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6831,7 +6835,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5947640513673569962}
-  m_Layer: 31
+  m_Layer: 9
   m_Name: stringBtm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6862,7 +6866,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5947640513673587510}
-  m_Layer: 31
+  m_Layer: 9
   m_Name: btmArm2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6893,7 +6897,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5947640513673562770}
-  m_Layer: 31
+  m_Layer: 9
   m_Name: bow_base_CTRL_AnimNUL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6924,7 +6928,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5947640513673655382}
-  m_Layer: 31
+  m_Layer: 9
   m_Name: topArm2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6955,7 +6959,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5947640513673659890}
-  m_Layer: 31
+  m_Layer: 9
   m_Name: stringBtmArc
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6986,7 +6990,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5947640513673592180}
-  m_Layer: 31
+  m_Layer: 9
   m_Name: stringTopNotch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7016,7 +7020,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5947640513673671346}
-  m_Layer: 31
+  m_Layer: 9
   m_Name: bow_base_CTRL_SpaceNUL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7047,7 +7051,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5947640513673690430}
-  m_Layer: 31
+  m_Layer: 9
   m_Name: topArm3
   m_TagString: Untagged
   m_Icon: {fileID: 0}

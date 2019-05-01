@@ -51,13 +51,20 @@ namespace Valve.VR.InteractionSystem
 
         public bool showGrabHint;
 
+        [Tooltip("How long after being dropped to respawn at original position (in seconds)")]
+        public float respawnTime = 5;
+        [Tooltip("Particle object to show when respawning")]
+        public GameObject respawnObject;
+        [Tooltip("Scale of respawn particles")]
+        public float respawnScale = 3;
+
         /** PRIVATE MEMBERS **/
         // The Interactable component attached to the object
         private Interactable interactable;
         // The tower node that the tower is currently intersecting when attached to the hand.  Operates on a first-
         // come, first-serve basis
         private TowerNode intersectedNode = null;
-        // The position and rotation from when the tower object was first picked up.  If we drop it anywhere that's 
+        // The position and rotation from when the tower object was first spawned.  If we drop it anywhere that's 
         // not a node, we restore it to this config
         private Vector3 oldPosition;
         private Quaternion oldRotation;
@@ -65,6 +72,8 @@ namespace Valve.VR.InteractionSystem
         private GameObject diveComponent;
         // If the player is dived at this tower
         private bool playerDive = false;
+        //coroutine for respawning after being dropped
+        private Coroutine crtRespawn;
 
         /** UNITY SYSTEM ROUTINES **/
 
@@ -72,6 +81,9 @@ namespace Valve.VR.InteractionSystem
         {
             // Fix the Interactable component for future use
             interactable = this.GetComponent<Interactable>();
+            // Store the position and rotation in case we need to restore it
+            oldPosition = transform.position;
+            oldRotation = transform.rotation;
         }
 
         /** INTERACTION SYSTEM ROUTINES **/
@@ -97,12 +109,10 @@ namespace Valve.VR.InteractionSystem
             // Check if we are not currently attached and are being grabbed
             if (interactable.attachedToHand == null && startingGrabType != GrabTypes.None)
             {
-                // Store the position and rotation in case we need to restore it
-                oldPosition = transform.position;
-                oldRotation = transform.rotation;
                 // Attach to the hand
                 hand.AttachObject(gameObject, startingGrabType, attachmentFlags, attachentOffset);
                 hand.HideGrabHint();
+                if (crtRespawn != null) StopCoroutine(crtRespawn);
             }
 
         }
@@ -125,7 +135,7 @@ namespace Valve.VR.InteractionSystem
                 {
                     // Restore the tower object to its original position
                     hand.DetachObject(gameObject, false);
-                    //transform.SetPositionAndRotation(oldPosition, oldRotation);
+                    crtRespawn = StartCoroutine(Respawn());
                 }
             }
         }
@@ -226,6 +236,20 @@ namespace Valve.VR.InteractionSystem
             {
                 return null;
             }
+        }
+
+        public IEnumerator Respawn()
+        {
+            yield return new WaitForSeconds(respawnTime);
+            CreateRespawnParticles();
+            transform.SetPositionAndRotation(oldPosition, oldRotation);
+            CreateRespawnParticles();
+        }
+
+        private void CreateRespawnParticles()
+        {
+            GameObject particles = Instantiate(respawnObject, transform.position, transform.rotation);
+            particles.transform.localScale = new Vector3(respawnScale, respawnScale, respawnScale);
         }
     }
 }
