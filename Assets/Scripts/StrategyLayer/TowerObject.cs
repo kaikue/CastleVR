@@ -53,6 +53,10 @@ namespace Valve.VR.InteractionSystem
 
         [Tooltip("How long after being dropped to respawn at original position (in seconds)")]
         public float respawnTime = 5;
+        [Tooltip("Particle object to show when respawning")]
+        public GameObject respawnObject;
+        [Tooltip("Scale of respawn particles")]
+        public float respawnScale = 3;
 
         /** PRIVATE MEMBERS **/
         // The Interactable component attached to the object
@@ -237,7 +241,15 @@ namespace Valve.VR.InteractionSystem
         public IEnumerator Respawn()
         {
             yield return new WaitForSeconds(respawnTime);
+            CreateRespawnParticles();
             transform.SetPositionAndRotation(oldPosition, oldRotation);
+            CreateRespawnParticles();
+        }
+
+        private void CreateRespawnParticles()
+        {
+            GameObject particles = Instantiate(respawnObject, transform.position, transform.rotation);
+            particles.transform.localScale = new Vector3(respawnScale, respawnScale, respawnScale);
         }
     }
 }
