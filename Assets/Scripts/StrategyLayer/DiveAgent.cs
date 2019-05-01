@@ -143,10 +143,17 @@ namespace Valve.VR.InteractionSystem
             //Vector3 feetOffset = player.trackingOriginTransform.position - player.feetPositionGuess;
             player.trackingOriginTransform.position = nextDT.divePos.position;// + feetOffset;
 
+            //TODO: update the rotation to match divePos?
+
             // Spawn the sword if necessary
             if (nextDT.swordTarget)
             {
                 divingHand.Activate_sword();
+            }
+            //Activate the bow if necessary
+            if (nextDT.archeryTarget)
+            {
+                nextDT.ActivateBow();
             }
 
             // Finish the dive process
@@ -194,6 +201,8 @@ namespace Valve.VR.InteractionSystem
             rightHand.Deactivate_sword();
             leftHand.DetachObject(leftHand.currentAttachedObject);
             rightHand.DetachObject(rightHand.currentAttachedObject);
+
+            currentDT.DeactivateBow();
 
             // Finish the dive process
             currentDT = null;
