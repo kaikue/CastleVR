@@ -2098,7 +2098,7 @@ PrefabInstance:
     - target: {fileID: 1381560441933809838, guid: 0a3bfde9921d46a4392cd19448804209,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1381560441933809838, guid: 0a3bfde9921d46a4392cd19448804209,
         type: 3}
@@ -2143,7 +2143,7 @@ PrefabInstance:
     - target: {fileID: 6499190715851293460, guid: 0a3bfde9921d46a4392cd19448804209,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7899266406928068254, guid: 0a3bfde9921d46a4392cd19448804209,
         type: 3}
@@ -2157,7 +2157,7 @@ PrefabInstance:
     - target: {fileID: 4145532090177213250, guid: 0a3bfde9921d46a4392cd19448804209,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a3bfde9921d46a4392cd19448804209, type: 3}
@@ -2503,6 +2503,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 100002, guid: 045ba601a86539a458753139644c0e66, type: 3}
+      propertyPath: m_Name
+      value: TallWallBricks
+      objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 045ba601a86539a458753139644c0e66, type: 3}
       propertyPath: m_LocalPosition.x
       value: 44.91
@@ -2558,10 +2562,6 @@ PrefabInstance:
     - target: {fileID: 400002, guid: 045ba601a86539a458753139644c0e66, type: 3}
       propertyPath: m_LocalScale.z
       value: 3.75
-      objectReference: {fileID: 0}
-    - target: {fileID: 100002, guid: 045ba601a86539a458753139644c0e66, type: 3}
-      propertyPath: m_Name
-      value: TallWallBricks
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 045ba601a86539a458753139644c0e66, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -3459,6 +3459,10 @@ PrefabInstance:
     - target: {fileID: 100008, guid: 08a280e14f52ea74380c9608c1b58600, type: 3}
       propertyPath: m_Name
       value: ESLamp
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 08a280e14f52ea74380c9608c1b58600, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400008, guid: 08a280e14f52ea74380c9608c1b58600, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4941,6 +4945,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 544448092}
     m_Modifications:
+    - target: {fileID: 100000, guid: 2a75046247a25e64c8e40eb5ec527286, type: 3}
+      propertyPath: m_Name
+      value: BigRock3
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 2a75046247a25e64c8e40eb5ec527286, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 2a75046247a25e64c8e40eb5ec527286, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.4030085
@@ -4997,14 +5009,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 18.289991
       objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 2a75046247a25e64c8e40eb5ec527286, type: 3}
-      propertyPath: m_Name
-      value: BigRock3
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 2a75046247a25e64c8e40eb5ec527286, type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a75046247a25e64c8e40eb5ec527286, type: 3}
 --- !u!4 &656852831 stripped
@@ -5020,6 +5024,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 100002, guid: 93996a34bdf52ee4aa7fb967a1aaece9, type: 3}
+      propertyPath: m_Name
+      value: LargeSquareTowerBricks (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 93996a34bdf52ee4aa7fb967a1aaece9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 43.96
@@ -5075,10 +5083,6 @@ PrefabInstance:
     - target: {fileID: 400002, guid: 93996a34bdf52ee4aa7fb967a1aaece9, type: 3}
       propertyPath: m_LocalScale.z
       value: 2.4110625
-      objectReference: {fileID: 0}
-    - target: {fileID: 100002, guid: 93996a34bdf52ee4aa7fb967a1aaece9, type: 3}
-      propertyPath: m_Name
-      value: LargeSquareTowerBricks (1)
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 93996a34bdf52ee4aa7fb967a1aaece9, type: 3}
       propertyPath: m_Materials.Array.data[1]
@@ -6208,6 +6212,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 100002, guid: 93996a34bdf52ee4aa7fb967a1aaece9, type: 3}
+      propertyPath: m_Name
+      value: LargeSquareTowerBricks
+      objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 93996a34bdf52ee4aa7fb967a1aaece9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 43.96
@@ -6263,10 +6271,6 @@ PrefabInstance:
     - target: {fileID: 400002, guid: 93996a34bdf52ee4aa7fb967a1aaece9, type: 3}
       propertyPath: m_LocalScale.z
       value: 2.4110625
-      objectReference: {fileID: 0}
-    - target: {fileID: 100002, guid: 93996a34bdf52ee4aa7fb967a1aaece9, type: 3}
-      propertyPath: m_Name
-      value: LargeSquareTowerBricks
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 93996a34bdf52ee4aa7fb967a1aaece9, type: 3}
       propertyPath: m_Materials.Array.data[1]
@@ -6781,6 +6785,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 544448092}
     m_Modifications:
+    - target: {fileID: 100000, guid: fd250531dc14fb2428f12f928aa871ab, type: 3}
+      propertyPath: m_Name
+      value: DeadOak2
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: fd250531dc14fb2428f12f928aa871ab, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fd250531dc14fb2428f12f928aa871ab, type: 3}
       propertyPath: m_LocalPosition.x
       value: 7.563009
@@ -6832,14 +6844,6 @@ PrefabInstance:
     - target: {fileID: 400000, guid: fd250531dc14fb2428f12f928aa871ab, type: 3}
       propertyPath: m_LocalScale.z
       value: 22.238844
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: fd250531dc14fb2428f12f928aa871ab, type: 3}
-      propertyPath: m_Name
-      value: DeadOak2
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: fd250531dc14fb2428f12f928aa871ab, type: 3}
-      propertyPath: m_Layer
-      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fd250531dc14fb2428f12f928aa871ab, type: 3}
@@ -8045,6 +8049,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 544448092}
     m_Modifications:
+    - target: {fileID: 100000, guid: cfe4d127c4da3a042886b3b39a9d69dc, type: 3}
+      propertyPath: m_Name
+      value: DeadOak1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: cfe4d127c4da3a042886b3b39a9d69dc, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: cfe4d127c4da3a042886b3b39a9d69dc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 33.84301
@@ -8097,14 +8109,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 54.019413
       objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: cfe4d127c4da3a042886b3b39a9d69dc, type: 3}
-      propertyPath: m_Name
-      value: DeadOak1
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: cfe4d127c4da3a042886b3b39a9d69dc, type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cfe4d127c4da3a042886b3b39a9d69dc, type: 3}
 --- !u!4 &1104501194 stripped
@@ -8140,6 +8144,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 544448092}
     m_Modifications:
+    - target: {fileID: 100000, guid: 96aaa09c10467274cbbf817bc514a254, type: 3}
+      propertyPath: m_Name
+      value: BigRock2
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 96aaa09c10467274cbbf817bc514a254, type: 3}
       propertyPath: m_LocalPosition.x
       value: 15.373009
@@ -8195,10 +8203,6 @@ PrefabInstance:
     - target: {fileID: 400000, guid: 96aaa09c10467274cbbf817bc514a254, type: 3}
       propertyPath: m_LocalScale.z
       value: 99.99997
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 96aaa09c10467274cbbf817bc514a254, type: 3}
-      propertyPath: m_Name
-      value: BigRock2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96aaa09c10467274cbbf817bc514a254, type: 3}
@@ -9345,6 +9349,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 544448092}
     m_Modifications:
+    - target: {fileID: 100000, guid: 5b4604c391d3329439e92e42be08fee4, type: 3}
+      propertyPath: m_Name
+      value: OakTree2 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 5b4604c391d3329439e92e42be08fee4, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5b4604c391d3329439e92e42be08fee4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 7.563009
@@ -9400,14 +9412,6 @@ PrefabInstance:
     - target: {fileID: 400000, guid: 5b4604c391d3329439e92e42be08fee4, type: 3}
       propertyPath: m_LocalScale.z
       value: 10.886136
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 5b4604c391d3329439e92e42be08fee4, type: 3}
-      propertyPath: m_Name
-      value: OakTree2 (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 5b4604c391d3329439e92e42be08fee4, type: 3}
-      propertyPath: m_Layer
-      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b4604c391d3329439e92e42be08fee4, type: 3}
@@ -10404,6 +10408,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 544448092}
     m_Modifications:
+    - target: {fileID: 100000, guid: 5b4604c391d3329439e92e42be08fee4, type: 3}
+      propertyPath: m_Name
+      value: OakTree2
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 5b4604c391d3329439e92e42be08fee4, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5b4604c391d3329439e92e42be08fee4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.9730086
@@ -10459,14 +10471,6 @@ PrefabInstance:
     - target: {fileID: 400000, guid: 5b4604c391d3329439e92e42be08fee4, type: 3}
       propertyPath: m_LocalScale.z
       value: 10.886136
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 5b4604c391d3329439e92e42be08fee4, type: 3}
-      propertyPath: m_Name
-      value: OakTree2
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 5b4604c391d3329439e92e42be08fee4, type: 3}
-      propertyPath: m_Layer
-      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b4604c391d3329439e92e42be08fee4, type: 3}
@@ -11455,6 +11459,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 544448092}
     m_Modifications:
+    - target: {fileID: 100000, guid: cfe4d127c4da3a042886b3b39a9d69dc, type: 3}
+      propertyPath: m_Name
+      value: DeadOak1 (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: cfe4d127c4da3a042886b3b39a9d69dc, type: 3}
       propertyPath: m_LocalPosition.x
       value: -41.953
@@ -11506,10 +11514,6 @@ PrefabInstance:
     - target: {fileID: 400000, guid: cfe4d127c4da3a042886b3b39a9d69dc, type: 3}
       propertyPath: m_LocalScale.z
       value: 54.019413
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: cfe4d127c4da3a042886b3b39a9d69dc, type: 3}
-      propertyPath: m_Name
-      value: DeadOak1 (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cfe4d127c4da3a042886b3b39a9d69dc, type: 3}
@@ -12513,6 +12517,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 100002, guid: 045ba601a86539a458753139644c0e66, type: 3}
+      propertyPath: m_Name
+      value: TallWallBricks (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 045ba601a86539a458753139644c0e66, type: 3}
       propertyPath: m_LocalPosition.x
       value: 44.91
@@ -12568,10 +12576,6 @@ PrefabInstance:
     - target: {fileID: 400002, guid: 045ba601a86539a458753139644c0e66, type: 3}
       propertyPath: m_LocalScale.z
       value: 3.75
-      objectReference: {fileID: 0}
-    - target: {fileID: 100002, guid: 045ba601a86539a458753139644c0e66, type: 3}
-      propertyPath: m_Name
-      value: TallWallBricks (1)
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 045ba601a86539a458753139644c0e66, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -15620,6 +15624,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 544448092}
     m_Modifications:
+    - target: {fileID: 100000, guid: 5b4604c391d3329439e92e42be08fee4, type: 3}
+      propertyPath: m_Name
+      value: OakTree2 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 5b4604c391d3329439e92e42be08fee4, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5b4604c391d3329439e92e42be08fee4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.96300864
@@ -15675,14 +15687,6 @@ PrefabInstance:
     - target: {fileID: 400000, guid: 5b4604c391d3329439e92e42be08fee4, type: 3}
       propertyPath: m_LocalScale.z
       value: 10.886136
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 5b4604c391d3329439e92e42be08fee4, type: 3}
-      propertyPath: m_Name
-      value: OakTree2 (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 5b4604c391d3329439e92e42be08fee4, type: 3}
-      propertyPath: m_Layer
-      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b4604c391d3329439e92e42be08fee4, type: 3}
