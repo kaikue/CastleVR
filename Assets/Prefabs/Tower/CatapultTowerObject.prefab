@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2049794010}
   - component: {fileID: 2049794008}
   - component: {fileID: 2049794009}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: CatapultTowerObject
   m_TagString: TowerObject
   m_Icon: {fileID: 0}
@@ -209,10 +209,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2049794014}
     m_Modifications:
-    - target: {fileID: 164854, guid: a288f47bff5cc9c4cb0dc3522a257663, type: 3}
-      propertyPath: m_Name
-      value: Catapult
-      objectReference: {fileID: 0}
     - target: {fileID: 443222, guid: a288f47bff5cc9c4cb0dc3522a257663, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.0002
@@ -268,6 +264,46 @@ PrefabInstance:
     - target: {fileID: 443222, guid: a288f47bff5cc9c4cb0dc3522a257663, type: 3}
       propertyPath: m_LocalScale.z
       value: 0.009999998
+      objectReference: {fileID: 0}
+    - target: {fileID: 164854, guid: a288f47bff5cc9c4cb0dc3522a257663, type: 3}
+      propertyPath: m_Name
+      value: Catapult
+      objectReference: {fileID: 0}
+    - target: {fileID: 164854, guid: a288f47bff5cc9c4cb0dc3522a257663, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 167240, guid: a288f47bff5cc9c4cb0dc3522a257663, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 171088, guid: a288f47bff5cc9c4cb0dc3522a257663, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 139352, guid: a288f47bff5cc9c4cb0dc3522a257663, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 156076, guid: a288f47bff5cc9c4cb0dc3522a257663, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 156688, guid: a288f47bff5cc9c4cb0dc3522a257663, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 137246, guid: a288f47bff5cc9c4cb0dc3522a257663, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 121876, guid: a288f47bff5cc9c4cb0dc3522a257663, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 179788, guid: a288f47bff5cc9c4cb0dc3522a257663, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a288f47bff5cc9c4cb0dc3522a257663, type: 3}
