@@ -7049,6 +7049,76 @@ PrefabInstance:
       propertyPath: m_Volume
       value: 0.478
       objectReference: {fileID: 0}
+    - target: {fileID: 6131587858350898104, guid: 1f557d85e4f48ce45ab626c672326314,
+        type: 3}
+      propertyPath: Priority
+      value: 203
+      objectReference: {fileID: 0}
+    - target: {fileID: 3281975267335958578, guid: 1f557d85e4f48ce45ab626c672326314,
+        type: 3}
+      propertyPath: Priority
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 3281975267335958578, guid: 1f557d85e4f48ce45ab626c672326314,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.52
+      objectReference: {fileID: 0}
+    - target: {fileID: 6131587857634477814, guid: 1f557d85e4f48ce45ab626c672326314,
+        type: 3}
+      propertyPath: Priority
+      value: 152
+      objectReference: {fileID: 0}
+    - target: {fileID: 6131587857634477814, guid: 1f557d85e4f48ce45ab626c672326314,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.84
+      objectReference: {fileID: 0}
+    - target: {fileID: 6131587857634477814, guid: 1f557d85e4f48ce45ab626c672326314,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6131587857974024125, guid: 1f557d85e4f48ce45ab626c672326314,
+        type: 3}
+      propertyPath: Priority
+      value: 111
+      objectReference: {fileID: 0}
+    - target: {fileID: 6131587858030497191, guid: 1f557d85e4f48ce45ab626c672326314,
+        type: 3}
+      propertyPath: Priority
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 6131587858030497191, guid: 1f557d85e4f48ce45ab626c672326314,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.87
+      objectReference: {fileID: 0}
+    - target: {fileID: 6131587859049982842, guid: 1f557d85e4f48ce45ab626c672326314,
+        type: 3}
+      propertyPath: Priority
+      value: 176
+      objectReference: {fileID: 0}
+    - target: {fileID: 6131587859049982842, guid: 1f557d85e4f48ce45ab626c672326314,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.49
+      objectReference: {fileID: 0}
+    - target: {fileID: 6131587859049982842, guid: 1f557d85e4f48ce45ab626c672326314,
+        type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6131587859190371639, guid: 1f557d85e4f48ce45ab626c672326314,
+        type: 3}
+      propertyPath: Priority
+      value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 6131587859190371639, guid: 1f557d85e4f48ce45ab626c672326314,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.96
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f557d85e4f48ce45ab626c672326314, type: 3}
 --- !u!1 &960468036 stripped
