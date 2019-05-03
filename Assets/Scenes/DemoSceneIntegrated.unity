@@ -7951,6 +7951,11 @@ PrefabInstance:
       propertyPath: Loop
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6131587859049982842, guid: 1f557d85e4f48ce45ab626c672326314,
+        type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 6131587859190371639, guid: 1f557d85e4f48ce45ab626c672326314,
         type: 3}
       propertyPath: Priority
