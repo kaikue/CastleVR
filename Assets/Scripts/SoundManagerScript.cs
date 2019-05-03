@@ -64,7 +64,10 @@ public class SoundManagerScript : MonoBehaviour
     //lose sound
     public void MakeLoseSound()
     {
-        loseSound.Play();
+        if (!loseSound.isPlaying)
+        {
+            loseSound.Play();
+        }
     }
     public void StopLoseSound()
     {
