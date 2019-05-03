@@ -67,6 +67,7 @@ public class GameController : MonoBehaviour
             StopCoroutine(SpawnWaves(0));
             wave_txt.text = "You Lose!";
             SoundManagerScript.S.StopPlayroomSound();
+      
             SoundManagerScript.S.MakeLoseSound();
             game_over = true;
         }
