@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using Valve.VR.InteractionSystem;
+using UnityEngine.UI;
 
-public class GameController : MonoBehaviour {
-    
+public class GameController : MonoBehaviour
+{
+
     public TextMeshPro let_through_txt;
     public TextMeshPro incoming_txt;
     public TextMeshPro wave_txt;
@@ -13,8 +15,10 @@ public class GameController : MonoBehaviour {
     public TextMeshPro incoming_txt_2;
     public TextMeshPro wave_txt_2;
     public int enemies_left_to_spawn;
-    public int enemies_through;
+    public int enemies_through = 0;
     public int wave = 0;
+    public Slider enemies_slider;
+
 
 
     public GameObject[] enemies;    // The enemy prefabs to be spawned.
@@ -25,13 +29,14 @@ public class GameController : MonoBehaviour {
     public EnemyPathSpawner[] enemyPaths;
 
     public int num_enemies = 5;
-    
+    private bool game_over = false;
+
     // Start is called before the first frame update
 
     private void Awake()
     {
         //if (score_txt == null)
-        //{
+        //{ 
         //    GameObject score = GameObject.Find("Score_Text");
         //    score_txt = score.GetComponent<TextMeshPro>();
         //}
@@ -45,7 +50,7 @@ public class GameController : MonoBehaviour {
     void Start()
     {
 
-
+        enemies_slider.value = 0;
         StartCoroutine(SpawnWaves(0));
         //StartCoroutine(SpawnWaves(1));
 
@@ -55,21 +60,23 @@ public class GameController : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (wave >= 10)
+        //if (wave >= 10)
+        //{
+        if (enemies_through >= 15)
         {
-            if (enemies_through >= 15)
-            {
-                StopCoroutine(SpawnWaves(0));
-                wave_txt.text = "You Lose!";
-                SoundManagerScript.S.MakeLoseSound();
-            }
-            else
-            {
-                StopCoroutine(SpawnWaves(0));
-                wave_txt.text = "You Win!";
-                SoundManagerScript.S.MakeWinSound();
-            }
+            StopCoroutine(SpawnWaves(0));
+            wave_txt.text = "You Lose!";
+            SoundManagerScript.S.MakeLoseSound();
+            game_over = true;
         }
+        else if (wave >= 10)
+        {
+            StopCoroutine(SpawnWaves(0));
+            wave_txt.text = "You Win!";
+            SoundManagerScript.S.MakeWinSound();
+            game_over = true;
+        }
+        //}
     }
 
     public void subtract_from_enemies_left(int x)
@@ -90,17 +97,19 @@ public class GameController : MonoBehaviour {
     public void add_to_enemies_through(int x)
     {
         enemies_through += x;
+        // update slider as well
+        enemies_slider.value = enemies_through;
         UpdateScore();
     }
 
     void UpdateScore()
     {
         incoming_txt.text = "Incoming: " + enemies_left_to_spawn;
-            
-        let_through_txt.text =  " Let Through: " + enemies_through;
+
+        let_through_txt.text = " Let Through: " + enemies_through + " out of 15";
         incoming_txt_2.text = "Incoming: " + enemies_left_to_spawn;
 
-        let_through_txt_2.text = " Let Through: " + enemies_through;
+        let_through_txt_2.text = " Let Through: " + enemies_through + " out of 15";
     }
 
     public void increase_wave()
@@ -123,7 +132,7 @@ public class GameController : MonoBehaviour {
     {
         //yield return new WaitForSeconds(wave_time);
 
-        increase_wave();    
+        increase_wave();
         reset_enemies_left(num_enemies);
 
         for (int i = 0; i < num_enemies; i++)
@@ -165,7 +174,7 @@ public class GameController : MonoBehaviour {
         StartCoroutine(SpawnWaves(0));
 
     }
-    
+
 }
 
 

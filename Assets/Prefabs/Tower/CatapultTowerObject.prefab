@@ -179,7 +179,7 @@ MonoBehaviour:
   attachentOffset: {fileID: 0}
   towerFab: {fileID: 317257284, guid: b3d9f9c00cf000a4895416fcd1785618, type: 3}
   nodePositionOffset: {x: 0, y: 0, z: 0}
-  nodeRotationOffset: {x: -90, y: -90, z: 0}
+  nodeRotationOffset: {x: -90, y: 180, z: 0}
   screenCover: {fileID: 0}
   diveInAction:
     actionPath: /actions/default/in/DiveIn
@@ -191,6 +191,8 @@ MonoBehaviour:
   respawnTime: 5
   respawnObject: {fileID: 2166782192338350113, guid: 7db6f667c382814458a59526ef41726e,
     type: 3}
+  respawnScale: 3
+  isCatapult: 1
 --- !u!65 &8488641444125953310
 BoxCollider:
   m_ObjectHideFlags: 0

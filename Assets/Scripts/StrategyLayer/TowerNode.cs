@@ -158,8 +158,10 @@ namespace Valve.VR.InteractionSystem
         {
             // Fix the tower to the position and rotation of the node
             Vector3 newPos = transform.position + positionOFfset;
-            Quaternion newRot = transform.rotation * Quaternion.Euler(rotationOffset);
+            Quaternion newRot = transform.rotation /* Quaternion.Euler(rotationOffset)*/;
             tower.transform.SetPositionAndRotation(newPos, newRot);
+            tower.transform.Rotate(rotationOffset);
+            print("applied rotation : " + rotationOffset);
             towerRigidWasColliding = tower.GetComponent<Rigidbody>().detectCollisions;
             towerRigidWasKinematic = tower.GetComponent<Rigidbody>().isKinematic;
             tower.GetComponent<Rigidbody>().detectCollisions = false;

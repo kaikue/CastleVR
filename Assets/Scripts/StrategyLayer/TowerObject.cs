@@ -58,6 +58,8 @@ namespace Valve.VR.InteractionSystem
         [Tooltip("Scale of respawn particles")]
         public float respawnScale = 3;
 
+        public bool isCatapult = false;
+
         /** PRIVATE MEMBERS **/
         // The Interactable component attached to the object
         private Interactable interactable;
@@ -193,6 +195,13 @@ namespace Valve.VR.InteractionSystem
 
             // Child and center the instance
             comp.transform.SetPositionAndRotation(transform.position, Quaternion.identity);
+
+            //TEMP: rotate the catapult
+            if (isCatapult)
+            {
+                comp.transform.Rotate(new Vector3(0,180,0));
+            }
+
             Rigidbody rigid = comp.GetComponent<Rigidbody>();
             if (rigid != null)
             {
