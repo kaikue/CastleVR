@@ -66,6 +66,7 @@ public class GameController : MonoBehaviour
         {
             StopCoroutine(SpawnWaves(0));
             wave_txt.text = "You Lose!";
+            SoundManagerScript.S.StopPlayroomSound();
             SoundManagerScript.S.MakeLoseSound();
             game_over = true;
         }
@@ -131,7 +132,10 @@ public class GameController : MonoBehaviour
     IEnumerator SpawnWaves(int path_index)
     {
         //yield return new WaitForSeconds(wave_time);
-
+        if (game_over)
+        {
+            yield break;
+        }
         increase_wave();
         reset_enemies_left(num_enemies);
 
