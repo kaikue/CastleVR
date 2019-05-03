@@ -566,7 +566,7 @@ GameObject:
   - component: {fileID: 1452472493}
   m_Layer: 8
   m_Name: Plane
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -751,15 +751,15 @@ PrefabInstance:
       propertyPath: winSoundObj
       value: 
       objectReference: {fileID: 1550262056}
-    - target: {fileID: 6131587857750768922, guid: 1f557d85e4f48ce45ab626c672326314,
-        type: 3}
-      propertyPath: Priority
-      value: 60
-      objectReference: {fileID: 0}
     - target: {fileID: 6131587858350898104, guid: 1f557d85e4f48ce45ab626c672326314,
         type: 3}
       propertyPath: m_PlayOnAwake
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6131587857750768922, guid: 1f557d85e4f48ce45ab626c672326314,
+        type: 3}
+      propertyPath: Priority
+      value: 60
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f557d85e4f48ce45ab626c672326314, type: 3}
@@ -1160,11 +1160,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8247298266916409958, guid: b7b2babe015e3d847a06e49a80fe6f31,
-        type: 3}
-      propertyPath: m_Name
-      value: Catapult
-      objectReference: {fileID: 0}
     - target: {fileID: 1550434790221482857, guid: b7b2babe015e3d847a06e49a80fe6f31,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1219,6 +1214,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8247298266916409958, guid: b7b2babe015e3d847a06e49a80fe6f31,
+        type: 3}
+      propertyPath: m_Name
+      value: Catapult
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b7b2babe015e3d847a06e49a80fe6f31, type: 3}
