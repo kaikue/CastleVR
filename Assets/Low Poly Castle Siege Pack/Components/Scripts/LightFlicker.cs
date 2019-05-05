@@ -9,6 +9,6 @@ public class LightFlicker : MonoBehaviour {
 
 	//Make the light flicker randomly
 	void Update () {
-		light.intensity = Random.Range (minIntensity, maxIntensity);
+		//light.intensity = Random.Range (minIntensity, maxIntensity);
 	}
 }
