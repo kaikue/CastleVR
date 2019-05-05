@@ -31,7 +31,8 @@ public class GameController : MonoBehaviour
 
     public int num_enemies = 5;
     private bool game_over = false;
-    private int enemies_done = 0;
+    private int enemies_done = 1;
+    private bool started = false;
 
     // Start is called before the first frame update
 
@@ -85,6 +86,15 @@ public class GameController : MonoBehaviour
             spawn_wave();
         }
         //}
+    }
+
+    public void on_start_button()
+    {
+        if (!started)
+        {
+            enemies_done = 0;
+            started = true;
+        }
     }
 
     public void subtract_from_enemies_left(int x)
