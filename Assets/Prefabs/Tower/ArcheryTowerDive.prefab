@@ -90,7 +90,7 @@ Transform:
   m_GameObject: {fileID: 317257284}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 346440200677471940}
   m_Father: {fileID: 0}
@@ -109,7 +109,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   divePos: {fileID: 6467462070015208055}
-  scaleFactor: 25
+  scaleFactor: 50
   swordTarget: 0
   archeryTarget: 1
   bow: {fileID: 1221983079}

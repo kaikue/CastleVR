@@ -92,8 +92,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   divePos: {fileID: 2083929104}
-  scaleFactor: 25
+  scaleFactor: 50
   swordTarget: 1
+  archeryTarget: 0
+  bow: {fileID: 0}
 --- !u!1 &2083929103
 GameObject:
   m_ObjectHideFlags: 0
