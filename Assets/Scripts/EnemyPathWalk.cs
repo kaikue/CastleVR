@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class EnemyPathWalk : MonoBehaviour
 {
@@ -36,12 +37,17 @@ public class EnemyPathWalk : MonoBehaviour
     private float FindGroundPos(Vector3 pos)
     {
         Vector3 start = pos + 3 * Vector3.up;
-        //Vector3 end = pos + Vector3.down;
         RaycastHit[] hits = Physics.RaycastAll(start, Vector3.down, 5, LayerMask.GetMask("LevelGeometry"));
 
-        if (hits.Length == 0) return pos.y;
-
-        return hits[0].point.y;
+        if (hits.Length == 0)
+        {
+            return pos.y;
+        }
+        else
+        {
+            float hit = hits.Max(h => h.point.y);
+            return hit;
+        }
     }
 
 	private void FixedUpdate()
