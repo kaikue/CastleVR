@@ -3894,7 +3894,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 398008aaa9b8a2e4ebd3860a13db4038, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -3.61
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 398008aaa9b8a2e4ebd3860a13db4038, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3942,7 +3942,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 398008aaa9b8a2e4ebd3860a13db4038, type: 3}
       propertyPath: m_LocalScale.z
-      value: 30.101751
+      value: 35.005325
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 398008aaa9b8a2e4ebd3860a13db4038, type: 3}
       propertyPath: m_StaticEditorFlags
