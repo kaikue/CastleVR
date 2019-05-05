@@ -6,7 +6,7 @@ public class SoundManagerScript : MonoBehaviour
 {
     public static SoundManagerScript S;
 
-    public GameObject bellSoundObj;
+    //public GameObject bellSoundObj;
     public GameObject explosionSoundObj;
     public GameObject loseSoundObj;
     public GameObject battleSoundObj;
@@ -16,7 +16,7 @@ public class SoundManagerScript : MonoBehaviour
     public GameObject winSoundObj;
     public GameObject thwackSoundObj;
 
-    private AudioSource bellSound;
+    //private AudioSource bellSound;
     private AudioSource explosionSound;
     private AudioSource loseSound;
     private AudioSource battleSound;
@@ -32,7 +32,7 @@ public class SoundManagerScript : MonoBehaviour
     {
         S = this;
 
-        bellSound = bellSoundObj.GetComponent<AudioSource>();
+        //bellSound = bellSoundObj.GetComponent<AudioSource>();
         explosionSound = explosionSoundObj.GetComponent<AudioSource>();
         loseSound = loseSoundObj.GetComponent<AudioSource>();
         battleSound = battleSoundObj.GetComponent<AudioSource>();
@@ -43,7 +43,7 @@ public class SoundManagerScript : MonoBehaviour
         thwackSound = thwackSoundObj.GetComponent<AudioSource>();
     }
 
-    //bell sound
+    /*bell sound
     public void MakeBellSound()
     {
         bellSound.Play();
@@ -51,7 +51,7 @@ public class SoundManagerScript : MonoBehaviour
     public void StopBellSound()
     {
         bellSound.Stop();
-    }
+    }*/
     //explosion sound
     public void MakeExplosionSound()
     {
@@ -64,7 +64,10 @@ public class SoundManagerScript : MonoBehaviour
     //lose sound
     public void MakeLoseSound()
     {
-        loseSound.Play();
+        if (!loseSound.isPlaying)
+        {
+            loseSound.Play();
+        }
     }
     public void StopLoseSound()
     {

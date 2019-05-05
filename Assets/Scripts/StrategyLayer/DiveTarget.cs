@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Valve.VR.InteractionSystem;
 
 public class DiveTarget : MonoBehaviour
 {
@@ -13,4 +14,25 @@ public class DiveTarget : MonoBehaviour
 
     [Tooltip("Whether or not the sword apparatus should be spawned on the agent's hands")]
     public bool swordTarget = false;
+
+    [Tooltip("Whether or not the bow should be made interactable")]
+    public bool archeryTarget = false;
+
+    [Tooltip("If this is an archery tower, the bow object to enable/disable")]
+    public GameObject bow;
+
+    public void ActivateBow()
+    {
+        if (bow != null)
+        {
+            bow.SetActive(true);
+        }
+    }
+    public void DeactivateBow()
+    {
+        if (bow != null)
+        {
+            bow.SetActive(false);
+        }
+    }
 }

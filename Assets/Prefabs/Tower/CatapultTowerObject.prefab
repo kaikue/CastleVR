@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2049794010}
   - component: {fileID: 2049794008}
   - component: {fileID: 2049794009}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: CatapultTowerObject
   m_TagString: TowerObject
   m_Icon: {fileID: 0}
@@ -29,14 +29,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2049794007}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+  m_LocalRotation: {x: 0, y: 0.7072302, z: 0.7069834, w: 0}
   m_LocalPosition: {x: -0.498, y: -0.154, z: 1.5}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children:
   - {fileID: 8964003323853862515}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -89.98, y: 180, z: 0}
 --- !u!33 &2049794013
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -52,7 +52,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2049794007}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -61,8 +61,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: f3373efa3c13330409cca4609f8bbb66, type: 2}
+  m_Materials: []
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -180,7 +179,7 @@ MonoBehaviour:
   attachentOffset: {fileID: 0}
   towerFab: {fileID: 317257284, guid: b3d9f9c00cf000a4895416fcd1785618, type: 3}
   nodePositionOffset: {x: 0, y: 0, z: 0}
-  nodeRotationOffset: {x: -90, y: 0, z: 0}
+  nodeRotationOffset: {x: -90, y: 180, z: 0}
   screenCover: {fileID: 0}
   diveInAction:
     actionPath: /actions/default/in/DiveIn
@@ -189,6 +188,11 @@ MonoBehaviour:
     actionPath: /actions/default/in/DiveOut
     needsReinit: 0
   showGrabHint: 0
+  respawnTime: 5
+  respawnObject: {fileID: 2166782192338350113, guid: 7db6f667c382814458a59526ef41726e,
+    type: 3}
+  respawnScale: 3
+  isCatapult: 1
 --- !u!65 &8488641444125953310
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -209,10 +213,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2049794014}
     m_Modifications:
-    - target: {fileID: 164854, guid: a288f47bff5cc9c4cb0dc3522a257663, type: 3}
-      propertyPath: m_Name
-      value: Catapult
-      objectReference: {fileID: 0}
     - target: {fileID: 443222, guid: a288f47bff5cc9c4cb0dc3522a257663, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.0002
@@ -268,6 +268,46 @@ PrefabInstance:
     - target: {fileID: 443222, guid: a288f47bff5cc9c4cb0dc3522a257663, type: 3}
       propertyPath: m_LocalScale.z
       value: 0.009999998
+      objectReference: {fileID: 0}
+    - target: {fileID: 164854, guid: a288f47bff5cc9c4cb0dc3522a257663, type: 3}
+      propertyPath: m_Name
+      value: Catapult
+      objectReference: {fileID: 0}
+    - target: {fileID: 164854, guid: a288f47bff5cc9c4cb0dc3522a257663, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 167240, guid: a288f47bff5cc9c4cb0dc3522a257663, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 171088, guid: a288f47bff5cc9c4cb0dc3522a257663, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 139352, guid: a288f47bff5cc9c4cb0dc3522a257663, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 156076, guid: a288f47bff5cc9c4cb0dc3522a257663, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 156688, guid: a288f47bff5cc9c4cb0dc3522a257663, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 137246, guid: a288f47bff5cc9c4cb0dc3522a257663, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 121876, guid: a288f47bff5cc9c4cb0dc3522a257663, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 179788, guid: a288f47bff5cc9c4cb0dc3522a257663, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a288f47bff5cc9c4cb0dc3522a257663, type: 3}

@@ -12,6 +12,7 @@ TagManager:
   - theWall
   - TowerNode
   - TowerObject
+  - Ground
   layers:
   - Default
   - TransparentFX

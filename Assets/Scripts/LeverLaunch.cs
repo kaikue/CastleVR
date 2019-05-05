@@ -112,6 +112,7 @@ namespace Vale.VR.InteractionSystem
             yield return new WaitForSeconds(5.5f);
             Destroy(instance);
             instance = Instantiate(ballPrefab, ball_pos.position,  new Quaternion(0, 0, 0, 0));
+            instance.transform.parent = this.transform.parent;
             ball = instance.GetComponent<Rigidbody>();
             ball.useGravity = false;
         }

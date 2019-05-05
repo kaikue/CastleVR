@@ -18,7 +18,7 @@ public class Explosion : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.name == "Plane")
+        if (collision.gameObject.tag == "Ground")
         {
             Impact();
         }
@@ -35,5 +35,6 @@ public class Explosion : MonoBehaviour
         explosionArea.transform.parent = this.transform;
         explosionArea.transform.localScale = new Vector3(2, 2, 2);
         SoundManagerScript.S.MakeExplosionSound();
+
     }
 }
