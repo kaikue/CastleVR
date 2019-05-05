@@ -73,7 +73,7 @@ public class GameController : MonoBehaviour
             SoundManagerScript.S.MakeLoseSound();
             game_over = true;
         }
-        else if (wave >= 10)
+        else if (wave >= 5)
         {
             //StopCoroutine(SpawnWaves(0));
             wave_txt.text = "You Win!";
@@ -94,7 +94,28 @@ public class GameController : MonoBehaviour
         {
             enemies_done = 0;
             started = true;
+        } else if (game_over)
+        {
+            restart();
         }
+    }
+
+    public void restart()
+    {
+        num_enemies = 5;
+        game_over = false;
+       
+        enemies_through = 0;
+        wave = 0;
+        SoundManagerScript.S.MakePlayroomSound();
+        SoundManagerScript.S.StopWinSound();
+        SoundManagerScript.S.StopLoseSound();
+
+        UpdateScore();
+        UpdateWave();
+
+        enemies_done = 0;
+
     }
 
     public void subtract_from_enemies_left(int x)
