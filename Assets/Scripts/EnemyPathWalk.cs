@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyPathWalk : MonoBehaviour
 {
-	private const float SPEED = 1.5f;
+	public float speed = 1f;
 	private const float DIE_TIME = 1.0f;
 
 	public GameObject deathParticlesPrefab;
@@ -30,15 +30,28 @@ public class EnemyPathWalk : MonoBehaviour
 	{
 		this.curve = curve;
 		t = 0;
-		totalT = curve.length / SPEED;
+		totalT = curve.length / speed;
 	}
+
+    private float FindGroundPos(Vector3 pos)
+    {
+        Vector3 start = pos + 3 * Vector3.up;
+        //Vector3 end = pos + Vector3.down;
+        RaycastHit[] hits = Physics.RaycastAll(start, Vector3.down, 5, LayerMask.GetMask("LevelGeometry"));
+
+        if (hits.Length == 0) return pos.y;
+
+        return hits[0].point.y;
+    }
 
 	private void FixedUpdate()
     {
-		Vector3 goalPos = curve.GetPointAt(t / totalT);
+        float st = Mathf.Clamp(t / totalT, 0.00001f, 0.99999f);
+		Vector3 goalPos = curve.GetPointAt(st);
+        goalPos.y = FindGroundPos(goalPos);
 		t += Time.fixedDeltaTime;
         transform.rotation = Quaternion.LookRotation(goalPos - rb.position);
-        rb.MovePosition(goalPos); //TODO: move physically around obstacles?
+        rb.MovePosition(goalPos);
     }
 	
     private void OnCollisionEnter(Collision collision)
