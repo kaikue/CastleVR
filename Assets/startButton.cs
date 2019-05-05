@@ -21,6 +21,7 @@ public class startButton : MonoBehaviour
 
     public void start_game()
     {
+        print("start button pressed");
         gc.on_start_button();
     }
 }
