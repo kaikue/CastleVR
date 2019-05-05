@@ -21,6 +21,7 @@ public class GameController : MonoBehaviour
 
 
 
+
     public GameObject[] enemies;    // The enemy prefabs to be spawned.
     //public float spawnTime = 3f;  // How long between each spawn.
     public float wave_time = 5f; // time between waves
@@ -30,6 +31,7 @@ public class GameController : MonoBehaviour
 
     public int num_enemies = 5;
     private bool game_over = false;
+    private int enemies_done = 0;
 
     // Start is called before the first frame update
 
@@ -51,7 +53,7 @@ public class GameController : MonoBehaviour
     {
 
         enemies_slider.value = 0;
-        StartCoroutine(SpawnWaves(0));
+        //StartCoroutine(SpawnWaves(0));
         //StartCoroutine(SpawnWaves(1));
 
 
@@ -64,19 +66,23 @@ public class GameController : MonoBehaviour
         //{
         if (enemies_through >= 15)
         {
-            StopCoroutine(SpawnWaves(0));
+            //StopCoroutine(SpawnWaves(0));
             wave_txt.text = "You Lose!";
             SoundManagerScript.S.StopPlayroomSound();
-      
             SoundManagerScript.S.MakeLoseSound();
             game_over = true;
         }
         else if (wave >= 10)
         {
-            StopCoroutine(SpawnWaves(0));
+            //StopCoroutine(SpawnWaves(0));
             wave_txt.text = "You Win!";
             SoundManagerScript.S.MakeWinSound();
             game_over = true;
+        }
+
+        if (enemies_done <= 0)
+        {
+            spawn_wave();
         }
         //}
     }
@@ -94,14 +100,21 @@ public class GameController : MonoBehaviour
     }
 
 
-
-
     public void add_to_enemies_through(int x)
     {
         enemies_through += x;
         // update slider as well
         enemies_slider.value = enemies_through;
         UpdateScore();
+    }
+
+    public void add_to_enemies_done(int x)
+    {
+        enemies_done += x;
+    }
+    public void subtract_from_enemies_done(int x)
+    {
+        enemies_done -= x;
     }
 
     void UpdateScore()
@@ -124,10 +137,15 @@ public class GameController : MonoBehaviour
     {
         wave_txt.text = "Wave: " + wave;
         wave_txt_2.text = "Wave: " + wave;
-
     }
 
-
+    public void spawn_wave()
+    {
+        enemies_done = num_enemies;
+        print("spawning a new wave of: " + enemies_done);
+   
+        StartCoroutine(SpawnWaves(0));
+    }
 
 
     IEnumerator SpawnWaves(int path_index)
@@ -140,6 +158,9 @@ public class GameController : MonoBehaviour
         increase_wave();
         reset_enemies_left(num_enemies);
 
+        yield return new WaitForSeconds(wave_time);
+
+
         for (int i = 0; i < num_enemies; i++)
         {
             // call spawnEnmenty on a path
@@ -147,6 +168,7 @@ public class GameController : MonoBehaviour
 
             if (enemies_left_to_spawn <= 2)
             {
+                print("case 1");
                 GameObject enemy_prefab = enemies[Random.Range(0, enemies.Length)];
                 path.SpawnEnemy(enemy_prefab);
                 subtract_from_enemies_left(1);
@@ -155,7 +177,7 @@ public class GameController : MonoBehaviour
             {
 
                 // pick a path now randomly generate a horde
-                int horde_size = Random.Range(1, Mathf.Min(enemies_left_to_spawn, 11));
+                int horde_size = Random.Range(2, Mathf.Min(enemies_left_to_spawn, 11));
                 //print(" hs: "+  horde_size);
                 //print(" left : " + enemies_left_to_spawn);
                 for (int j = 0; j < horde_size; j++)
@@ -167,6 +189,7 @@ public class GameController : MonoBehaviour
                     yield return new WaitForSeconds(1f);
 
                 }
+                i--;
             }
             // wait a random amoount of time betwen spawining hordes
             int wait = Random.Range(spawn_time, spawn_time + 5);
@@ -174,9 +197,10 @@ public class GameController : MonoBehaviour
         }
 
         num_enemies += 10;
+        print("end");
 
-        yield return new WaitForSeconds(wave_time);
-        StartCoroutine(SpawnWaves(0));
+        //yield return new WaitForSeconds(wave_time);
+        //StartCoroutine(SpawnWaves(0));
 
     }
 

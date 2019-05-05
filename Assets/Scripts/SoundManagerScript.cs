@@ -76,7 +76,10 @@ public class SoundManagerScript : MonoBehaviour
     // battle sound
     public void MakeBattleSound()
     {
-        battleSound.Play();
+        if (!battleSound.isPlaying)
+        {
+            battleSound.Play();
+        }
     }
     public void StopBattleSound()
     {
@@ -85,7 +88,10 @@ public class SoundManagerScript : MonoBehaviour
     //playroom sound
     public void MakePlayroomSound()
     {
-        playroomSound.Play();
+        if (!playroomSound.isPlaying)
+        {
+            playroomSound.Play();
+        }
     }
     public void StopPlayroomSound()
     {
@@ -112,7 +118,10 @@ public class SoundManagerScript : MonoBehaviour
     //win sound
     public void MakeWinSound()
     {
-        winSound.Play();
+        if (!winSound.isPlaying)
+        {
+            winSound.Play();
+        }
     }
     public void StopWinSound()
     {
