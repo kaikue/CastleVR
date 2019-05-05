@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 2049794007}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
   m_LocalPosition: {x: -0.498, y: -0.154, z: 1.5}
-  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_LocalScale: {x: 50, y: 50, z: 50}
   m_Children:
   - {fileID: 5947640513673579228}
   m_Father: {fileID: 0}
@@ -192,6 +192,8 @@ MonoBehaviour:
   respawnTime: 5
   respawnObject: {fileID: 2166782192338350113, guid: 7db6f667c382814458a59526ef41726e,
     type: 3}
+  respawnScale: 3
+  isCatapult: 0
 --- !u!1 &3778706597465422434
 GameObject:
   m_ObjectHideFlags: 0

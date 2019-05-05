@@ -192,6 +192,8 @@ MonoBehaviour:
   respawnTime: 5
   respawnObject: {fileID: 2166782192338350113, guid: 7db6f667c382814458a59526ef41726e,
     type: 3}
+  respawnScale: 3
+  isCatapult: 0
 --- !u!65 &7440083513566132127
 BoxCollider:
   m_ObjectHideFlags: 0
