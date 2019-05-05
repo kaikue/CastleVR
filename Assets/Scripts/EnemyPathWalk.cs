@@ -57,12 +57,14 @@ public class EnemyPathWalk : MonoBehaviour
 			}
 			else
 			{
-				Kill(collision.rigidbody.velocity);
+                gc.subtract_from_enemies_done(1);
+                Kill(collision.rigidbody.velocity);
 			}
         }
         if (collision.gameObject.CompareTag("theWall"))
         {
             gc.add_to_enemies_through(1);
+            gc.subtract_from_enemies_done(1);
             Destroy(gameObject);
         }
         
