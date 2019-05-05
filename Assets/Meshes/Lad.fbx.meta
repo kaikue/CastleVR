@@ -14,6 +14,7 @@ ModelImporter:
     100016: pSphere1SmoothProxyGroup
     100018: pSphere2
     100020: pSphere3
+    100022: pCylinder2
     400000: //RootNode
     400002: pCylinder1SmoothProxyGroup
     400004: pCylinder2SmoothProxyGroup
@@ -25,6 +26,7 @@ ModelImporter:
     400016: pSphere1SmoothProxyGroup
     400018: pSphere2
     400020: pSphere3
+    400022: pCylinder2
     2100000: blinn5
     2100002: lambert1
     2100004: blinn8
