@@ -284,18 +284,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2049794014, guid: fc3fd072e942e764ea470608a4cee89e, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 2049794014, guid: fc3fd072e942e764ea470608a4cee89e, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 99.99997
-      objectReference: {fileID: 0}
-    - target: {fileID: 2049794014, guid: fc3fd072e942e764ea470608a4cee89e, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 99.99997
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc3fd072e942e764ea470608a4cee89e, type: 3}
 --- !u!1 &92412013
@@ -839,18 +827,6 @@ PrefabInstance:
     - target: {fileID: 2049794014, guid: fc3fd072e942e764ea470608a4cee89e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2049794014, guid: fc3fd072e942e764ea470608a4cee89e, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 2049794014, guid: fc3fd072e942e764ea470608a4cee89e, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 99.99997
-      objectReference: {fileID: 0}
-    - target: {fileID: 2049794014, guid: fc3fd072e942e764ea470608a4cee89e, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 99.99997
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc3fd072e942e764ea470608a4cee89e, type: 3}
@@ -5115,6 +5091,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6775579606671043778, guid: acd1e47dcb70eb843b25f85f04070022,
+        type: 3}
+      propertyPath: hoverSphereRadius
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 6775579606670994524, guid: acd1e47dcb70eb843b25f85f04070022,
+        type: 3}
+      propertyPath: hoverSphereRadius
+      value: 0.05
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: acd1e47dcb70eb843b25f85f04070022, type: 3}
 --- !u!1001 &898024602
@@ -7681,14 +7667,6 @@ PrefabInstance:
     - target: {fileID: 2049794014, guid: 919d4403b4c2855499c2576bca1fe45f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2049794014, guid: 919d4403b4c2855499c2576bca1fe45f, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 99.99997
-      objectReference: {fileID: 0}
-    - target: {fileID: 2049794014, guid: 919d4403b4c2855499c2576bca1fe45f, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 99.99997
       objectReference: {fileID: 0}
     - target: {fileID: 2049794009, guid: 919d4403b4c2855499c2576bca1fe45f, type: 3}
       propertyPath: nodeRotationOffset.y
