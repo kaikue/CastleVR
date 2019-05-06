@@ -227,8 +227,9 @@ namespace Valve.VR.InteractionSystem
 		private void FireArrow()
 		{
 			currentArrow.transform.parent = null;
+            currentArrow.transform.localScale = new Vector3(1, 1, 1);
 
-			Arrow arrow = currentArrow.GetComponent<Arrow>();
+            Arrow arrow = currentArrow.GetComponent<Arrow>();
 			arrow.shaftRB.isKinematic = false;
 			arrow.shaftRB.useGravity = true;
 			arrow.shaftRB.transform.GetComponent<BoxCollider>().enabled = true;
