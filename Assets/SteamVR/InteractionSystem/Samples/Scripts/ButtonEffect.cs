@@ -9,6 +9,18 @@ namespace Valve.VR.InteractionSystem.Sample
 {
     public class ButtonEffect : MonoBehaviour
     {
+        private Color oldColor;
+
+        private void Start()
+        {
+            //this is bad but who cares
+            Renderer[] renderers = this.GetComponentsInChildren<Renderer>();
+            for (int rendererIndex = 0; rendererIndex < renderers.Length; rendererIndex++)
+            {
+                oldColor = renderers[rendererIndex].material.color;
+            }
+        }
+
         public void OnButtonDown(Hand fromHand)
         {
             ColorSelf(Color.cyan);
@@ -17,7 +29,7 @@ namespace Valve.VR.InteractionSystem.Sample
 
         public void OnButtonUp(Hand fromHand)
         {
-            ColorSelf(Color.white);
+            ColorSelf(oldColor);
         }
 
         private void ColorSelf(Color newColor)
