@@ -292,7 +292,7 @@ MonoBehaviour:
   closedMat: {fileID: 2100000, guid: 89d7cf9a4a67b2842b1acdc57d52c0c7, type: 2}
   closedHoverMat: {fileID: 2100000, guid: bd9462ac52728514296ea58a66f0e1e3, type: 2}
   da: {fileID: 0}
-  allowsSwapping: 1
+  allowsSwapping: 0
   hudText: {fileID: 9133403405038045375}
   dtOverride: {fileID: 2017781183}
 --- !u!114 &1381560441933809827
