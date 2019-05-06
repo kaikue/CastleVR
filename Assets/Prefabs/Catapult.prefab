@@ -2169,7 +2169,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   linearMapping: {fileID: 8548080965142639462}
-  ball: {fileID: 4665801982965761142}
   trajectoryPointPrefab: {fileID: 8529648415341305909}
   ballPrefab: {fileID: 5630329640689728729, guid: 66174f79b1afaab4780b174affbe8956,
     type: 3}

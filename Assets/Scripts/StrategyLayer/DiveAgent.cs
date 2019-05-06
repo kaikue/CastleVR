@@ -42,6 +42,8 @@ namespace Valve.VR.InteractionSystem
         // The position where a dive was initiated from (and thus where we should dive out to)
         private Vector3 diveOutPos;
 
+        private Quaternion diveOutRot;
+
         // Parameters to control the fade effect
         private float currentFadeTime = 0.5f;
 
@@ -135,6 +137,7 @@ namespace Valve.VR.InteractionSystem
 
             // Fix the current position
             diveOutPos = player.trackingOriginTransform.position;
+            diveOutRot = player.trackingOriginTransform.rotation;
 
             // Scale down the agent using the inverse of the scaling factor
             player.transform.localScale *= (1f / nextDT.scaleFactor);
@@ -143,7 +146,8 @@ namespace Valve.VR.InteractionSystem
             //Vector3 feetOffset = player.trackingOriginTransform.position - player.feetPositionGuess;
             player.trackingOriginTransform.position = nextDT.divePos.position;// + feetOffset;
 
-            //TODO: update the rotation to match divePos?
+            //update the rotation to match divePos
+            player.trackingOriginTransform.rotation = nextDT.divePos.rotation;
 
             // Spawn the sword if necessary
             if (nextDT.swordTarget)
@@ -195,6 +199,7 @@ namespace Valve.VR.InteractionSystem
             // Update the position of the agent
             //Vector3 feetOffset = player.trackingOriginTransform.position - player.feetPositionGuess;
             player.trackingOriginTransform.position = diveOutPos; //+ feetOffset;
+            player.trackingOriginTransform.rotation = diveOutRot;
 
             // Free the agent's hands
             leftHand.Deactivate_sword();
