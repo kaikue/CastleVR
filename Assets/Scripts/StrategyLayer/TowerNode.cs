@@ -179,7 +179,7 @@ namespace Valve.VR.InteractionSystem
             // Store a reference to the attached tower
             attachedTower = tower;
 
-            tower.SpawnTowerComponents();
+            tower.SpawnTowerComponents(this);
             tower.HideTowerObject();
         }
 

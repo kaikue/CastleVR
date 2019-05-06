@@ -178,7 +178,7 @@ namespace Valve.VR.InteractionSystem
 
         /** UNIQUE ROUTINES **/
 
-        public void SpawnTowerComponents()
+        public void SpawnTowerComponents(TowerNode tn)
         {
             // TODO
             // We're gonna want to find some way to make this routine flexible
@@ -194,7 +194,7 @@ namespace Valve.VR.InteractionSystem
             diveComponent = comp;
 
             // Child and center the instance
-            comp.transform.SetPositionAndRotation(transform.position, Quaternion.identity);
+            comp.transform.SetPositionAndRotation(transform.position, tn.transform.rotation);
 
             //TEMP: rotate the catapult
             if (isCatapult)

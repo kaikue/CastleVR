@@ -29,7 +29,7 @@ GameObject:
   - component: {fileID: 4922927194049868886}
   - component: {fileID: 3337577714364359501}
   - component: {fileID: 7440083513566132127}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: SwordTowerObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,7 +45,7 @@ Transform:
   m_GameObject: {fileID: 8119556038263710034}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: -0.154, z: 0}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children:
   - {fileID: 4492672814573893548}
   m_Father: {fileID: 0}
@@ -222,7 +222,7 @@ PrefabInstance:
     - target: {fileID: 3263580878359327629, guid: 44dc59ac0b1e9cb45923004f4e0e5c1b,
         type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 3263580878359162797, guid: 44dc59ac0b1e9cb45923004f4e0e5c1b,
         type: 3}

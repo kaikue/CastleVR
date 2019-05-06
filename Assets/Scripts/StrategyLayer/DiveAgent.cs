@@ -147,6 +147,7 @@ namespace Valve.VR.InteractionSystem
             player.trackingOriginTransform.position = nextDT.divePos.position;// + feetOffset;
 
             //update the rotation to match divePos
+            Debug.Log("Rotation update " + nextDT + " " + nextDT.divePos + " " + nextDT.divePos.rotation, nextDT.divePos);
             player.trackingOriginTransform.rotation = nextDT.divePos.rotation;
 
             // Spawn the sword if necessary
