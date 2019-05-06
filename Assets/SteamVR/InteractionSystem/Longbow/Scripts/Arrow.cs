@@ -120,14 +120,15 @@ namespace Valve.VR.InteractionSystem
                 Rigidbody rb = GetComponent<Rigidbody>();
 				float rbSpeed = rb.velocity.sqrMagnitude;
 				bool canStick = ( targetPhysMaterial != null && collision.collider.sharedMaterial == targetPhysMaterial && rbSpeed > 0.2f );
+                
 				bool hitBalloon = collision.collider.gameObject.GetComponent<Balloon>() != null;
 
                 
 
                 if ( travelledFrames < 2 && !canStick )
 				{
-					// Reset transform but halve your velocity
-					transform.position = prevPosition - prevVelocity * Time.deltaTime;
+                    // Reset transform but halve your velocity
+                    transform.position = prevPosition - prevVelocity * Time.deltaTime;
 					transform.rotation = prevRotation;
 
 					Vector3 reflfectDir = Vector3.Reflect( arrowHeadRB.velocity, collision.contacts[0].normal );
@@ -184,8 +185,8 @@ namespace Valve.VR.InteractionSystem
 				}
 
 				if ( canStick )
-				{
-					StickInTarget( collision, travelledFrames < 2 );
+                {
+                    StickInTarget( collision, travelledFrames < 2 );
 				}
 
 				// Player Collision Check (self hit)
@@ -221,9 +222,11 @@ namespace Valve.VR.InteractionSystem
 
 				if ( !properHit )
 				{
+                    print("BAD STICKY");
 					return;
 				}
 			}
+            print("GOOD STICKY");
 
 			Destroy( glintParticle );
 
