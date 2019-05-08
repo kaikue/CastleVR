@@ -76,7 +76,7 @@ public class EnemyPathWalk : MonoBehaviour
 			}
 			else
 			{
-                gc.subtract_from_enemies_done(1);
+                //gc.subtract_from_enemies_done(1);
                 Kill(collision.rigidbody.velocity);
 			}
         }
@@ -92,6 +92,7 @@ public class EnemyPathWalk : MonoBehaviour
     public void Kill(Vector3 velocity)
     {
         //velocity.y = 0;
+        gc.subtract_from_enemies_done(1);
         gameObject.layer = LayerMask.NameToLayer("DeadEnemy");
         print(velocity);
         rb.velocity = velocity;
