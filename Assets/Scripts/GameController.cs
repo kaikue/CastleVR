@@ -31,7 +31,7 @@ public class GameController : MonoBehaviour
 
     public int num_enemies = 5;
     private bool game_over = false;
-    private int enemies_done = 1;
+    private int enemies_done = 0;
     private bool started = false;
 
     // Start is called before the first frame update
