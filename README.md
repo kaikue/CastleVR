@@ -4,6 +4,7 @@ A game for Windows Mixed Reality by Studio Lighthouse
 
 ![Logo](Media/logo_game.png)
 
+## Watch The Trailer:
 [![Trailer](https://img.youtube.com/vi/mL8AknRCMsk/0.jpg)](https://www.youtube.com/watch?v=mL8AknRCMsk)
 
 ![Studio](Media/Logo.png)
