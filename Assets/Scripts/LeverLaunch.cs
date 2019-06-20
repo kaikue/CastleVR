@@ -27,7 +27,7 @@ namespace Vale.VR.InteractionSystem
 
         void Awake()
         {
-            instance = ballPrefab;
+            instance = ball.gameObject;
             target = trajectoryPointPrefab.GetComponent<Transform>();
             ball.useGravity = false;
         }
