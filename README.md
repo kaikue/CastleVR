@@ -2,6 +2,14 @@
 
 A game for Windows Mixed Reality by Studio Lighthouse
 
+![Logo](Media/logo_game.png)
+
+[![Trailer](https://img.youtube.com/vi/mL8AknRCMsk/0.jpg)](https://www.youtube.com/watch?v=mL8AknRCMsk)
+
+![Studio](Media/Logo.png)
+
+
+
 ## Packages Used
 - https://assetstore.unity.com/packages/3d/characters/toony-tiny-ww1-soldiers-demo-115694
 - https://jaks.itch.io/lowpolyforestpack
